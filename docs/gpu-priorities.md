@@ -1,42 +1,44 @@
-# Priorità GPU native
+# Native GPU queue priorities
 
-La correzione coinvolge il driver Asahi nel kernel e Honeykrisp in Mesa. È una modifica locale del port, distinta dalle release upstream di entrambi.
+This change coordinates the Asahi kernel driver and Mesa Honeykrisp. It is a local port extension, not a feature attributed to the upstream releases.
 
-## Problema riprodotto
+## Reproduced failure
 
-Il driver Vulkan dichiarava LOW, MEDIUM, HIGH e REALTIME, ma rifiutava incondizionatamente le ultime due. Anche il kernel le rifiutava con EINVAL, con un TODO relativo a CAP_SYS_NICE. SurfaceFlinger selezionava REALTIME e falliva in vkCreateDevice con VK_ERROR_NOT_PERMITTED, provocando il riavvio del servizio. La sola disponibilità di AHardwareBuffer o di due code non risolveva questo contratto incoerente.
+The Vulkan driver advertised LOW, MEDIUM, HIGH, and REALTIME priorities but unconditionally rejected HIGH and REALTIME. The kernel also rejected those priorities with EINVAL and carried a TODO for CAP_SYS_NICE authorization. SurfaceFlinger selected REALTIME, received VK_ERROR_NOT_PERMITTED from vkCreateDevice, and restarted.
 
-## Implementazione
+AHardwareBuffer support and the availability of two queues did not resolve this mismatch between advertised capabilities and queue creation.
 
-`DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY`, bit 1 dei parametri Asahi, è **un’estensione locale dell’ABI ai commit fissati**. Prima di portarla su altre versioni occorre riconciliare l’assegnazione del bit con l’upstream.
+## Authorization and discovery
 
-Il kernel imposta il bit in GET_PARAMS solo quando il chiamante è autorizzato tramite `capable(CAP_SYS_NICE)`, nel namespace utente iniziale e secondo la policy LSM. È una fotografia dell’autorizzazione del chiamante, non un’autorizzazione trasferibile con il file descriptor. QUEUE_CREATE ricontrolla le credenziali correnti per ogni richiesta HIGH/REALTIME e restituisce EACCES se il permesso manca. Valori fuori dall’intervallo restano EINVAL.
+`DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY`, bit 1 of the Asahi parameters, is **a local ABI extension at the recorded kernel/Mesa revisions**. Its bit assignment must be reconciled with upstream before rebasing onto other versions.
 
-Mesa espone HIGH/REALTIME solo sul percorso DRM diretto quando il kernel restituisce quel bit. Kernel precedenti e chiamanti senza il permesso vedono LOW/MEDIUM. Il trasporto virtio resta su LOW/MEDIUM finché non esiste un contratto di autorizzazione verificato per quel trasporto. Il debug single-queue rifiuta il riuso di una coda con priorità diversa.
+GET_PARAMS sets the bit only when `capable(CAP_SYS_NICE)` authorizes the current caller in the initial user namespace and under the LSM policy. It reports an authorization snapshot, not a permission transferred by a file descriptor. QUEUE_CREATE rechecks current credentials for every HIGH/REALTIME request and returns EACCES when authorization is absent. Out-of-range priorities remain EINVAL.
 
-Le richieste vengono inoltrate alla creazione della vera coda; EACCES/EPERM diventano VK_ERROR_NOT_PERMITTED. Gli altri errori di creazione restano errori. Non viene sostituita una priorità richiesta con una più bassa per ottenere un successo.
+Mesa exposes HIGH/REALTIME only on the direct DRM path when the kernel reports that bit. Older kernels and unauthorized callers expose LOW/MEDIUM. The virtio transport remains limited to LOW/MEDIUM pending a verified authorization contract for that transport. Single-queue debug mode rejects reuse of a cached queue with a different priority.
 
-| Vulkan | Valore DRM | Classe firmware AGX |
+Requests retain their actual priority through native queue creation. EACCES and EPERM map to VK_ERROR_NOT_PERMITTED; other creation failures remain errors. A requested priority is not silently downgraded to obtain a successful return value.
+
+| Vulkan priority | DRM value | AGX firmware class |
 | --- | --- | --- |
 | LOW | 0 | 3 |
 | MEDIUM | 1 | 2 |
 | HIGH | 2 | 1 |
 | REALTIME | 3 | 0 |
 
-Queste sono classi di scheduling. Il nome REALTIME non garantisce scadenze temporali rigide e non completa la preemption compute che l’upstream lascia disabilitata in alcuni percorsi.
+These are scheduling classes. REALTIME does not guarantee hard deadlines or complete compute preemption that upstream leaves disabled in some paths.
 
-## Codice e dipendenze
+## Implementation
 
-- Kernel: `sources/linux-asahi/drivers/gpu/drm/asahi/file.rs` e relativo header UAPI.
-- Mesa: `sources/mesa/src/asahi/vulkan/hk_queue.c`, `hk_physical_device.c`, helper `agx_device.c/.h` e header UAPI coordinato.
-- Test: `scripts/asahi_priority_permissions_probe.c`, `scripts/vulkan_priority_probe.c`, `scripts/vulkan_android_interop_probe.c`.
+- **Kernel:** `sources/linux-asahi/drivers/gpu/drm/asahi/file.rs` and the corresponding UAPI header.
+- **Mesa:** `sources/mesa/src/asahi/vulkan/hk_queue.c`, `hk_physical_device.c`, `agx_device.c/.h`, and the coordinated UAPI header.
+- **Probes:** `scripts/asahi_priority_permissions_probe.c`, `scripts/vulkan_priority_probe.c`, and `scripts/vulkan_android_interop_probe.c`.
 
-SurfaceFlinger possedeva già CAP_SYS_NICE nella sessione osservata. Non sono necessari cambiamenti dei privilegi delle app, domini permissive o modifiche di m1n1 per implementare questa funzione.
+SurfaceFlinger already held CAP_SYS_NICE in the observed session. This implementation requires no additional application privileges, permissive SELinux domains, or m1n1 changes.
 
-## Verifiche e stato hardware
+## Validation
 
-La coppia kernel25/Mesa è stata compilata. La policy della priorità, i nuovi header e il driver sono presenti negli artefatti registrati in `tests/results/local-2026-10-17.json`. Il kernel ha letto tutti i file del vendor compresso in VM.
+Kernel25 and Mesa built successfully. Their artifacts and local validation are recorded in `tests/results/local-2026-10-17.json`. Kernel25 read and checked the entire compressed vendor filesystem in a VM.
 
-Il controllo negativo sul M1 con il kernel precedente ha ottenuto code LOW/MEDIUM reali e EINVAL per HIGH/REALTIME. Il probe Vulkan ha riprodotto la pubblicizzazione di quattro priorità e il rifiuto delle due superiori. Gli estratti pubblici contengono solo le righe dei probe, senza capture UART integrali.
+The previous-kernel M1 negative control created actual LOW/MEDIUM queues and returned EINVAL for HIGH/REALTIME. The Vulkan probe reproduced advertisement of four priorities and rejection of the upper two. Public extracts contain probe output only, not complete UART captures.
 
-**La nuova implementazione non è stata caricata sull’M1.** Il proprietario ha interrotto le prove hardware per usare il dispositivo. Restano da verificare: rifiuto EACCES del kernel nuovo per un client non autorizzato; creazione delle classi elevate da un owner autorizzato; esecuzione Vulkan di SurfaceFlinger; progresso e stabilità con più client; revoca della capability dopo la discovery. Nessuna di queste prove viene dedotta dalla sola compilazione.
+**The new implementation has not been loaded on M1.** Hardware testing was suspended at the owner’s request. Outstanding checks include new-kernel EACCES enforcement, authorized elevated queue creation, SurfaceFlinger Vulkan execution, multi-client progress and stability, and capability revocation after discovery. Successful compilation does not establish those results.

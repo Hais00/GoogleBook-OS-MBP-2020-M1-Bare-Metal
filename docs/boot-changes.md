@@ -1,33 +1,35 @@
-# Modifiche per l’avvio Android sul J293
+# Android boot integration on J293
 
-## Boot e storage
+## Boot and storage
 
-Il kernel e l’initramfs vengono trasferiti in RAM attraverso m1n1. Android usa le proprie partizioni sul NVMe interno. Il profilo Linux conserva i driver Apple necessari e rimuove componenti di piattaforme non pertinenti; il kernel usa pagine da 16 KiB.
+m1n1 transfers the kernel and initramfs into RAM. Android uses its partitions on internal NVMe. The Linux profile retains the required Apple drivers, disables unrelated platform components, and uses 16 KiB pages.
 
-L’immagine di partenza aveva partizioni GPT prive dei nomi richiesti dal percorso Android. Il port assegna i nomi `super`, `metadata` e `userdata` nel censimento Linux, mediante corrispondenze esplicite con le partizioni attese. Non riscrive i nomi GPT. Nella copia pubblicata gli UUID sono esempi e vanno configurati per la macchina interessata.
+The original installation contained GPT partitions without the names required by Android. The port assigns `super`, `metadata`, and `userdata` names during Linux partition discovery using explicit partition matches; it does not rename the on-disk GPT entries. The published UUIDs are examples and require installation-specific configuration.
 
-Il bootstrap trasporta il firmware una sola volta e conserva il manifest dei payload originali. La procedura di aggiornamento modifica solo le aree previste di `super`: verifica la versione attiva, protegge gli extent precedenti, richiede una copia completa di ripristino per un extent inattivo riutilizzato e verifica payload e copie liblp prima di avviare Android.
+The bootstrap transports firmware once and retains a manifest of the original payloads. The updater operates on the planned areas within `super`: it verifies the active layout, protects historical extents, requires a complete rollback copy before reusing an inactive extent, and verifies payloads and liblp metadata before continuing into Android.
 
-La compatibilità Android include il percorso memfd/ashmem richiesto da questo userspace. Gli adattamenti per la compilazione sul Mac sono separabili dalle modifiche necessarie al funzionamento sul M1.
+The kernel also provides the memfd/ashmem behavior required by this userspace. Host build adaptations for macOS are separable from changes needed for operation on M1.
 
-## Grafica e sincronizzazione
+## Graphics and synchronization
 
-Asahi/DRM controlla la GPU fisica; DCP gestisce il display principale e ADP il display della Touch Bar. minigbm e drm-hwcomposer vengono adattati al censimento effettivo, ai buffer e ai fence. Le correzioni DRM CRTC della durata e della race dei fence sono conservate con la loro provenienza upstream.
+Asahi/DRM controls the physical GPU. DCP handles the main display; ADP handles the Touch Bar display. minigbm and drm-hwcomposer are adapted to actual device discovery, buffer layout, and fence behavior. DRM CRTC fence lifetime and race fixes retain their upstream provenance.
 
-Honeykrisp riceve l’integrazione Android native-buffer/AHardwareBuffer e il percorso acquire/release. Gli import usano layout e stride effettivi; i fence sono eventi reali. Il supporto a due code native usa worker distinti e protegge gli heap condivisi attraverso il completamento GPU osservato. Le nuove priorità sono una modifica ulteriore descritta nella pagina dedicata.
+Honeykrisp adds Android native-buffer/AHardwareBuffer import and the acquire/release path. Imports use observed layouts and strides; synchronization uses actual fence events. Two native queues use separate submission workers, while shared heaps are protected by observed GPU completion. The subsequent priority changes are documented in [GPU queue priorities](gpu-priorities.md).
 
-## HAL, input e audio
+## HAL services, input, and audio
 
-Il prodotto Android di partenza contieneva servizi e percorsi Qualcomm non corrispondenti all’hardware Apple. Gli script di staging selezionano i componenti pertinenti e installano le implementazioni locali; i permessi SELinux sono mirati e le prove sul dispositivo mantengono Enforcing.
+The Android base product contained Qualcomm-specific services and paths that do not match Apple hardware. Staging recipes select the applicable components and install the local implementations. SELinux changes are targeted; the reported M1 sessions retained Enforcing mode.
 
-Wi-Fi usa il backend Linux e l’interfaccia HAL del prodotto. Bluetooth collega il controller Linux e la factory audio già presente nell’immagine. Il servizio Lights espone le interfacce AOSP corrispondenti alla matrice effettiva; gli errori del pannello principale, della tastiera e della Touch Bar rimangono indipendenti.
+Wi-Fi connects the Linux backend to the product HAL interface. Bluetooth connects the Linux controller transport and the audio factory already present in the image. The Lights service exposes the AOSP interface versions required by the actual compatibility matrix. Main-display, keyboard, and Touch Bar failures remain independent.
 
-La Touch Bar usa ADP, buffer KMS e completion dei page flip, con rotazione e pitch corretti. Il daemon osserva il sensore effettivo e produce eventi uinput, gestendo slot multitouch, rilasci, cambi di layout e perdita di sincronizzazione.
+The Touch Bar daemon uses ADP, KMS buffers, and page-flip completion events with corrected rotation and pitch. It observes the actual touch device and emits uinput events, including explicit handling of multitouch slots, releases, layout transitions, and synchronization loss.
 
-Il servizio audio primario espone una porta Android stereo PCM16 a 48 kHz e usa il PCM AppleJ293 S32_LE a quattro canali. Mantiene FIR e mapping fisico, limite digitale e interlock. speakersafetyd conserva modello termico e monitoraggio V/I. Le correzioni dell’indirizzo AIDL, di XRUN e della sequenza pausa/flush/standby hanno preceduto la conferma acustica degli speaker.
+The primary audio service exposes a stereo PCM16 Android port at 48 kHz and drives the AppleJ293 S32_LE four-channel PCM. It preserves FIR processing, physical channel mapping, the digital peak limit, and the speaker interlock. speakersafetyd retains its thermal model and voltage/current monitoring. Fixes to the AIDL port address, XRUN recovery, and pause/flush/standby handling preceded the owner’s confirmation of speaker playback.
 
-## Video e limiti del debug
+## Video and diagnostics
 
-Il linker del firmware AVD open source è stato corretto affinché i vettori Cortex-M3 inizino a zero. Il driver è presente, ma Android usa ancora componenti software perché il percorso Codec2 per V4L2 Request stateless non è integrato. Il servizio hardware di encoding non è implementato.
+The open-source AVD firmware linker was corrected to place the Cortex-M3 vector table at address zero. The driver is available, but Android still selects software codecs because a stateless V4L2 Request Codec2 adapter has not been integrated. Hardware encoding remains unimplemented.
 
-Per i log, le prove hanno impiegato la modalità hypervisor m1n1 e la sua UART virtuale su USB. L’output iniziale veniva acquisito prima della disponibilità di `/data`; in seguito il logcat completo passava su file con sovrapposizione temporale e recupero verificato tramite SHA-256. I log privati e il coordinatore della sessione fisica sono esclusi dal rilascio.
+Debug sessions used the m1n1 hypervisor and its USB virtual UART. Initial output was captured before `/data` became available. Complete logcat output then moved to an on-device file, with timestamp overlap at logger transitions and SHA-256 verification during retrieval. Private captures and the physical-session coordinator are excluded from this source release.
+
+The m1n1 host transport also closes inherited child-only pipe ends and detects EOF while reading 9P responses, allowing exporter rejection to be observed instead of leaving the parent waiting indefinitely.

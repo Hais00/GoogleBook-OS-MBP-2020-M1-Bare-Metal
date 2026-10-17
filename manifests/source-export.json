@@ -1301,29 +1301,41 @@
       "file": "docs/engineering/m1-bluetooth-audio-integration-20261017.md",
       "origin": "local engineering documentation",
       "original_sha256": "29c34d84cb0cbd1295d159a90210f94b421a9e1206179264d97140c53a07ae0f",
-      "published_sha256": "ff8704e69690362b02c9cb05ee5634ae258042413fb14d5edd83eb73ab9d8cfd",
-      "publication_path_or_identifier_adjustments": true
+      "published_sha256": "2a6503befe2bba8b2f4576880c23a11b2a5387b8ec2d4ec8332ab0a25720f492",
+      "publication_path_or_identifier_adjustments": true,
+      "previous_published_sha256": "ff8704e69690362b02c9cb05ee5634ae258042413fb14d5edd83eb73ab9d8cfd",
+      "documentation_language": "en",
+      "editorial_revision": "Translated and edited for technical clarity; historical validation scope and recorded hashes preserved."
     },
     {
       "file": "docs/engineering/m1-native-input.md",
       "origin": "local engineering documentation",
       "original_sha256": "2e57e31703366e423152ccbbe238196c3438e71b1d9694e3f2d2607c59f94f6d",
-      "published_sha256": "2e57e31703366e423152ccbbe238196c3438e71b1d9694e3f2d2607c59f94f6d",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "a86b3dbfd07142cc449fcbceb9b2e7c717bd1b7bb8ccea926fbc5b228cb4ca6a",
+      "publication_path_or_identifier_adjustments": false,
+      "previous_published_sha256": "2e57e31703366e423152ccbbe238196c3438e71b1d9694e3f2d2607c59f94f6d",
+      "documentation_language": "en",
+      "editorial_revision": "Translated and edited for technical clarity; historical validation scope and recorded hashes preserved."
     },
     {
       "file": "docs/engineering/m1-native-primary-audio-20261017.md",
       "origin": "local engineering documentation",
       "original_sha256": "702df99318fa960306a7162cf73489ae3f88eeca171f9f65b3d78478a5bf5634",
-      "published_sha256": "702df99318fa960306a7162cf73489ae3f88eeca171f9f65b3d78478a5bf5634",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "23e7fcce9d40b90adf163dbf64123057064d5541968d5c3296b6d0d2361d345c",
+      "publication_path_or_identifier_adjustments": false,
+      "previous_published_sha256": "702df99318fa960306a7162cf73489ae3f88eeca171f9f65b3d78478a5bf5634",
+      "documentation_language": "en",
+      "editorial_revision": "Translated and edited for technical clarity; historical validation scope and recorded hashes preserved."
     },
     {
       "file": "docs/engineering/m1-touchbar-visual-audit-20261017.md",
       "origin": "local engineering documentation",
       "original_sha256": "ed5b1ee3306a7630a9b044238af2ff973483c790f9de8f523ddded19a1e1cd1f",
-      "published_sha256": "ed5b1ee3306a7630a9b044238af2ff973483c790f9de8f523ddded19a1e1cd1f",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "3daad67d9e363e54a583dbe0dab71fb4d0bd142f757c752730150e466164cb75",
+      "publication_path_or_identifier_adjustments": false,
+      "previous_published_sha256": "ed5b1ee3306a7630a9b044238af2ff973483c790f9de8f523ddded19a1e1cd1f",
+      "documentation_language": "en",
+      "editorial_revision": "Translated and edited for technical clarity; historical validation scope and recorded hashes preserved."
     },
     {
       "file": "sources/linux-asahi/arch/arm64/tools/gen-kernel-hwcaps.sh",
@@ -1823,11 +1835,15 @@
       "publication_path_or_identifier_adjustments": false
     },
     {
-      "file": "docs/engineering/configurazione-e-modifiche-m1.md",
+      "file": "docs/engineering/early-bringup-kernel12.md",
       "origin": "historical boot/kernel12 engineering documentation",
       "original_sha256": "947d3adb52717cc41ca3add0ba6071c80d13733481b8948c90873993760002fb",
-      "published_sha256": "20d2a80f73da5ff7c9da23a82159ef86f895f191782a34fe64c9058f5275e70c",
-      "publication_path_or_identifier_adjustments": true
+      "published_sha256": "43363be3543aeda648c3de50fb6ce317096c744a1f1a84b6854c1095d8ad5df8",
+      "publication_path_or_identifier_adjustments": true,
+      "previous_publication_path": "docs/engineering/configurazione-e-modifiche-m1.md",
+      "previous_published_sha256": "20d2a80f73da5ff7c9da23a82159ef86f895f191782a34fe64c9058f5275e70c",
+      "documentation_language": "en",
+      "editorial_revision": "Translated and edited for technical clarity; historical validation scope and recorded hashes preserved."
     },
     {
       "file": "sources/m1n1/LICENSE",
@@ -1836,5 +1852,6 @@
       "published_sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
       "publication_path_or_identifier_adjustments": false
     }
-  ]
+  ],
+  "documentation_updated_utc": "2026-10-17T18:49:41.966414+00:00"
 }

@@ -1,16 +1,22 @@
-# Patch del port
+# Patch sets
 
-`googlebook-port.patch` in ciascuna sottocartella è la patch aggregata contro il commit corrispondente in `manifests/upstreams.json`. Gli snapshot in `sources/` permettono di leggere direttamente i file modificati. Gli UUID delle partizioni nel kernel pubblico sono esempi.
+Each component’s `googlebook-port.patch` is the aggregate diff against the commit recorded in `manifests/upstreams.json`. The corresponding files under `sources/` provide readable snapshots. Partition UUIDs in the published kernel are examples.
 
-Per una verifica senza modificare l’albero:
+## Check and apply
+
+Confirm the recorded upstream revision before checking a patch:
 
 ```sh
 git -C /path/to/linux-asahi apply --check /path/to/repo/patches/linux-asahi/googlebook-port.patch
 git -C /path/to/mesa apply --check /path/to/repo/patches/mesa/googlebook-port.patch
 ```
 
-Dopo aver verificato il commit corretto, le patch possono essere applicate con gli stessi comandi senza `--check`.
+After the checks pass, apply the selected patch using the same command without `--check`.
 
-Le patch `privileged-priority.patch` isolano la nuova funzione per revisione. La patch Mesa isolata presuppone l’integrazione Android/two-queue già presente; quella aggregata parte direttamente dall’upstream fissato. `android-vulkan-full.patch` raccoglie l’integrazione Vulkan senza gli adattamenti preesistenti dei compilatori host. Sono alternative per revisione e composizione: non vanno applicate tutte una dopo l’altra allo stesso albero.
+## Aggregate and focused patches
 
-Le correzioni DRM fence mantengono anche le patch e i riferimenti originali. La patch aggregata del kernel le comprende già. Il futuro riallineamento upstream dell’estensione UAPI delle priorità deve coordinare kernel e Mesa.
+The `privileged-priority.patch` files isolate the new GPU priority work for review. The focused Mesa patch assumes that the Android/two-queue integration is already present. The aggregate Mesa patch starts from the recorded upstream revision.
+
+`android-vulkan-full.patch` contains the Vulkan integration without the pre-existing host compiler adaptations. These variants serve different review and composition needs; they are not a sequence to apply cumulatively to the same tree.
+
+Original DRM fence patches and references are retained for provenance. The aggregate kernel patch already includes them. Rebasing the local priority UAPI extension requires coordinated kernel and Mesa review.

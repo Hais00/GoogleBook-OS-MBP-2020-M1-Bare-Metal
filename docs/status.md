@@ -1,28 +1,32 @@
-# Stato al 17 ottobre 2026
+# Validation status
 
-## Risultati già osservati sul M1
+**Recorded: 17 October 2026.** Hardware results apply to the identified historical builds. The new kernel25/Mesa priority pair has only been validated locally.
 
-Android ha completato il boot con SELinux Enforcing. Wi-Fi si è collegato a una rete; l’utente ha confermato l’ascolto con cuffie Bluetooth e, dopo le correzioni del primario ALSA, con gli altoparlanti interni. La Touch Bar ha funzionato ed è stata corretta la deformazione delle icone.
+## Observed on M1
 
-Il driver Vulkan precedente ha superato i test di import/export AHardwareBuffer, quattro frame di swapchain e otto sequenze di dipendenza su due code native. Impostazioni ha usato Skia Vulkan con 97 frame renderizzati, con conferma visiva dell’utente. Queste prove riguardano quel driver, non la nuova build delle priorità.
+Android completed boot with SELinux Enforcing. Wi-Fi connected to a network. The device owner confirmed Bluetooth headphone playback and, after the primary ALSA corrections, playback through the internal speakers. Touch Bar operation and the icon distortion correction were also confirmed.
 
-L’attivazione di Vulkan per SurfaceFlinger ha rivelato il rifiuto di una priorità che il driver dichiarava disponibile. Il compositore è stato temporaneamente riportato a OpenGL nella sessione di debug. La correzione ora presente nei sorgenti modifica sia il kernel sia Mesa.
+The preceding Vulkan driver passed AHardwareBuffer import/export, four swapchain frames, and eight dependency sequences across two native queues. Settings used Skia Vulkan and rendered 97 frames, with visual confirmation from the owner. Those results do not validate the subsequent priority build.
 
-## Nuova build verificata localmente
+Enabling Vulkan for SurfaceFlinger exposed a priority advertised by the driver but rejected during queue creation. The debug session’s compositor was temporarily returned to OpenGL. The source correction now changes both the kernel and Mesa.
 
-Kernel25 e Honeykrisp con priorità autorizzate sono compilati. Gli header UAPI del kernel e di Mesa coincidono; la patch GPU è stata confrontata con i sorgenti, e le patch complete vengono verificate rispetto ai commit di base.
+## Local validation of the new build
 
-La nuova immagine vendor contiene 3.385 elementi, di cui 2.801 file regolari confrontati per hash. Proprietari, permessi, tipi, link e attributi di sicurezza sono verificati. Il kernel25 ha letto e controllato tutti i file del filesystem compresso in VM. Configurazione e DTB mantengono le identità del profilo precedente. Le modifiche del vendor rispetto alla versione18 riguardano solo la libreria Vulkan e il manifest dell’integrazione.
+- Kernel25 and the updated Honeykrisp driver built successfully.
+- Kernel and Mesa UAPI headers match. The GPU source changes were checked against the build inputs; aggregate patches were applied to clean upstream files and compared with the published snapshots.
+- The new vendor filesystem contains **3,385 entries**, including **2,801 regular files** checked by hash. Ownership, modes, file types, symlinks, and security attributes were verified.
+- Kernel25 read and verified every file in the compressed vendor filesystem in a VM.
+- The kernel configuration and DTB retain the preceding profile’s identities. Relative to vendor18, vendor19 changes only the Vulkan library and integration manifest.
 
-**Le prove hardware sono sospese su richiesta dell’utente. La nuova coppia kernel25/Mesa non è installata né qualificata sul M1.** La sessione già in uso non è stata riavviata per provarla.
+**Hardware testing is suspended at the owner’s request. The new kernel25/Mesa pair has not been installed or validated on M1.** The active session was not rebooted to test it.
 
-## Parti ancora aperte
+## Outstanding work
 
-- Validazione delle priorità sul kernel nuovo, compresi permessi, revoca e lavoro GPU sotto concorrenza.
-- Avvio e stabilità di SurfaceFlinger e delle app con la nuova coppia.
-- Adattatore Android Codec2 per il decoder AVD stateless; l’inventario corrente seleziona codec software.
-- Backend hardware di encoding.
-- Qualifica estesa del DSP/volume speaker e della durata termica, del cursore Android di illuminazione per tastiera e delle altre funzioni non provate.
-- Avvio diretto senza hypervisor di debug e build completa riproducibile della distribuzione.
+- Validate new-kernel priority permissions, capability revocation, elevated queue creation, GPU execution, and progress under concurrent clients.
+- Validate SurfaceFlinger and application stability with the new pair.
+- Integrate a stateless V4L2 Request Codec2 adapter for AVD; the observed Android codec inventory still selects software components.
+- Implement a hardware encoder backend.
+- Extend speaker DSP, volume, and thermal-duration validation; integrate Android’s per-keyboard backlight control; validate other untested features.
+- Validate direct boot without the debug hypervisor and consolidate a reproducible full-distribution build.
 
-I report selezionati pubblicano gli hash e la portata dei test, senza includere log privati o pretendere conformità Vulkan CTS o certificazione Android.
+Selected reports publish artifact hashes and test scope without private logs. Vulkan CTS conformance and Android certification are not claimed.

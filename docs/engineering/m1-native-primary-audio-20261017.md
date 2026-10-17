@@ -1,67 +1,73 @@
-> Historical engineering notes. The current status is in ../../README.md and ../../docs/status.md; earlier candidate/pending sections describe their original phase.
+# Native primary audio integration
 
-# HAL primario ALSA M1 J293
+**Historical checkpoints: 17 October 2026.** This report follows the native primary service from local validation through confirmed speaker playback. Current limitations remain summarized in [validation status](../status.md).
 
-Implementato un servizio autonomo `android.hardware.audio.core.IModule/m1`, con API AOSP V3 congelata e hash originale `eb5f1f5af402830af56b50eb66bdd60fd8cc774e`. Mantiene invariati i servizi e le librerie Google originali che forniscono Bluetooth. Non pubblica microfoni, MMAP, offload o altri percorsi non implementati.
+## Service and data path
 
-## Percorso reale
+The standalone `android.hardware.audio.core.IModule/m1` service implements the canonical frozen AOSP V3 interface, hash `eb5f1f5af402830af56b50eb66bdd60fd8cc774e`. Original Google services and libraries used by Bluetooth remain unchanged. Microphone, MMAP, offload, and other unimplemented paths are not advertised.
 
-Il servizio riconosce la scheda tramite identità ALSA `AppleJ293`/`macaudio`, verifica sul PCM le capacità S32_LE, quattro canali e 48 kHz, configura la route Secondary prevista dall’UCM Asahi e pubblica una porta primaria stereo PCM16 a 48 kHz. Il framework può così costruire un AudioPolicyManager valido e gestire anche le uscite Bluetooth.
+The service identifies the ALSA card as `AppleJ293`/`macaudio`, queries the PCM for S32_LE, four channels, and 48 kHz, applies the Secondary route defined by the Asahi UCM, and publishes a primary stereo PCM16 port at 48 kHz. This allows Android to construct a valid AudioPolicyManager and manage Bluetooth outputs as well.
 
-Lo stream usa i worker Binder/FMQ AOSP e scrive realmente ALSA. Il drain viene richiesto una sola volta: in modalità non bloccante, ripeterlo aggiungerebbe ulteriore silenzio nel plugin hw. Il completamento viene ricontrollato nello stato kernel DRAINING → SETUP; errori e timeout restano errori. Le posizioni vengono ricavate dai frame inviati e dal ritardo ALSA, senza conteggiare come presentati i frame scartati.
+AOSP Binder/FMQ workers feed actual ALSA writes. Nonblocking drain is requested once; repeating the request would append silence in the hardware plugin. Completion is rechecked through the kernel DRAINING → SETUP transition. Errors and timeouts remain errors. Presentation positions use submitted frames and ALSA delay; discarded frames are not counted as presented.
 
-Il DSP applica le FIR front/rear J293 a 48 kHz ai quattro canali FL/FR/RL/RR. Questa prima integrazione impone un picco digitale massimo di 0,125, circa −18 dBFS: la piena catena di effetti e compressione PipeWire/LSP non è stata portata né qualificata. Non dichiarare equivalente l’intero DSP Asahi o disponibile il volume massimo originale.
+FIR processing maps stereo input to physical FL/FR/RL/RR channels using the J293 front/rear responses at 48 kHz. This integration limits digital peaks to **0.125, approximately −18 dBFS**. The complete PipeWire/LSP effects and compression chain has not been ported or validated, and original maximum-volume equivalence is not claimed.
 
-## Protezione
+## Speaker protection
 
-`speakersafetyd` resta una dipendenza GPL separata, con sorgente, licenza e patch riproducibili conservati. Usa il profilo J293 originale, gli otto canali V/I del PCM2, il modello termico, i lock dei controlli e il keepalive originali. Gli adattamenti sono il flag di avvio su tmpfs `/dev/speakersafetyd` e il percorso sysfs diretto alla stessa proprietà DT `compatible`.
+`speakersafetyd` remains a separate GPL dependency with retained source, license, and patches. It uses the original J293 profile, eight PCM2 voltage/current channels, thermal model, control locks, and keepalive protocol. Android adaptations change the boot flag to `/dev/speakersafetyd` and use the direct sysfs path for the same device-tree `compatible` property.
 
-L’HAL non scrive mai il magic di sblocco né i guadagni degli amplificatori. Prima dei campioni del client verifica il vero controllo kernel `Speaker Volume Unlock`; se necessario avvia il clock con soli zeri entro un timeout. Alla perdita dello sblocco chiude il PCM e restituisce errore. Il kernel mantiene il clamp originale.
+The HAL does not write the unlock magic or amplifier gains. Before accepting client samples, it checks the actual kernel `Speaker Volume Unlock` control. When necessary, it starts the clock using silence within a timeout. Loss of the unlock closes the PCM and returns an error. The kernel’s original clamp remains in place.
 
-La policy aggiunge una sola etichetta per `compatible` e una per il flag temporaneo, con permessi mirati del dominio audio. Nessun permissive sul target, nessun cambiamento dei permessi dei nodi audio e nessuna modifica al kernel23 o ai componenti Wi-Fi/Touch Bar.
+SELinux policy adds specific labels for the compatible property and temporary flag, with targeted audio-domain access. No permissive target domain or audio-device DAC override was introduced. Wi-Fi and Touch Bar components were preserved.
 
-## Verifiche completate
+## Initial local validation
 
-- Compilazione Bionic del servizio e della protezione, ELF AArch64 e allineamento 16 KiB.
-- Prova reale in VM kernel23: Binder remoto V3, FMQ, PCM ALSA loopback, 19.200 frame accettati e presentati dopo drain; quattro canali confrontati con i campioni client. Il loopback è presente esclusivamente nel banco CPU, non nell’immagine installabile.
-- Esecuzione Bionic di help/version della protezione; rifiuto della mancanza hardware prima dei controlli. Questo non qualifica il modello termico sul silicio.
-- Compilazione della policy completa con secilc e neverallow attivi: RC0.
-- EROFS: 3.380 inode e 2.797 payload confrontati con archivio, UID/GID, modi, link, tipi e xattr. Lettura e hash di tutti i file anche con il kernel23 di produzione.
+Completed checks included:
 
-Immagine `vendor-generation13-native-audio-r2.erofs`, 404.697.088 byte, SHA-256 `0fbc54ccfe5bec06756a13ac537654e6ac37057b5e38b640d79077164382b815`.
+- Bionic service/protector compilation, AArch64 ELF validation, and 16 KiB-compatible alignment.
+- A kernel23 VM test using remote Binder V3, FMQ, and real ALSA loopback: 19,200 frames accepted and presented after drain, with four-channel sample comparison. Loopback belongs only to the CPU fixture.
+- Protector version/help execution and rejection of missing hardware before control access. This does not validate the physical thermal model.
+- Full policy compilation using secilc with neverallow checks enabled: RC0.
+- EROFS comparison of 3,380 entries and 2,797 regular payloads, covering ownership, modes, links, types, and security attributes, followed by complete kernel23 readback.
 
-## Verifica M1 pendente
+The R2 image was `vendor-generation13-native-audio-r2.erofs`, 404,697,088 bytes, SHA-256 `0fbc54ccfe5bec06756a13ac537654e6ac37057b5e38b640d79077164382b815`.
 
-Non installata al momento di questa nota. Il precedente collegamento è terminato il 17 ottobre alle 13:28:35 Europe/Rome con errore USB ENODEV; nessun riavvio richiesto da questo lavoro e causa non stabilita. Il log Android iniziale da 16 MB e i log UART/HV sono salvati e sigillati. Resta da recuperare il file `/data/local/tmp/gos-audio13-preparation-full.log`.
+At the initial preparation checkpoint, the preceding connection had ended at 13:28:35 Europe/Rome with USB ENODEV. No reboot had been requested; the cause was not established. Initial Android, UART, and hypervisor logs were retained, while retrieval of `/data/local/tmp/gos-audio13-preparation-full.log` was still outstanding.
 
-Prima dell’avvio: controllare il proxy originale, rileggere il prefisso NVMe corrente e confrontarlo con quello atteso; archivio inattivo vendor11 verificato sul target prima della scrittura. Preservare vendor12 attivo e vendor10 stabile. Poi provare SELinux enforcing, processo di protezione, reale AudioPolicyManager, porte Bluetooth, stream e ascolto.
+Hardware admission required a fresh original proxy check and an exact current NVMe metadata match. The inactive vendor11 rollback archive had to match the device before writing, while active vendor12 and stable vendor10 remained protected.
 
-## Revisione finale R2
+### R2 API behavior
 
-Mute e volume master non sono controlli hardware implementati: il servizio restituisce esplicitamente unsupported, così AudioFlinger applica il proprio mixer software. Il test remoto verifica anche il rifiuto dei falsi ACK. R8 conferma nuovamente 19.200 frame reali e il confronto dei quattro canali. L’immagine R1 non è mai stata installata.
+Master mute and volume are not implemented as hardware controls. The service explicitly returns unsupported so AudioFlinger can use its software mixer. Remote checks cover the unsupported results; R8 reconfirmed 19,200 actual frames and four-channel sample comparison. R1 was never installed.
 
-Tutti i controlli locali della R2 sono PASS. Il piano è congelato e verificato su file sparso privato; l’ammissione hardware rimane falsa fino alla rilettura fisica del prefisso NVMe. Il 17 ottobre l’utente ha indicato il proxy pronto, ma il Mac di lavoro non enumera ancora m1n1 né le sue due porte USB. Nessuna prova fisica o scrittura del nuovo vendor è stata dichiarata.
+All local R2 checks passed. The plan was frozen and checked on a private sparse-file fixture; hardware admission stayed false until a physical metadata read. At one subsequent readiness report, the host still did not enumerate the proxy’s USB ports, so no device write was attributed to that report.
 
-## Prova reale definitiva: vendor14
+## Vendor14 routing correction
 
-La prima prova hardware vendor13 ha rilevato un difetto di conversione: l’indirizzo AIDL `alsa(card,device)` dello speaker interno diventava un indirizzo `id` nel percorso legacy Android e non corrispondeva più alla porta pubblicata. Vendor14 usa l’indirizzo interno canonico AOSP `id("")`; la selezione reale di scheda e PCM rimane nel backend ALSA qualificato. Nessuna sostituzione del framework o modifica delle librerie Google.
+The first vendor13 hardware trial exposed an address-conversion mismatch. A speaker `alsa(card,device)` AIDL address became a legacy Android `id` address and no longer matched the published port. Vendor14 used the canonical AOSP internal `id("")` address while retaining actual ALSA card/PCM selection in the backend. The framework and original Google libraries were not replaced.
 
-Immagine installata: `vendor-generation14-native-audio-r1.erofs`, 404.701.184 byte, SHA-256 `8c688b41ec297f31cf0f1f536756f14ffd2a17fc0cf52d91a58f480142e89fc8`. Sul M1: archivio vendor12 confrontato col disco, payload riletto e quattro copie LP committate con successo; precedente vendor13 e vendor10 stabile conservati. Il passaggio da 13 a 14 è avvenuto tramite `/system/bin/reboot` Android, senza reset del proxy.
+Installed image: `vendor-generation14-native-audio-r1.erofs`, 404,701,184 bytes, SHA-256 `8c688b41ec297f31cf0f1f536756f14ffd2a17fc0cf52d91a58f480142e89fc8`.
 
-Android completa il boot con SELinux Enforcing. Il framework apre realmente il primario m1 a 48 kHz; la porta speaker è ID4 e l’I/O primario è 13. La prova pubblica AAudio ha selezionato e ricontrollato ID4, accettato 48.000 frame stereo a 48 kHz ed è uscita con codice0. AudioFlinger registra successivamente 69.632 frame scritti, nessun underrun del mixer e ritorno in standby. I processi HAL593 e protezione585 restano attivi nel dominio audio; il kernel ha registrato lo sblocco reale degli speaker.
+On M1, the vendor12 rollback archive matched the device, the new payload read back correctly, and all four liblp metadata copies committed successfully. Previous vendor13 and stable vendor10 were preserved. Android’s `/system/bin/reboot` was used for the transition; the proxy was not reset.
 
-Evidenze: `trial-native-audio-kernel23-v14-r1/hardware-audio-result.json` e file citati nel suo elenco. Il log Android completo della prova è salvato sul host con confronto SHA-256 (5.607.424 byte, `5aa1b8ed4f498232fd305622b94b49e620edbd3d6b5cf3ae6315a1bd3e8f7c26`); il logger completo sul target continua su un nuovo file, con sovrapposizione temporale.
+Android completed boot with SELinux Enforcing. The framework opened the m1 primary at 48 kHz; the speaker port was ID4 and primary I/O was 13. An AAudio probe selected and rechecked ID4, accepted 48,000 stereo frames at 48 kHz, and exited with code 0. AudioFlinger subsequently reported 69,632 frames written, no mixer underrun, and a return to standby. The HAL and protector remained active in the audio domain, and the kernel recorded the actual speaker unlock.
 
-La conferma dell’ascolto dell’utente è ancora pendente: frame accettati e DMA attivo non vengono descritti come prova acustica. Bluetooth è ON senza crash e mantiene una cuffia abbinata, ma non è ancora connessa nella prova14. Il trasferimento e l’ascolto nelle cuffie restano da verificare. Il limite speaker 0,125 e la mancata qualifica della piena catena LSP restano invariati.
+Evidence reference: `trial-native-audio-kernel23-v14-r1/hardware-audio-result.json`. The complete 5,607,424-byte Android log was retrieved and SHA-256 verified as `5aa1b8ed4f498232fd305622b94b49e620edbd3d6b5cf3ae6315a1bd3e8f7c26`. A replacement full logger used timestamp overlap.
 
+These digital observations did not establish audible output. At that checkpoint the headphones were paired but not connected during the trial; playback and acoustic confirmation remained separate checks. The peak limit and incomplete LSP-chain validation were unchanged.
 
-## Riscontro acustico e correzione XRUN / MCA pause
+## XRUN and MCA pause correction
 
-Il 17 ottobre l’utente conferma che le cuffie Bluetooth suonano con Spotify. Gli speaker sono invece silenziosi anche con Spotify effettivamente assegnato alla porta 4. Il log completo verificato `android-full-8d3b7e655e.log` mostra alle 14:47:10.063 `write failed: -32` e alle 14:47:11.528 il rifiuto di standby dallo stato ERROR. I frame accettati prima del guasto non qualificavano la stabilità né l’acustica.
+The owner subsequently confirmed Spotify playback through the Bluetooth headphones, while the selected internal-speaker route remained silent. The verified `android-full-8d3b7e655e.log` recorded `write failed: -32` at 14:47:10.063 and rejection of standby from ERROR at 14:47:11.528. Frames accepted before the failure did not establish stable playback.
 
-La nuova implementazione recupera un vero XRUN con prepare ALSA e ricontrolla la protezione prima dei campioni; gli altri errori non diventano successi. Mantiene conservativamente l’ultima posizione osservata prima del reset del PCM, senza dichiarare riprodotti campioni non osservati. MCA non dichiara INFO_PAUSE: la pausa usa stop reale, puntatori congelati e coda limitata per conservare la coda pendente; flush la scarta, resume la riemette solo dopo verifica della protezione. Diagnostica in sola lettura di controlli, owner/lock, PCM, recuperi e picchi.
+The correction handles a real XRUN through ALSA prepare and rechecks protection before sending client samples. Other errors remain errors. It conservatively retains the last observed presentation position across PCM reset.
 
-Regressione CPU con Bionic/Binder/FMQ e snd-aloop reale: vecchio binario riproduce EPIPE e stato ERROR; correzione supera starvation di 220 ms, burst vuoto, ripresa con campioni riletti, pausa con backpressure, resume, drain, standby/reopen e sequenza Android pause→flush→standby. `native-primary-audio-local-runtime-r9-xrun-pause/result.json` PASS. Nessuna prova CPU è una qualifica acustica del J293. Picco massimo 0,125 e speakersafetyd invariati. Installazione e prova hardware della nuova immagine ancora pendenti.
+MCA does not advertise INFO_PAUSE. Pause therefore performs a real stop, freezes position accounting, and retains pending data in a bounded queue. Flush discards that queue; resume replays it only after protection checks. Read-only diagnostics expose controls, ownership/locks, PCM state, recovery counts, and peaks.
 
+The Bionic/Binder/FMQ fixture with actual snd-aloop reproduced EPIPE and ERROR with the old binary. R9 then passed 220 ms starvation, an empty burst, sample-checked recovery, pause with backpressure, resume, drain, standby/reopen, and the Android pause → flush → standby sequence. `native-primary-audio-local-runtime-r9-xrun-pause/result.json` passed. This remained CPU validation rather than acoustic or physical thermal validation.
 
-Riscontro hardware finale native15: installazione con archivio13 verificato sul Mac, immagine riletta e tutte le copie LP PASS. Android boot_completed=1 e SELinux Enforcing. L’utente conferma che Spotify suona ora dagli altoparlanti interni. Cuffie Bluetooth già confermate udibili sulla versione14. Limite di picco e protector invariati; non è una qualifica della catena DSP completa o della durata.
+## Vendor15 acoustic result
+
+Vendor15 installed with the vendor13 rollback archive verified on the device, complete image readback, and all liblp copies passing. Android reported `boot_completed=1` with SELinux Enforcing.
+
+The owner confirmed that Spotify played through the internal speakers. Bluetooth headphone playback had already been confirmed on vendor14. The digital peak limit and protector remained unchanged. This establishes the observed playback result; it does not validate the full DSP chain, original maximum volume, or extended thermal operation.

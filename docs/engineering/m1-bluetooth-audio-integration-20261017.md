@@ -1,70 +1,78 @@
-> Historical engineering notes. The current status is in ../../README.md and ../../docs/status.md; earlier candidate/pending sections describe their original phase.
+# Bluetooth audio integration
 
-# Audio Bluetooth M1 — integrazione del 17 ottobre 2026
+**Historical checkpoints: 17 October 2026.** This report records the route from the initial Bluetooth configuration to the primary-output failure. Subsequent headphone and speaker results are documented in [Native primary audio integration](m1-native-primary-audio-20261017.md). See [current status](../status.md) for the project summary.
 
-## Stato
+## Initial diagnosis
 
-Configurazione preparata e percorso Binder verificato localmente. Prova M1 autorizzata e in preparazione. Riproduzione nelle cuffie, FMQ PCM e HFP sul controller fisico ancora da verificare. Gli altoparlanti interni non sono qualificati.
+The original C++ `dras.core-cpp.audio` service was present in the audio APEX and already started on M1, but initially published only `IModule/r_submix`. Its software Bluetooth branch and configuration were disabled.
 
-## Diagnosi verificata
+The original binary’s desktop `ModuleBluetooth` constructor obtains `com.android.desktop.audio.IDesktopAudioFactory/default` from the Rust process and registers the Bluetooth audio factory. This existing Binder relationship allows the image’s Rust software providers to be used without introducing a second, independent session owner.
 
-Il servizio C++ originale `dras.core-cpp.audio` esiste nell’APEX audio e si avviava già sul M1, ma pubblicava solamente `IModule/r_submix`. Non mancava il programma: erano disattivati il ramo Bluetooth software e la relativa configurazione.
+## Configuration candidate
 
-Il costruttore desktop `ModuleBluetooth` del binario originale ottiene `com.android.desktop.audio.IDesktopAudioFactory/default` nel processo Rust e registra la factory audio Bluetooth. Questo collegamento Binder previsto dall’immagine permette di usare i provider software Rust senza inserire una factory AOSP indipendente con un altro proprietario della sessione.
+The candidate stage, `.agent-work/vendor-audio-stage`, was derived from the validated Wi-Fi vendor10 image. It enabled the software HFP branch needed by the C++ service to construct its Bluetooth module, disabled Qualcomm A2DP/LE offload, added external SCO ports and A2DP routes, normalized XML list syntax, and declared `IModule/bluetooth` V4 through init and VINTF.
 
-## Modifiche candidate
+`/dev/rfkill` was assigned to `bluetooth:bluetooth`, mode 0660, with the existing `bt_device` SELinux type. This stage added no allow rules or CIL changes.
 
-Stage: `.agent-work/vendor-audio-stage`, derivato dal vendor10 Wi-Fi verificato.
+No ELF payload changed relative to vendor10. The Google APEX remained unchanged. The installed Rust binary retained the earlier `libagmipcservice.so` to `libgosagmservice.so` adaptation; this stage did not extend it. `vendor.audio.dras.default_nothing=true` remained selected and did not provide a native internal-speaker HAL.
 
-- Attivazione del percorso software HFP richiesto dal servizio C++ per creare il modulo Bluetooth; offload Qualcomm A2DP/LE disattivato.
-- Inclusione del modulo Bluetooth con porte SCO esterne e delle route A2DP; sintassi delle liste XML normalizzata.
-- Avvio tramite il programma C++ dell’APEX originale, con dichiarazioni init delle interfacce e VINTF `IModule/bluetooth` V4.
-- `/dev/rfkill` assegnato a `bluetooth:bluetooth`, modo 0660, tipo SELinux esistente `bt_device`. Nessuna nuova regola allow e nessuna modifica al CIL.
+## Local Binder validation
 
-Nessun ELF è cambiato rispetto al vendor10. L’APEX Google resta identico. Il binario Rust installato conserva l’adattamento preesistente del nome `libagmipcservice.so` a `libgosagmservice.so`; questa fase non lo aggiunge né lo estende. La configurazione primaria `vendor.audio.dras.default_nothing=true` resta attiva: non costituisce un HAL nativo per gli altoparlanti interni.
+The test used the production kernel23 in a VM with no physical disks, radios, or audio devices attached. Bionic, Binder, and the supplied audio processes ran directly.
 
-## Test locali effettivi
+- **Positive control:** four services were available: `IModule/default`, `IModule/a2dp`, `IDesktopAudioFactory/default`, and `IModule/r_submix`. The V6 factory exposed one software A2DP capability; a remote provider opened and answered a Binder ping.
+- **Negative control:** disabling the software HFP branch left the same four services available but prevented Bluetooth factory registration.
 
-Kernel23 reale in VM senza dischi fisici, radio o dispositivi audio esposti; Bionic e Binder reali, processi audio forniti senza modifiche.
+These checks did not transfer PCM or validate the physical controller, pairing, headphones, microphone, HFP audio, or enforcing policy on M1. Only this isolated fixture used the saved Android policy in permissive mode with processes in the kernel context. Its programs and helpers were not added to the vendor stage.
 
-- Positivo: quattro owner reali disponibili (`IModule/default`, `IModule/a2dp`, `IDesktopAudioFactory/default`, `IModule/r_submix`); factory V6; una capacità A2DP software; apertura e ping di un provider Binder remoto riusciti.
-- Negativo: disabilitando il percorso HFP software, gli stessi quattro owner restano disponibili ma la factory Bluetooth non viene registrata.
-- Le prove non trasferiscono ancora PCM e non qualificano radio, pairing, cuffie, microfono, HFP o la policy enforcing su M1. La VM usa la policy Android salvata in modalità permissiva solo nel banco di prova, con processi in contesto kernel; i programmi e gli helper della prova non entrano nello stage vendor.
+Historical result references:
 
-Evidenze: `/opt/googlebook/external/googlebook-bringup-20261016/audio-software-local-runtime-r11/result.json` e `/opt/googlebook/external/googlebook-bringup-20261016/audio-software-local-runtime-negative/result.json`.
+- `/opt/googlebook/external/googlebook-bringup-20261016/audio-software-local-runtime-r11/result.json`
+- `/opt/googlebook/external/googlebook-bringup-20261016/audio-software-local-runtime-negative/result.json`
 
-## Ammissione hardware
+## Filesystem and installation checks
 
-Completare immagine EROFS e confronto di tutti i payload, owner, modi e xattr; lettura completa con kernel23; piano limitato a vendor_a con vendor10 attivo preservato. Il vecchio extent inattivo generation7 può essere riutilizzato solo dopo archivio esatto verificato anche sul target, prima di aprire il dispositivo in scrittura. Nessuna scrittura su GPT, macOS, ESP o userdata.
+The final vendor11 candidate was built on ext4 in a disposable local virtual disk, using sequential archive input with `--sort=none`. Earlier packaging attempts, including a temporary 2 TiB sparse file on APFS and tmpfs-based builds, were not accepted for installation.
 
-I tentativi iniziali di packaging locale non sono ammessi all’installazione. La variante finale è stata costruita su un filesystem ext4 in un disco virtuale locale usa e getta, con lettura sequenziale dell’archivio (`--sort=none`), evitando il file sparso provvisorio da 2 TiB su APFS e i limiti della tmpfs. Il filesystem verificato contiene 3.273 inode e 2.699 file regolari: tutti i payload, UID/GID, modi, tipi, destinazioni dei link e xattr di sicurezza corrispondono all’archivio sorgente.
+The final filesystem contained 3,273 entries and 2,699 regular files. Payloads, UID/GID, modes, types, symlink targets, and security attributes matched the archive. An initial scanner had observed an empty directory through a nonrecursive bind and was rejected as evidence; the explicit complete readback was used instead.
 
-Immagine: `vendor-generation11-btaudio-r2.erofs`, 402.702.336 byte, SHA-256 `e9cb0d86f4716b37ab0e506a152306b72fdeda5acb76c5a81428dea12b9c0b9e`. Il primo scanner aveva osservato una directory vuota per un bind non ricorsivo e non costituisce una prova valida; il readback completo esplicito di 3.273 elementi è quello confrontato con l’archivio.
+Artifact: `vendor-generation11-btaudio-r2.erofs`, 402,702,336 bytes, SHA-256 `e9cb0d86f4716b37ab0e506a152306b72fdeda5acb76c5a81428dea12b9c0b9e`.
 
-Sul M1 verificare log completi, enforcing=1, etichetta e accesso rfkill, stato Bluetooth ON, factory V6 e pairing. L’utente esegue personalmente l’abbinamento delle cuffie e comunicherà quando sono collegate. Solo allora qualificare route, sessione e riproduzione. Non sbloccare gli amplificatori interni senza la protezione Asahi.
+The update plan preserved active vendor10. Reuse of inactive generation7 required a complete rollback archive and matching on-device digest before opening the target for writing. GPT, macOS, ESP, and userdata were outside the update scope. Planned M1 checks included full logs, Enforcing mode, rfkill access, controller state, factory version, pairing, routing, session behavior, and playback. Internal amplifier unlock remained dependent on Asahi protection.
 
-## Prima prova M1 e correzione HCI
+## First M1 trial and HCI correction
 
-Il vendor11 è stato installato con archivio del vecchio extent, readback SHA-256 e commit LP verificati. Su M1: boot completato, SELinux Enforcing, `/dev/rfkill` 0660 bluetooth:bluetooth e `bt_device`, factory audio e `IModule/bluetooth` presenti. Il processo Bluetooth è terminato perché il trasporto AOSP15 eseguiva `rfkill(1)` prima del bind HCI USER: il kernel ha restituito `Operation not possible due to RF-kill`. Questa è una prova negativa reale, non un guasto dedotto della scheda.
+Vendor11 installed with verified rollback archive, payload readback, and liblp commit. Android completed boot with SELinux Enforcing. `/dev/rfkill` had the intended ownership, mode, and type; the factory and `IModule/bluetooth` were present.
 
-Il riferimento AOSP `aa229558cbf04bc997ed27465c5e7ad497123d1b`, `bluetooth/aidl/default/net_bluetooth_mgmt.cpp`, contiene già la correzione: `rfkill(0)` prima del bind e `rfkill(1)` dopo la chiusura. Il builder verifica che il file differisca dalla versione precedente solo per queste due chiamate e i commenti, usa il vecchio header e mantiene l’interfaccia Binder V1 congelata. Nessun ACK o successo forzato.
+Bluetooth then terminated because the AOSP15 transport called `rfkill(1)` before binding HCI USER. The kernel returned `Operation not possible due to RF-kill`. This was an observed transport failure, not evidence of a defective radio.
 
-Vendor12 cambia solo il binario HCI rispetto a vendor11. Binario SHA-256 `4e568427111954444798ba849e37ce23075f84de741b6c6ac7893e179d718bc0`; immagine 402.702.336 byte, SHA-256 `1716fccb526416830f11d047ed5db6fd3c042cc5d10cfbc015878adc1b900015`. Confronto completo di 3.273 inode e lettura di ogni payload con kernel23 superati. Il piano preserva vendor11 e il vendor10 Wi-Fi; il vecchio vendor9 viene archiviato e verificato prima del riuso. Il prefisso fisico dopo il riavvio Android coincide con quello atteso.
+AOSP revision `aa229558cbf04bc997ed27465c5e7ad497123d1b`, in `bluetooth/aidl/default/net_bluetooth_mgmt.cpp`, already contained the correction: `rfkill(0)` before binding and `rfkill(1)` after closing. The builder verified that only those calls and comments differed, retained the older header, and preserved the frozen Binder V1 interface. Error results were not converted into success.
 
-RUN11 è sigillato; recuperato anche il file completo della precedente prova Wi-Fi (48.074.752 byte). RUN12 è in installazione; Bluetooth ON e audio nelle cuffie restano da verificare.
+Vendor12 changed only the HCI binary relative to vendor11:
 
-## Cuffie collegate: blocco primario verificato su M1
+| Artifact | Identity |
+| --- | --- |
+| HCI binary | SHA-256 `4e568427111954444798ba849e37ce23075f84de741b6c6ac7893e179d718bc0` |
+| Vendor image | 402,702,336 bytes; SHA-256 `1716fccb526416830f11d047ed5db6fd3c042cc5d10cfbc015878adc1b900015` |
 
-Vendor12 avviato correttamente: Bluetooth ON senza nuovi crash, HCI inizializzato e cuffie collegate realmente nei profili HEADSET e A2DP. Wi-Fi ancora VALIDATED. SELinux resta Enforcing.
+All 3,273 entries were compared, and kernel23 read every payload. The plan preserved vendor11 and Wi-Fi vendor10; inactive vendor9 was archived and checked before reuse. After the Android-requested reboot, the physical metadata prefix matched the expected state. RUN11 was sealed, and the preceding complete Wi-Fi log was also recovered: 48,074,752 bytes.
 
-La riproduzione **non è risolta**. Il dump AudioPolicy restituisce `AudioPolicyManager: 0x0`; il log originale di audioserver contiene `The policy configuration does not declare a primary output`. Il servizio Rust dichiara `Using nothing HAL`. La configurazione XML legacy aggiunta non crea un'uscita primaria dentro il modulo AIDL Nothing: serve un proprietario primario reale con porte, route e stream ALSA. Non attribuire il mancato output al pairing né alla sola frequenza di campionamento. I 48 kHz indicati dall'utente sono un requisito utile per la futura qualifica del PCM, non una prova di funzionamento attuale.
+## Connected headphones and the primary-output failure
 
-Evidenze: `trial-native-btaudio-kernel23-v12-r3/audio-routing-diagnosis.json`, dump delle route e log completo `android-full-b21b2a7dac.log` (16.003.072 byte, SHA-256 `bc63646dd32b4b78cef84c3874f4408ce04910b55694369cbf04fe54efb784a7`). Il logger completo sul target è stato riaperto su file dopo la copia, mantenendo la UART kernel continua.
+Vendor12 completed boot. Bluetooth remained ON without new crashes, HCI initialized, and the headphones connected through HEADSET and A2DP. Wi-Fi remained VALIDATED and SELinux remained Enforcing.
 
-### Preparazione locale successiva, non installata
+Playback was still unavailable. AudioPolicy reported `AudioPolicyManager: 0x0`; audioserver logged `The policy configuration does not declare a primary output`; the Rust service reported `Using nothing HAL`.
 
-- `build_m1_speakersafetyd.py`: dipendenza Asahi GPL separata compilata per Bionic, stesso modello, sensori V/I, ownership dei controlli e keepalive; soltanto il flag di boot passa da `/run` a una directory tmpfs `/dev/speakersafetyd`, che dovrà essere creata da init. Il servizio non è stato avviato sul M1 e gli amplificatori non sono stati sbloccati.
-- `test_m1_speaker_dependency_runtime.py`: esecuzione reale in VM con kernel23 e Bionic; version/help superati, assenza hardware rifiutata prima di accedere ai controlli. Nessun dispositivo audio o disco fisico nella VM. È uno smoke test delle dipendenze, non una qualifica del modello termico o della riproduzione.
-- `fetch_m1_native_audio_references.py` e `build_m1_native_audio_abi.py`: fonti AOSP fissate e otto librerie Binder generate dai veri snapshot congelati (core V3, common types V4 e dipendenze). Destinate a un processo nativo separato; nessuna modifica dei metadati versione/hash, nessuna sostituzione delle librerie originali Google. **Non costituiscono ancora l'implementazione di un servizio HAL primario.**
+The legacy XML additions could not create a primary output inside the AIDL Nothing module. A real primary service with ALSA ports, routes, and streams was required. Pairing alone, or the reported 48 kHz speaker rate, could not establish playback.
 
-Restano implementazione e verifica del servizio primario ALSA, PCM e posizioni/drain reali, routing J293, integrazione init/SELinux della protezione e prove hardware. Non usare una falsa uscita speaker o un backend che scarta campioni per superare l'inizializzazione del gestore audio.
+Evidence references: `trial-native-btaudio-kernel23-v12-r3/audio-routing-diagnosis.json` and the complete `android-full-b21b2a7dac.log`, 16,003,072 bytes, SHA-256 `bc63646dd32b4b78cef84c3874f4408ce04910b55694369cbf04fe54efb784a7`. After retrieval, complete file logging resumed while kernel UART capture continued.
+
+## Preparation of the native primary service
+
+The subsequent local work established the dependencies for a separate native implementation:
+
+- `build_m1_speakersafetyd.py` built the GPL Asahi protector for Bionic, retaining the model, V/I sensors, control ownership, and keepalive. Its boot-state flag moved from `/run` to an init-created `/dev/speakersafetyd` tmpfs directory.
+- `test_m1_speaker_dependency_runtime.py` ran version/help under kernel23 and Bionic and rejected missing hardware before accessing controls. No physical audio device or disk was exposed; this was dependency validation, not thermal or playback validation.
+- `fetch_m1_native_audio_references.py` and `build_m1_native_audio_abi.py` pinned AOSP sources and generated eight Binder libraries from frozen snapshots, including core V3 and common types V4. Original Google libraries and interface version/hash metadata were preserved.
+
+At that checkpoint, the ALSA primary service, real PCM positions and drain behavior, J293 routing, protector init/SELinux integration, and hardware playback still remained to be implemented. The subsequent implementation and acoustic results are recorded in the [primary audio report](m1-native-primary-audio-20261017.md).
