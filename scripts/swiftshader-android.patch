@@ -1,3 +1,8 @@
+GoogleBook OS patch archive; changes recorded 2026-10-17.
+This patch is not licensed by the root MIT notice as a whole.
+Per-file upstream licenses and notices apply; see manifests/license-audit.json.
+For current notice-bearing source use the component aggregate patch.
+
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 0ef4a68..999b79e 100644
 --- a/CMakeLists.txt

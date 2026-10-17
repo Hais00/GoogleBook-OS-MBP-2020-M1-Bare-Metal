@@ -1,21 +1,16 @@
-MIT License
+GoogleBook OS source collection — license index
 
-Copyright (c) 2026 GoogleBook OS port contributors
+There is no single license for every file in this repository.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Original port documentation and port material identified as MIT in
+manifests/license-audit.json are covered by the unchanged project MIT grant in LICENSES/MIT-Project.txt.
+Third-party source and patches retain their own per-file grants, including
+GPL-2.0-only, GPL-2.0-or-later, LGPL package terms, Apache-2.0, MIT,
+BSD-3-Clause, HPND-sell-variant, and the recorded dual-license alternatives.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Consult LICENSING.md, THIRD_PARTY_NOTICES.md, the source headers, component
+COPYING/NOTICE files, and manifests/license-audit.json. LICENSES/ contains
+license and exception texts; notices/ preserves component-specific notices.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This index does not relicense third-party material, remove an alternative
+grant, impose a new restriction, or certify a future binary/image release.

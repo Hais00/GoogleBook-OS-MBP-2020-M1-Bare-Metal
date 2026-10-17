@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: BSD-3-Clause
+// Modified for GoogleBook OS on 2026-10-17.
+// Port integration changes; original copyright and license notices retained.
+// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 /*
  * Copyright 2014 The Chromium OS Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be

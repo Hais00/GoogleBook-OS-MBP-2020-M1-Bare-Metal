@@ -1,3 +1,6 @@
+dnl Modified for GoogleBook OS on 2026-10-17.
+dnl Port integration changes; original copyright and license notices retained.
+dnl See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ([2.72])
 AC_INIT([alsa-lib], [1.2.17pre1])

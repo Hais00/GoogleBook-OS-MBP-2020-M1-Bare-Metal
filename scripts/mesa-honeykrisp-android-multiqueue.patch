@@ -1,3 +1,8 @@
+GoogleBook OS patch archive; changes recorded 2026-10-17.
+This patch is not licensed by the root MIT notice as a whole.
+Per-file upstream licenses and notices apply; see manifests/license-audit.json.
+For current notice-bearing source use the component aggregate patch.
+
 diff --git a/src/asahi/lib/agx_device.c b/src/asahi/lib/agx_device.c
 index 82fd609..c03049a 100644
 --- a/src/asahi/lib/agx_device.c

@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: GPL-2.0 */
+/* Modified for GoogleBook OS on 2026-10-17; existing GPL terms retained. */
 #ifndef _SCRIPTS_ELF_H_COMPAT
 #define _SCRIPTS_ELF_H_COMPAT
 

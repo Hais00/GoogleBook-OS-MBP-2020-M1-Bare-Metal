@@ -1,0 +1,60 @@
+{
+  "audit_date": "2026-10-17",
+  "pass": true,
+  "scope": "source publication and license-inventory consistency; no legal-rights or binary-clearance assertion",
+  "notice_only_source_changes_verified": 44,
+  "pinned_evidence_hashes_verified": 24,
+  "aggregate_patches": [
+    {
+      "component": "linux-asahi",
+      "base_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "files": 15,
+      "clean_apply_and_exact_snapshot_match": true
+    },
+    {
+      "component": "mesa",
+      "base_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "files": 17,
+      "clean_apply_and_exact_snapshot_match": true
+    },
+    {
+      "component": "minigbm",
+      "base_commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "files": 6,
+      "clean_apply_and_exact_snapshot_match": true
+    },
+    {
+      "component": "drm-hwcomposer",
+      "base_commit": "a87112ca8e78a5d401368bd44672bd73f79fe9af",
+      "files": 1,
+      "clean_apply_and_exact_snapshot_match": true
+    },
+    {
+      "component": "speakersafetyd",
+      "base_commit": "615674e75dc68639d550171e33ba3946538d03b0",
+      "files": 1,
+      "clean_apply_and_exact_snapshot_match": true
+    },
+    {
+      "component": "alsa-lib",
+      "base_commit": "a47c8bc3fef190e7eb463283230263c82208597a",
+      "files": 1,
+      "clean_apply_and_exact_snapshot_match": true
+    },
+    {
+      "component": "m1n1",
+      "base_commit": "809541515659bf4e504807fd72bc0a539be5eee7",
+      "files": 1,
+      "clean_apply_and_exact_snapshot_match": true
+    }
+  ],
+  "python_files_parsed": 98,
+  "shell_files_syntax_checked": 11,
+  "inventory_checker_pass": true,
+  "negative_controls": {
+    "false_mit_relabel_rejected": true,
+    "unclassified_code_rejected": true,
+    "missing_patch_member_scope_rejected": true
+  },
+  "physical_device_accessed": false
+}

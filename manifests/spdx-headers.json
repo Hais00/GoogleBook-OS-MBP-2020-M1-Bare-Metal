@@ -1,5 +1,5 @@
 {
-  "scope": "Explicit source headers; components without individual headers retain their upstream COPYING notices. Root MIT does not override upstream licensing.",
+  "scope": "Leading literal file headers only; embedded/generated source strings and patch payload tags are not whole-file license declarations. See license-audit.json for conclusions.",
   "files": [
     {
       "file": "scripts/alsa_owner_inventory.c",
@@ -40,10 +40,6 @@
     {
       "file": "scripts/codec_inventory_probe.cpp",
       "SPDX": "Apache-2.0"
-    },
-    {
-      "file": "scripts/kernel-android-memfd.patch",
-      "SPDX": "GPL-2.0"
     },
     {
       "file": "scripts/kernel-host-include/byteswap.h",
@@ -162,22 +158,6 @@
       "SPDX": "Apache-2.0"
     },
     {
-      "file": "scripts/mesa-honeykrisp-android-multiqueue.patch",
-      "SPDX": "MIT"
-    },
-    {
-      "file": "scripts/mesa-honeykrisp-android-priority.patch",
-      "SPDX": "MIT"
-    },
-    {
-      "file": "scripts/mesa-honeykrisp-android.patch",
-      "SPDX": "MIT"
-    },
-    {
-      "file": "scripts/mesa-honeykrisp-full-priority.patch",
-      "SPDX": "MIT"
-    },
-    {
       "file": "scripts/qemu_img_framework_main.c",
       "SPDX": "MIT"
     },
@@ -242,8 +222,8 @@
       "SPDX": "Apache-2.0"
     },
     {
-      "file": "sources/linux-asahi/COPYING",
-      "SPDX": "GPL-2.0 WITH Linux-syscall-note"
+      "file": "sources/drm-hwcomposer/drm/ResourceManager.cpp",
+      "SPDX": "Apache-2.0"
     },
     {
       "file": "sources/linux-asahi/arch/arm64/tools/gen-kernel-hwcaps.sh",
@@ -260,6 +240,10 @@
     {
       "file": "sources/linux-asahi/drivers/gpu/drm/asahi/file.rs",
       "SPDX": "GPL-2.0-only OR MIT"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/drm_crtc.c",
+      "SPDX": "HPND-sell-variant"
     },
     {
       "file": "sources/linux-asahi/include/uapi/drm/asahi_drm.h",
@@ -291,6 +275,10 @@
     },
     {
       "file": "sources/linux-asahi/scripts/Makefile.vmlinux",
+      "SPDX": "GPL-2.0-only"
+    },
+    {
+      "file": "sources/linux-asahi/scripts/mod/file2alias.c",
       "SPDX": "GPL-2.0-only"
     },
     {
@@ -364,6 +352,34 @@
     {
       "file": "sources/mesa/src/asahi/vulkan/meson.build",
       "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/compiler/clc/clc_helpers.cpp",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_buffer.cc",
+      "SPDX": "BSD-3-Clause"
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_driver.cc",
+      "SPDX": "BSD-3-Clause"
+    },
+    {
+      "file": "sources/minigbm/drv.c",
+      "SPDX": "BSD-3-Clause"
+    },
+    {
+      "file": "sources/minigbm/drv_helpers.h",
+      "SPDX": "BSD-3-Clause"
+    },
+    {
+      "file": "sources/minigbm/dumb_driver.c",
+      "SPDX": "BSD-3-Clause"
+    },
+    {
+      "file": "sources/minigbm/virtgpu.c",
+      "SPDX": "BSD-3-Clause"
     },
     {
       "file": "sources/speakersafetyd/src/main.rs",

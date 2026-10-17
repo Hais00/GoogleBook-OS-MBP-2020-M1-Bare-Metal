@@ -1,7 +1,18 @@
+GoogleBook OS source changes recorded 2026-10-17.
+Licensing is per file; see manifests/license-audit.json and THIRD_PARTY_NOTICES.md.
+
 diff --git a/include/drm-uapi/asahi_drm.h b/include/drm-uapi/asahi_drm.h
 --- a/include/drm-uapi/asahi_drm.h
 +++ b/include/drm-uapi/asahi_drm.h
-@@ -213,6 +213,14 @@
+@@ -1,4 +1,7 @@
+ /* SPDX-License-Identifier: MIT */
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright (C) The Asahi Linux Contributors
+  * Copyright (C) 2018-2023 Collabora Ltd.
+@@ -213,6 +216,14 @@
  	 * userspace can speculate memory accesses more aggressively.
  	 */
  	DRM_ASAHI_FEATURE_SOFT_FAULTS = (1UL) << 0,
@@ -16,7 +27,7 @@ diff --git a/include/drm-uapi/asahi_drm.h b/include/drm-uapi/asahi_drm.h
  };
  
  /**
-@@ -538,14 +546,14 @@
+@@ -538,14 +549,14 @@
  	/**
  	 * @DRM_ASAHI_PRIORITY_HIGH: High priority queue.
  	 *
@@ -36,7 +47,14 @@ diff --git a/include/drm-uapi/asahi_drm.h b/include/drm-uapi/asahi_drm.h
 diff --git a/src/asahi/lib/agx_device.c b/src/asahi/lib/agx_device.c
 --- a/src/asahi/lib/agx_device.c
 +++ b/src/asahi/lib/agx_device.c
-@@ -736,39 +736,50 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2021 Alyssa Rosenzweig
+  * Copyright 2019 Collabora, Ltd.
+@@ -736,39 +739,50 @@
     close(dev->fd);
  }
  
@@ -115,7 +133,14 @@ diff --git a/src/asahi/lib/agx_device.c b/src/asahi/lib/agx_device.c
 diff --git a/src/asahi/lib/agx_device.h b/src/asahi/lib/agx_device.h
 --- a/src/asahi/lib/agx_device.h
 +++ b/src/asahi/lib/agx_device.h
-@@ -114,6 +114,7 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2021 Alyssa Rosenzweig
+  * SPDX-License-Identifier: MIT
+@@ -114,6 +117,7 @@
  
     /* Global queue handle */
     uint32_t queue_id;
@@ -123,7 +148,7 @@ diff --git a/src/asahi/lib/agx_device.h b/src/asahi/lib/agx_device.h
  
     /* VMA heaps */
     simple_mtx_t vma_lock;
-@@ -243,6 +244,10 @@
+@@ -243,6 +247,10 @@
     return util_sparse_array_get(&dev->bo_map, handle);
  }
  
@@ -137,7 +162,14 @@ diff --git a/src/asahi/lib/agx_device.h b/src/asahi/lib/agx_device.h
 diff --git a/src/asahi/meson.build b/src/asahi/meson.build
 --- a/src/asahi/meson.build
 +++ b/src/asahi/meson.build
-@@ -21,7 +21,7 @@
+@@ -1,3 +1,6 @@
++# Modified for GoogleBook OS on 2026-10-17.
++# Port integration changes; original copyright and license notices retained.
++# See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ # Copyright 2018 Rob Clark
+ # Copyright 2019 Collabora, Ltd.
+ # SPDX-License-Identifier: MIT
+@@ -21,7 +24,7 @@
  if with_gallium_asahi or with_asahi_vk
     subdir('layout')
     subdir('lib')
@@ -150,7 +182,10 @@ diff --git a/src/asahi/vulkan/hk_android.c b/src/asahi/vulkan/hk_android.c
 new file mode 100644
 --- /dev/null
 +++ b/src/asahi/vulkan/hk_android.c
-@@ -0,0 +1,562 @@
+@@ -0,0 +1,565 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 +/*
 + * Copyright 2025 Google LLC
 + * Adapted to Honeykrisp for the GoogleBook Android integration.
@@ -717,7 +752,10 @@ diff --git a/src/asahi/vulkan/hk_android.h b/src/asahi/vulkan/hk_android.h
 new file mode 100644
 --- /dev/null
 +++ b/src/asahi/vulkan/hk_android.h
-@@ -0,0 +1,76 @@
+@@ -0,0 +1,79 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 +/*
 + * Copyright 2025 Google LLC
 + * SPDX-License-Identifier: MIT
@@ -797,7 +835,14 @@ new file mode 100644
 diff --git a/src/asahi/vulkan/hk_buffer.c b/src/asahi/vulkan/hk_buffer.c
 --- a/src/asahi/vulkan/hk_buffer.c
 +++ b/src/asahi/vulkan/hk_buffer.c
-@@ -5,6 +5,7 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -5,6 +8,7 @@
   * SPDX-License-Identifier: MIT
   */
  #include "hk_buffer.h"
@@ -805,7 +850,7 @@ diff --git a/src/asahi/vulkan/hk_buffer.c b/src/asahi/vulkan/hk_buffer.c
  
  #include "agx_bo.h"
  #include "agx_device.h"
-@@ -211,6 +212,12 @@
+@@ -211,6 +215,12 @@
     const VkPhysicalDeviceExternalBufferInfo *pExternalBufferInfo,
     VkExternalBufferProperties *pExternalBufferProperties)
  {
@@ -821,7 +866,14 @@ diff --git a/src/asahi/vulkan/hk_buffer.c b/src/asahi/vulkan/hk_buffer.c
 diff --git a/src/asahi/vulkan/hk_device.c b/src/asahi/vulkan/hk_device.c
 --- a/src/asahi/vulkan/hk_device.c
 +++ b/src/asahi/vulkan/hk_device.c
-@@ -388,6 +388,12 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -388,6 +391,12 @@
     if (result != VK_SUCCESS)
        goto fail_internal_shaders;
  
@@ -834,7 +886,7 @@ diff --git a/src/asahi/vulkan/hk_device.c b/src/asahi/vulkan/hk_device.c
     for (unsigned i = 0; i < pCreateInfo->queueCreateInfoCount; i++) {
        for (unsigned q = 0; q < pCreateInfo->pQueueCreateInfos[i].queueCount;
             q++) {
-@@ -449,6 +455,9 @@
+@@ -449,6 +458,9 @@
        struct hk_queue *queue = container_of(iter, struct hk_queue, vk);
        hk_queue_finish(dev, queue);
     }
@@ -844,7 +896,7 @@ diff --git a/src/asahi/vulkan/hk_device.c b/src/asahi/vulkan/hk_device.c
     hk_destroy_internal_shaders(dev, &dev->kernels, false);
  fail_internal_shaders:
     hk_destroy_internal_shaders(dev, &dev->prolog_epilog, true);
-@@ -479,6 +488,15 @@
+@@ -479,6 +491,15 @@
     if (!dev)
        return;
  
@@ -860,7 +912,7 @@ diff --git a/src/asahi/vulkan/hk_device.c b/src/asahi/vulkan/hk_device.c
     util_dynarray_fini(&dev->external_bos.counts);
     util_dynarray_fini(&dev->external_bos.list);
     u_rwlock_destroy(&dev->external_bos.lock);
-@@ -488,11 +506,6 @@
+@@ -488,11 +509,6 @@
     hk_destroy_internal_shaders(dev, &dev->prolog_epilog, true);
  
     vk_pipeline_cache_destroy(dev->mem_cache, NULL);
@@ -875,7 +927,14 @@ diff --git a/src/asahi/vulkan/hk_device.c b/src/asahi/vulkan/hk_device.c
 diff --git a/src/asahi/vulkan/hk_device.h b/src/asahi/vulkan/hk_device.h
 --- a/src/asahi/vulkan/hk_device.h
 +++ b/src/asahi/vulkan/hk_device.h
-@@ -63,6 +63,17 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -63,6 +66,17 @@
  
  struct hk_device {
     struct vk_device vk;
@@ -896,7 +955,14 @@ diff --git a/src/asahi/vulkan/hk_device.h b/src/asahi/vulkan/hk_device.h
 diff --git a/src/asahi/vulkan/hk_device_memory.c b/src/asahi/vulkan/hk_device_memory.c
 --- a/src/asahi/vulkan/hk_device_memory.c
 +++ b/src/asahi/vulkan/hk_device_memory.c
-@@ -5,6 +5,7 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -5,6 +8,7 @@
   * SPDX-License-Identifier: MIT
   */
  #include "hk_device_memory.h"
@@ -904,7 +970,7 @@ diff --git a/src/asahi/vulkan/hk_device_memory.c b/src/asahi/vulkan/hk_device_me
  
  #include "hk_device.h"
  #include "hk_entrypoints.h"
-@@ -162,6 +163,8 @@
+@@ -162,6 +166,8 @@
  hk_AllocateMemory(VkDevice device, const VkMemoryAllocateInfo *pAllocateInfo,
                    const VkAllocationCallbacks *pAllocator, VkDeviceMemory *pMem)
  {
@@ -916,7 +982,14 @@ diff --git a/src/asahi/vulkan/hk_device_memory.c b/src/asahi/vulkan/hk_device_me
 diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
 --- a/src/asahi/vulkan/hk_image.c
 +++ b/src/asahi/vulkan/hk_image.c
-@@ -5,6 +5,8 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -5,6 +8,8 @@
   * SPDX-License-Identifier: MIT
   */
  #include "hk_image.h"
@@ -925,7 +998,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
  #include "asahi/layout/layout.h"
  #include "drm-uapi/drm_fourcc.h"
  #include "util/bitscan.h"
-@@ -305,6 +307,26 @@
+@@ -305,6 +310,26 @@
     const VkPhysicalDeviceImageFormatInfo2 *pImageFormatInfo,
     VkImageFormatProperties2 *pImageFormatProperties)
  {
@@ -952,7 +1025,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
     VK_FROM_HANDLE(hk_physical_device, pdev, physicalDevice);
  
     const VkPhysicalDeviceExternalImageFormatInfo *external_info =
-@@ -794,7 +816,7 @@
+@@ -794,7 +819,7 @@
        return DRM_FORMAT_MOD_INVALID;
  }
  
@@ -961,7 +1034,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
  hk_image_init(struct hk_device *dev, struct hk_image *image,
                const VkImageCreateInfo *pCreateInfo)
  {
-@@ -838,6 +860,9 @@
+@@ -838,6 +863,9 @@
        mod_explicit_info = vk_find_struct_const(
           pCreateInfo->pNext,
           IMAGE_DRM_FORMAT_MODIFIER_EXPLICIT_CREATE_INFO_EXT);
@@ -971,7 +1044,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
  
        uint64_t modifier = DRM_FORMAT_MOD_INVALID;
  
-@@ -903,6 +928,10 @@
+@@ -903,6 +931,10 @@
        };
  
        ail_make_miptree(&image->planes[plane].layout);
@@ -982,7 +1055,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
     }
  
     return VK_SUCCESS;
-@@ -979,6 +1008,9 @@
+@@ -979,6 +1011,9 @@
  hk_CreateImage(VkDevice _device, const VkImageCreateInfo *pCreateInfo,
                 const VkAllocationCallbacks *pAllocator, VkImage *pImage)
  {
@@ -992,7 +1065,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
     VK_FROM_HANDLE(hk_device, dev, _device);
     struct hk_physical_device *pdev = hk_device_physical(dev);
     struct hk_image *image;
-@@ -1033,7 +1065,10 @@
+@@ -1033,7 +1068,10 @@
     if (!image)
        return;
  
@@ -1003,7 +1076,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
     vk_free2(&dev->vk.alloc, pAllocator, image);
  }
  
-@@ -1046,6 +1081,10 @@
+@@ -1046,6 +1084,10 @@
     assert(util_is_power_of_two_or_zero64(plane_align_B));
  
     *align_B = MAX2(*align_B, plane_align_B);
@@ -1014,7 +1087,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
     *size_B = align64(*size_B, plane_align_B);
     *size_B += plane->layout.size_B;
  }
-@@ -1062,7 +1101,7 @@
+@@ -1062,7 +1104,7 @@
                                  VK_IMAGE_CREATE_SPARSE_RESIDENCY_BIT);
  
     uint64_t size_B = 0;
@@ -1023,7 +1096,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
     if (image->disjoint) {
        uint8_t plane = hk_image_aspects_to_plane(image, aspects);
        hk_image_plane_add_req(&image->planes[plane], sparse, &size_B, &align_B);
-@@ -1087,8 +1126,10 @@
+@@ -1087,8 +1129,10 @@
        switch (ext->sType) {
        case VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS: {
           VkMemoryDedicatedRequirements *dedicated = (void *)ext;
@@ -1036,7 +1109,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
           break;
        }
        default:
-@@ -1254,8 +1295,8 @@
+@@ -1254,8 +1298,8 @@
     const uint8_t p = hk_image_aspects_to_plane(image, isr->aspectMask);
     const struct hk_image_plane *plane = &image->planes[p];
  
@@ -1047,7 +1120,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
        uint32_t align_B = 0;
        /* TODO: sparse? */
        for (unsigned plane = 0; plane < p; plane++)
-@@ -1326,7 +1367,7 @@
+@@ -1326,7 +1370,7 @@
  hk_image_plane_bind(struct hk_device *dev, struct hk_image_plane *plane,
                      struct hk_device_memory *mem, uint64_t *offset_B)
  {
@@ -1056,7 +1129,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
  
     if (plane->va) {
  #if 0
-@@ -1369,8 +1410,21 @@
+@@ -1369,8 +1413,21 @@
        }
  #endif
  
@@ -1079,7 +1152,7 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
        if (image->disjoint) {
           const VkBindImagePlaneMemoryInfo *plane_info = vk_find_struct_const(
              pBindInfos[i].pNext, BIND_IMAGE_PLANE_MEMORY_INFO);
-@@ -1379,7 +1433,9 @@
+@@ -1379,7 +1436,9 @@
           hk_image_plane_bind(dev, &image->planes[plane], mem, &offset_B);
        } else {
           for (unsigned plane = 0; plane < image->plane_count; plane++) {
@@ -1093,7 +1166,14 @@ diff --git a/src/asahi/vulkan/hk_image.c b/src/asahi/vulkan/hk_image.c
 diff --git a/src/asahi/vulkan/hk_image.h b/src/asahi/vulkan/hk_image.h
 --- a/src/asahi/vulkan/hk_image.h
 +++ b/src/asahi/vulkan/hk_image.h
-@@ -39,6 +39,9 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -39,6 +42,9 @@
  #define HK_MIP_TAIL_START_OFFSET 0x6d74000000000000UL
  
  struct hk_device_memory;
@@ -1103,7 +1183,7 @@ diff --git a/src/asahi/vulkan/hk_image.h b/src/asahi/vulkan/hk_image.h
  struct hk_physical_device;
  
  static VkFormatFeatureFlags2
-@@ -51,6 +54,8 @@
+@@ -51,6 +57,8 @@
  
  struct hk_image_plane {
     struct ail_layout layout;
@@ -1115,7 +1195,14 @@ diff --git a/src/asahi/vulkan/hk_image.h b/src/asahi/vulkan/hk_image.h
 diff --git a/src/asahi/vulkan/hk_physical_device.c b/src/asahi/vulkan/hk_physical_device.c
 --- a/src/asahi/vulkan/hk_physical_device.c
 +++ b/src/asahi/vulkan/hk_physical_device.c
-@@ -69,6 +69,10 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -69,6 +72,10 @@
        .KHR_external_memory_fd = true,
        .KHR_external_semaphore = true,
        .KHR_external_semaphore_fd = true,
@@ -1126,7 +1213,7 @@ diff --git a/src/asahi/vulkan/hk_physical_device.c b/src/asahi/vulkan/hk_physica
        .KHR_format_feature_flags2 = true,
        .KHR_fragment_shader_barycentric = false,
        .KHR_get_memory_requirements2 = true,
-@@ -1281,6 +1285,13 @@
+@@ -1281,6 +1288,13 @@
  
     unsigned st_idx = 0;
     pdev->syncobj_sync_type = vk_drm_syncobj_get_type(fd);
@@ -1140,7 +1227,7 @@ diff --git a/src/asahi/vulkan/hk_physical_device.c b/src/asahi/vulkan/hk_physica
     pdev->sync_types[st_idx++] = &pdev->syncobj_sync_type;
     pdev->sync_types[st_idx++] = NULL;
     assert(st_idx <= ARRAY_SIZE(pdev->sync_types));
-@@ -1450,9 +1461,15 @@
+@@ -1450,9 +1464,15 @@
           if (prio) {
              STATIC_ASSERT(ARRAY_SIZE(hk_global_queue_priorities) <=
                            VK_MAX_GLOBAL_PRIORITY_SIZE_KHR);
@@ -1161,7 +1248,14 @@ diff --git a/src/asahi/vulkan/hk_physical_device.c b/src/asahi/vulkan/hk_physica
 diff --git a/src/asahi/vulkan/hk_queue.c b/src/asahi/vulkan/hk_queue.c
 --- a/src/asahi/vulkan/hk_queue.c
 +++ b/src/asahi/vulkan/hk_queue.c
-@@ -55,8 +55,9 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -55,8 +58,9 @@
        assert(vk_sync_type_is_drm_syncobj(wait->sync->type));
        const struct vk_drm_syncobj *syncobj = vk_sync_as_drm_syncobj(wait->sync);
  
@@ -1173,7 +1267,7 @@ diff --git a/src/asahi/vulkan/hk_queue.c b/src/asahi/vulkan/hk_queue.c
     }
  
     /* Transfer the queue timeline into each out fence. They will all be
-@@ -69,8 +70,9 @@
+@@ -69,8 +73,9 @@
        const struct vk_drm_syncobj *syncobj =
           vk_sync_as_drm_syncobj(signal->sync);
  
@@ -1185,7 +1279,7 @@ diff --git a/src/asahi/vulkan/hk_queue.c b/src/asahi/vulkan/hk_queue.c
     }
  
     return VK_SUCCESS;
-@@ -916,6 +918,84 @@
+@@ -916,6 +921,84 @@
     return result;
  }
  
@@ -1270,7 +1364,7 @@ diff --git a/src/asahi/vulkan/hk_queue.c b/src/asahi/vulkan/hk_queue.c
  static enum drm_asahi_priority
  translate_priority(VkQueueGlobalPriorityKHR prio)
  {
-@@ -958,27 +1038,38 @@
+@@ -958,27 +1041,38 @@
        priority_info ? priority_info->globalPriority
                      : VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR;
  
@@ -1315,7 +1409,7 @@ diff --git a/src/asahi/vulkan/hk_queue.c b/src/asahi/vulkan/hk_queue.c
  
        return vk_errorf(dev, VK_ERROR_OUT_OF_HOST_MEMORY,
                         "DRM_IOCTL_SYNCOBJ_CREATE failed: %m");
-@@ -992,14 +1083,28 @@
+@@ -992,14 +1086,28 @@
                         "DRM_IOCTL_TIMELINE_SYNCOBJ_SIGNAL failed: %m");
     }
  
@@ -1348,7 +1442,14 @@ diff --git a/src/asahi/vulkan/hk_queue.c b/src/asahi/vulkan/hk_queue.c
 diff --git a/src/asahi/vulkan/hk_queue.h b/src/asahi/vulkan/hk_queue.h
 --- a/src/asahi/vulkan/hk_queue.h
 +++ b/src/asahi/vulkan/hk_queue.h
-@@ -43,3 +43,8 @@
+@@ -1,3 +1,6 @@
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2024 Valve Corporation
+  * Copyright 2024 Alyssa Rosenzweig
+@@ -43,3 +46,8 @@
                         uint32_t index_in_family);
  
  void hk_queue_finish(struct hk_device *dev, struct hk_queue *queue);
@@ -1360,7 +1461,14 @@ diff --git a/src/asahi/vulkan/hk_queue.h b/src/asahi/vulkan/hk_queue.h
 diff --git a/src/asahi/vulkan/meson.build b/src/asahi/vulkan/meson.build
 --- a/src/asahi/vulkan/meson.build
 +++ b/src/asahi/vulkan/meson.build
-@@ -48,6 +48,10 @@
+@@ -1,3 +1,6 @@
++# Modified for GoogleBook OS on 2026-10-17.
++# Port integration changes; original copyright and license notices retained.
++# See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ # Copyright © 2022 Collabora Ltd. and Red Hat Inc.
+ # SPDX-License-Identifier: MIT
+ hk_files = files(
+@@ -48,6 +51,10 @@
    'hk_wsi.c',
    'hk_wsi.h'
  )
@@ -1374,7 +1482,15 @@ diff --git a/src/asahi/vulkan/meson.build b/src/asahi/vulkan/meson.build
 diff --git a/src/compiler/clc/clc_helpers.cpp b/src/compiler/clc/clc_helpers.cpp
 --- a/src/compiler/clc/clc_helpers.cpp
 +++ b/src/compiler/clc/clc_helpers.cpp
-@@ -1171,7 +1171,11 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: MIT
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ //
+ // Copyright 2012-2016 Francisco Jerez
+ // Copyright 2012-2016 Advanced Micro Devices, Inc.
+@@ -1171,7 +1175,11 @@
     if (args->use_llvm_spirv_target) {
        const char *triple = args->address_bits == 32 ? "spirv-unknown-unknown" : "spirv64-unknown-unknown";
        std::string error_msg("");

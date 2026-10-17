@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: GPL-2.0-only
+// Modified for GoogleBook OS on 2026-10-17.
+// Port integration changes; original copyright and license notices retained.
+// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 /* Simple code to turn various tables in an ELF file into alias definitions.
  * This deals with kernel datastructures where they should be
  * dealt with: in the kernel source.

@@ -1,3 +1,8 @@
+GoogleBook OS patch archive; changes recorded 2026-10-17.
+This patch is not licensed by the root MIT notice as a whole.
+Per-file upstream licenses and notices apply; see manifests/license-audit.json.
+For current notice-bearing source use the component aggregate patch.
+
 diff --git a/mm/Kconfig b/mm/Kconfig
 index e8bf1e9e6..05e0fbd7c 100644
 --- a/mm/Kconfig

@@ -1,3 +1,7 @@
+// SPDX-License-Identifier: HPND-sell-variant
+// Modified for GoogleBook OS on 2026-10-17.
+// Port integration changes; original copyright and license notices retained.
+// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 /*
  * Copyright (c) 2006-2008 Intel Corporation
  * Copyright (c) 2007 Dave Airlie <airlied@linux.ie>

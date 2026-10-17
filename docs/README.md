@@ -7,6 +7,8 @@
 - [Android boot integration](boot-changes.md): bootstrap, storage, graphics, services, input, audio, and diagnostics.
 - [Source release scope](publication.md): included material, publication adjustments, and build limitations.
 
+- [License and provenance audit](license-audit.md): per-file evidence, redistribution obligations, notices, and upstream contribution rules.
+
 ## Historical engineering reports
 
 These reports preserve the state and evidence of their original checkpoints. Earlier “pending” or candidate sections must be read in that context; [validation status](status.md) is the current summary.

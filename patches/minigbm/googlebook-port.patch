@@ -1,7 +1,18 @@
+GoogleBook OS source changes recorded 2026-10-17.
+Licensing is per file; see manifests/license-audit.json and THIRD_PARTY_NOTICES.md.
+
 diff --git a/cros_gralloc/cros_gralloc_buffer.cc b/cros_gralloc/cros_gralloc_buffer.cc
 --- a/cros_gralloc/cros_gralloc_buffer.cc
 +++ b/cros_gralloc/cros_gralloc_buffer.cc
-@@ -363,7 +363,9 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: BSD-3-Clause
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2017 The Chromium OS Authors. All rights reserved.
+  * Use of this source code is governed by a BSD-style license that can be
+@@ -363,7 +367,9 @@
  
  	if (map_flags) {
  		if (lock_data_[0]) {
@@ -12,7 +23,7 @@ diff --git a/cros_gralloc/cros_gralloc_buffer.cc b/cros_gralloc/cros_gralloc_buf
  			vaddr = lock_data_[0]->vma->addr;
  		} else {
  			struct rectangle r = *rect;
-@@ -402,8 +404,10 @@
+@@ -402,8 +408,10 @@
  
  	if (!--lockcount_) {
  		if (lock_data_[0]) {
@@ -27,7 +38,15 @@ diff --git a/cros_gralloc/cros_gralloc_buffer.cc b/cros_gralloc/cros_gralloc_buf
 diff --git a/cros_gralloc/cros_gralloc_driver.cc b/cros_gralloc/cros_gralloc_driver.cc
 --- a/cros_gralloc/cros_gralloc_driver.cc
 +++ b/cros_gralloc/cros_gralloc_driver.cc
-@@ -112,6 +112,9 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: BSD-3-Clause
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2017 The Chromium OS Authors. All rights reserved.
+  * Use of this source code is governed by a BSD-style license that can be
+@@ -112,6 +116,9 @@
  	drv = drv_create(fd, NULL);
  	if (!drv)
  		close(fd);
@@ -40,7 +59,15 @@ diff --git a/cros_gralloc/cros_gralloc_driver.cc b/cros_gralloc/cros_gralloc_dri
 diff --git a/drv.c b/drv.c
 --- a/drv.c
 +++ b/drv.c
-@@ -49,6 +49,8 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: BSD-3-Clause
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2016 The Chromium OS Authors. All rights reserved.
+  * Use of this source code is governed by a BSD-style license that can be
+@@ -49,6 +53,8 @@
  #endif
  
  // Dumb / generic drivers
@@ -49,7 +76,7 @@ diff --git a/drv.c b/drv.c
  extern const struct backend backend_evdi;
  extern const struct backend backend_marvell;
  extern const struct backend backend_mediatek;
-@@ -66,6 +68,8 @@
+@@ -66,6 +72,8 @@
  extern const struct backend backend_mock;
  
  static const struct backend *drv_backend_list[] = {
@@ -58,7 +85,7 @@ diff --git a/drv.c b/drv.c
  #ifdef DRV_AMDGPU
  	&backend_amdgpu,
  #endif
-@@ -497,10 +501,13 @@
+@@ -497,10 +505,13 @@
  	return NULL;
  }
  
@@ -72,7 +99,7 @@ diff --git a/drv.c b/drv.c
  	uint32_t i;
  	uint8_t *addr;
  	struct mapping mapping = { 0 };
-@@ -569,20 +576,25 @@
+@@ -569,20 +580,25 @@
  success:
  	*map_data = drv_array_append(drv->mappings, &mapping);
  exact_match:
@@ -102,7 +129,7 @@ diff --git a/drv.c b/drv.c
  
  	if (--mapping->refcount)
  		goto out;
-@@ -600,7 +612,14 @@
+@@ -600,7 +616,14 @@
  	}
  
  out:
@@ -121,7 +148,15 @@ diff --git a/drv.c b/drv.c
 diff --git a/drv_helpers.h b/drv_helpers.h
 --- a/drv_helpers.h
 +++ b/drv_helpers.h
-@@ -19,6 +19,7 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: BSD-3-Clause
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2014 The Chromium OS Authors. All rights reserved.
+  * Use of this source code is governed by a BSD-style license that can be
+@@ -19,6 +23,7 @@
  struct format_metadata;
  
  extern const struct backend backend_dma_heap;
@@ -132,7 +167,15 @@ diff --git a/drv_helpers.h b/drv_helpers.h
 diff --git a/dumb_driver.c b/dumb_driver.c
 --- a/dumb_driver.c
 +++ b/dumb_driver.c
-@@ -13,7 +13,7 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: BSD-3-Clause
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2020 The Chromium OS Authors. All rights reserved.
+  * Use of this source code is governed by a BSD-style license that can be
+@@ -13,7 +17,7 @@
  #define INIT_DUMB_DRIVER_WITH_NAME(driver, _name)                                                  \
  	const struct backend backend_##driver = {                                                  \
  		.name = _name,                                                                     \
@@ -141,7 +184,7 @@ diff --git a/dumb_driver.c b/dumb_driver.c
  		.bo_create = drv_dumb_bo_create,                                                   \
  		.bo_create_with_modifiers = dumb_bo_create_with_modifiers,                         \
  		.bo_destroy = drv_dumb_bo_destroy,                                                 \
-@@ -33,7 +33,7 @@
+@@ -33,7 +37,7 @@
  static const uint32_t texture_only_formats[] = { DRM_FORMAT_R8, DRM_FORMAT_NV12, DRM_FORMAT_NV21,
  						 DRM_FORMAT_YVU420, DRM_FORMAT_YVU420_ANDROID };
  
@@ -150,7 +193,7 @@ diff --git a/dumb_driver.c b/dumb_driver.c
  {
  	drv_add_combinations(drv, scanout_render_formats, ARRAY_SIZE(scanout_render_formats),
  			     &LINEAR_METADATA, BO_USE_RENDER_MASK | BO_USE_SCANOUT);
-@@ -66,6 +66,8 @@
+@@ -66,6 +70,8 @@
  }
  
  INIT_DUMB_DRIVER(evdi)
@@ -162,7 +205,15 @@ diff --git a/dumb_driver.c b/dumb_driver.c
 diff --git a/virtgpu.c b/virtgpu.c
 --- a/virtgpu.c
 +++ b/virtgpu.c
-@@ -50,6 +50,12 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: BSD-3-Clause
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright 2021 The Chromium OS Authors. All rights reserved.
+  * Use of this source code is governed by a BSD-style license that can be
+@@ -50,6 +54,12 @@
  			drv_logi("virtgpu backend not enabling %s\n", params[i].name);
  	}
  

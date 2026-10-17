@@ -1,4 +1,7 @@
 # SPDX-License-Identifier: MIT
+# Modified for GoogleBook OS on 2026-10-17.
+# Port integration changes; original copyright and license notices retained.
+# See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 from construct import Struct, Int8ul, Int16ul, Int32sl, Int32ul, Int64ul
 from subprocess import Popen, PIPE
 import pathlib

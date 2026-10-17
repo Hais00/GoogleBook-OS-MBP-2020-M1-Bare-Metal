@@ -20,3 +20,7 @@ The `privileged-priority.patch` files isolate the new GPU priority work for revi
 `android-vulkan-full.patch` contains the Vulkan integration without the pre-existing host compiler adaptations. These variants serve different review and composition needs; they are not a sequence to apply cumulatively to the same tree.
 
 Original DRM fence patches and references are retained for provenance. The aggregate kernel patch already includes them. Rebasing the local priority UAPI extension requires coordinated kernel and Mesa review.
+
+## License notices
+
+The supported aggregate patches reproduce dated downstream notices in each modified upstream snapshot. Historical/focused variants retain their source payloads and a publication preamble; their target-file licenses are recorded per member in `manifests/license-audit.json`. They are not collectively relicensed under project MIT. Verbatim upstream fence patches retain their original author/date metadata.

@@ -1,7 +1,18 @@
+GoogleBook OS source changes recorded 2026-10-17.
+Licensing is per file; see manifests/license-audit.json and THIRD_PARTY_NOTICES.md.
+
 diff --git a/src/main.rs b/src/main.rs
 --- a/src/main.rs
 +++ b/src/main.rs
-@@ -29,7 +29,7 @@
+@@ -1,4 +1,7 @@
+ // SPDX-License-Identifier: GPL-2.0-only
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ // Copyright (C) The Asahi Linux Contributors
+ /*!
+     Handles speaker safety on Apple Silicon machines. This code is designed to
+@@ -29,7 +32,7 @@
  
  const UNLOCK_MAGIC: i32 = 0xdec1be15u32 as i32;
  
@@ -10,7 +21,7 @@ diff --git a/src/main.rs b/src/main.rs
  
  /// Simple program to greet a person
  #[derive(Parser, Debug)]
-@@ -49,7 +49,7 @@
+@@ -49,7 +52,7 @@
  }
  
  fn get_machine() -> String {

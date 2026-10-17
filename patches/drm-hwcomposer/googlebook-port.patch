@@ -1,7 +1,18 @@
+GoogleBook OS source changes recorded 2026-10-17.
+Licensing is per file; see manifests/license-audit.json and THIRD_PARTY_NOTICES.md.
+
 diff --git a/drm/ResourceManager.cpp b/drm/ResourceManager.cpp
 --- a/drm/ResourceManager.cpp
 +++ b/drm/ResourceManager.cpp
-@@ -43,6 +43,7 @@
+@@ -1,3 +1,7 @@
++// SPDX-License-Identifier: Apache-2.0
++// Modified for GoogleBook OS on 2026-10-17.
++// Port integration changes; original copyright and license notices retained.
++// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ /*
+  * Copyright (C) 2018 The Android Open Source Project
+  *
+@@ -43,6 +47,7 @@
  #if HAS_LIBDISPLAY_INFO
  #include "utils/EdidWrapper.h"
  #endif
@@ -9,7 +20,7 @@ diff --git a/drm/ResourceManager.cpp b/drm/ResourceManager.cpp
  #include "utils/log.h"
  #include "utils/properties.h"
  
-@@ -181,15 +182,8 @@
+@@ -181,15 +186,8 @@
      }
    } else {
      path_pattern.resize(path_pattern.size() - 1);

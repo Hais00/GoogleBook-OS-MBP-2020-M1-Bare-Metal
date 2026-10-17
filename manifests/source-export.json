@@ -489,22 +489,43 @@
       "file": "scripts/kernel-adp-scanout-pitch.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "ee453a9ae86cfa2676e88be4f5159cdade5befe507ef722e2a798057fcd4bc67",
-      "published_sha256": "ee453a9ae86cfa2676e88be4f5159cdade5befe507ef722e2a798057fcd4bc67",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "912ed669e7d8067093da7d4e7543a922d6138e29f229f688b42f80bfe878bee8",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "ee453a9ae86cfa2676e88be4f5159cdade5befe507ef722e2a798057fcd4bc67",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/kernel-android-memfd.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "540ae7105ec2ce03d6b2d1db5e413250bd21ce924baf457d6e64d00f5a50898b",
-      "published_sha256": "540ae7105ec2ce03d6b2d1db5e413250bd21ce924baf457d6e64d00f5a50898b",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "55c462e7e59155fe8828a29a463cc96ddae9c5ee58d44c6e31f33c1533554964",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "540ae7105ec2ce03d6b2d1db5e413250bd21ce924baf457d6e64d00f5a50898b",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/kernel-asahi-privileged-priority.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
-      "published_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "99ad630c86802ac5a071cbdff6ce274ac381299b9e4f1cc715b8eeceb1d2f9bb",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/kernel-googlebook.config",
@@ -517,15 +538,29 @@
       "file": "scripts/kernel-host-include/byteswap.h",
       "origin": "port implementation or development recipe",
       "original_sha256": "3b900a351c193ed31af75bc7c9fcc801a3d819320fcbabd1f779fc65c83e47ac",
-      "published_sha256": "3b900a351c193ed31af75bc7c9fcc801a3d819320fcbabd1f779fc65c83e47ac",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "6ee1c9d6cb69be6e82033c6822bebc6528d3e812b76de7d09a2deac3d7a51865",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "3b900a351c193ed31af75bc7c9fcc801a3d819320fcbabd1f779fc65c83e47ac",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/kernel-host-include/elf.h",
       "origin": "port implementation or development recipe",
       "original_sha256": "c740aff6c359b415e9e3ac0f5baea6c3400c1b581c1cc4a884ace9651d1aeb99",
-      "published_sha256": "aad8fd7e9fdd062523ecf423e771c58d3c16690cc11780da8d24e6ba17a6e465",
-      "publication_path_or_identifier_adjustments": true
+      "published_sha256": "981d0e010a038fd1c212be0d507770d792df2282ee3f4e1eb0939f58873cfd16",
+      "publication_path_or_identifier_adjustments": true,
+      "publication_history": [
+        {
+          "sha256": "aad8fd7e9fdd062523ecf423e771c58d3c16690cc11780da8d24e6ba17a6e465",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/kernel-host-include/endian.h",
@@ -538,8 +573,15 @@
       "file": "scripts/kernel-macos-m1.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "b909d3f1be30af9f439f20c2bdbaf28e76deadb0e04b86ae5285e9e39e4b44c0",
-      "published_sha256": "0f2eb4537929a4c4b394bc1d42596fd991ac045337aea52e9984cacd9cae4e7b",
-      "publication_path_or_identifier_adjustments": true
+      "published_sha256": "d93a34b2ac847737ef97bea32d5106d7db2a3b6deadb3c756f713e728e3dd9c8",
+      "publication_path_or_identifier_adjustments": true,
+      "publication_history": [
+        {
+          "sha256": "0f2eb4537929a4c4b394bc1d42596fd991ac045337aea52e9984cacd9cae4e7b",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/keymint_software.cpp",
@@ -748,36 +790,71 @@
       "file": "scripts/mesa-asahi-privileged-priority.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
-      "published_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "2d3b7983d149a3cf9db9f91b6e764b2c73cd3e66c1b0c33b1f24637f25853dbd",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/mesa-honeykrisp-android-multiqueue.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "6709d73da72f5be8b99c7ade542c684c7848b468db0221b113d3b233c861d32c",
-      "published_sha256": "6709d73da72f5be8b99c7ade542c684c7848b468db0221b113d3b233c861d32c",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "d0b7723432a412137b8798e8b33beed288d5036bdc72dd7f224da2d0311d8420",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "6709d73da72f5be8b99c7ade542c684c7848b468db0221b113d3b233c861d32c",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/mesa-honeykrisp-android-priority.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "b9639a01b577b9c67a66319a8b737ce817493570ae324d8e34b1274d878a267a",
-      "published_sha256": "b9639a01b577b9c67a66319a8b737ce817493570ae324d8e34b1274d878a267a",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "44af4973f52beb912dcbc3616985c3af06c76736898eec6d0206e5193d807966",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "b9639a01b577b9c67a66319a8b737ce817493570ae324d8e34b1274d878a267a",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/mesa-honeykrisp-android.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "8b89d1e1af6c254f33427f204e497cf2697b533647790983dc0d59170e0b5c30",
-      "published_sha256": "8b89d1e1af6c254f33427f204e497cf2697b533647790983dc0d59170e0b5c30",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "747c0d1905096d851be6fcbc87841a0d114c2795da1e385e7e45250efc1f265a",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "8b89d1e1af6c254f33427f204e497cf2697b533647790983dc0d59170e0b5c30",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/mesa-honeykrisp-full-priority.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
-      "published_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "c9e3b0ef3d9734c6db1e7d82dd479f23145f9a7ee63e96f00dd81627aeb68a21",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/minigbm_sync_failure_test.c",
@@ -1063,8 +1140,15 @@
       "file": "scripts/swiftshader-android.patch",
       "origin": "port implementation or development recipe",
       "original_sha256": "bac2969e9f370fd75aa072f9797c343219db08d30a7fd92b662322b8234131e2",
-      "published_sha256": "bac2969e9f370fd75aa072f9797c343219db08d30a7fd92b662322b8234131e2",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "3768721af418a72ae0e146b7aa37c7ffcb2718ea280fd7351e8a65dac3ac7db6",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "bac2969e9f370fd75aa072f9797c343219db08d30a7fd92b662322b8234131e2",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "scripts/test_android_lp_state.py",
@@ -1341,113 +1425,225 @@
       "file": "sources/linux-asahi/arch/arm64/tools/gen-kernel-hwcaps.sh",
       "origin": "modified linux-asahi source",
       "original_sha256": "0d1615969e269ce6621e1c42d8c5a4ef3d48f8dfffb255cc21cc67988857e0e7",
-      "published_sha256": "0d1615969e269ce6621e1c42d8c5a4ef3d48f8dfffb255cc21cc67988857e0e7",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "35435e9e33ac742dfcc34f164515210d178c92171cef86aac653341288274737",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "0d1615969e269ce6621e1c42d8c5a4ef3d48f8dfffb255cc21cc67988857e0e7",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/block/partitions/efi.c",
       "origin": "modified linux-asahi source",
       "original_sha256": "7bcd688fafb78ab625b2e7ba974fd022e5c538e47a875d55865a9a60f900e431",
-      "published_sha256": "0602b06cd5ae380a33e3de865dde4a40e40ccdd54ab335442a097c035a734f02",
-      "publication_path_or_identifier_adjustments": true
+      "published_sha256": "acdc00432da01e1ab2614c7d263f16f205d7d4ec59724d5c5e1ca4058b0d8146",
+      "publication_path_or_identifier_adjustments": true,
+      "publication_history": [
+        {
+          "sha256": "0602b06cd5ae380a33e3de865dde4a40e40ccdd54ab335442a097c035a734f02",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/drivers/gpu/drm/adp/adp_drv.c",
       "origin": "modified linux-asahi source",
       "original_sha256": "77aaeff412a8a54db873b305705d7f74538f0d1aed4035e9b62388d0519b4d1c",
-      "published_sha256": "77aaeff412a8a54db873b305705d7f74538f0d1aed4035e9b62388d0519b4d1c",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "adcbdbbd33f7085abfb4900c12684e63aa8e03a41320d63d46bdb94053fbe78c",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "77aaeff412a8a54db873b305705d7f74538f0d1aed4035e9b62388d0519b4d1c",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/drivers/gpu/drm/asahi/file.rs",
       "origin": "modified linux-asahi source",
       "original_sha256": "53ad70f052fef3c8e75f5e504b5b8719ff8f53dd3a9919c5311041209aa68f11",
-      "published_sha256": "53ad70f052fef3c8e75f5e504b5b8719ff8f53dd3a9919c5311041209aa68f11",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "f9175e827c828ebb902a891c55714f82de1d23d794eceb8643d533cf4af356ff",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "53ad70f052fef3c8e75f5e504b5b8719ff8f53dd3a9919c5311041209aa68f11",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/drivers/gpu/drm/drm_crtc.c",
       "origin": "modified linux-asahi source",
       "original_sha256": "fba8c3eb7311d496cabfab848c86b418d2f94b70caff9edaeb98f870469e06c9",
-      "published_sha256": "fba8c3eb7311d496cabfab848c86b418d2f94b70caff9edaeb98f870469e06c9",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "6da40ce2ddf9b5480d8a58f67caed3d3298d9b97d24075200f9b8ddb0ad17380",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "fba8c3eb7311d496cabfab848c86b418d2f94b70caff9edaeb98f870469e06c9",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/include/uapi/drm/asahi_drm.h",
       "origin": "modified linux-asahi source",
       "original_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
-      "published_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "ecca9b24615a873cc1292bae175ca4dd4efebc2156d3cb4afec15369460d788a",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/mm/Kconfig",
       "origin": "modified linux-asahi source",
       "original_sha256": "30bddcfc1bea77c00440e8b675372d50e0059ae682a618131f4ca757ace00eab",
-      "published_sha256": "30bddcfc1bea77c00440e8b675372d50e0059ae682a618131f4ca757ace00eab",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "608a96715955c6965231768de0cd8f6339b82371c6fba4917ba1fa61a432de98",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "30bddcfc1bea77c00440e8b675372d50e0059ae682a618131f4ca757ace00eab",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/mm/Makefile",
       "origin": "modified linux-asahi source",
       "original_sha256": "9b23c5d6516101da9bb73bd445a5268bad33a123626c1b59233f475ba80b8704",
-      "published_sha256": "9b23c5d6516101da9bb73bd445a5268bad33a123626c1b59233f475ba80b8704",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "ab75a8d5eb7463b6c4309029308c6790a2f97a476b8572dc6782144778d876d9",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "9b23c5d6516101da9bb73bd445a5268bad33a123626c1b59233f475ba80b8704",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/mm/memfd-ashmem-shim-internal.h",
       "origin": "modified linux-asahi source",
       "original_sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
-      "published_sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "8be364781d7245fc154eb16ab294ec1dab18ef165fed33c33786a4533ded89c9",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/mm/memfd-ashmem-shim.c",
       "origin": "modified linux-asahi source",
       "original_sha256": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
-      "published_sha256": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "0bcc54235548c7300540ddaf327cf60d066df537f7b801a6b0ce6f6401af7c2a",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/mm/memfd-ashmem-shim.h",
       "origin": "modified linux-asahi source",
       "original_sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
-      "published_sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "d6d7316e4f5eeaef76ec1679a68a6ae907b79ed9a9b817d17cde24d8d609e4f7",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/mm/shmem.c",
       "origin": "modified linux-asahi source",
       "original_sha256": "d2d9455c7277cd1543ec1a89664ff384b5fa435635205c9357a85a68c06eb268",
-      "published_sha256": "d2d9455c7277cd1543ec1a89664ff384b5fa435635205c9357a85a68c06eb268",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "51fada507ef117db0c36209010e169fee5331df2a561cbfe11c91e5710e6494d",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "d2d9455c7277cd1543ec1a89664ff384b5fa435635205c9357a85a68c06eb268",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/scripts/Makefile.vmlinux",
       "origin": "modified linux-asahi source",
       "original_sha256": "7372c536b4b1f66be9c9d3ec8d970f3dbacad0fe4e440cf6c20538ca4c8e073d",
-      "published_sha256": "7372c536b4b1f66be9c9d3ec8d970f3dbacad0fe4e440cf6c20538ca4c8e073d",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "4d134a195b1f47539a77941cafe7867e3ac3bae3e2c6750601c05c184da98263",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "7372c536b4b1f66be9c9d3ec8d970f3dbacad0fe4e440cf6c20538ca4c8e073d",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/scripts/mod/file2alias.c",
       "origin": "modified linux-asahi source",
       "original_sha256": "7573025cf9c5dc609a06c7fe29a181e9f438d64429c8360aabe4a8b736c93807",
-      "published_sha256": "7573025cf9c5dc609a06c7fe29a181e9f438d64429c8360aabe4a8b736c93807",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "94b796a66dd56ca4078e1526b557e21c90060a95393d9723326ff22a12922c81",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "7573025cf9c5dc609a06c7fe29a181e9f438d64429c8360aabe4a8b736c93807",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/usr/gen_init_cpio.c",
       "origin": "modified linux-asahi source",
       "original_sha256": "3f2dab06f48fd1415cacaf076a953a5571fdb3d613556a70662ad30f6b35252e",
-      "published_sha256": "3f2dab06f48fd1415cacaf076a953a5571fdb3d613556a70662ad30f6b35252e",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "56403200e131d57d34e1cd9c710acc946d3d2c6bd6fe80ad68b93ad395f57aab",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "3f2dab06f48fd1415cacaf076a953a5571fdb3d613556a70662ad30f6b35252e",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/linux-asahi/googlebook-port.patch",
       "origin": "aggregate diff against recorded upstream commit",
       "original_sha256": "0b58363172c313aa6e1f28a54938aa35eeb8506b5f3059c89058111552ddbb02",
-      "published_sha256": "9db0150a21f68cdd2c2fccc49dd7a01ca708902ad47be7885de52934eaf4643f",
-      "publication_path_or_identifier_adjustments": true
+      "published_sha256": "8eddaae02ecbef6ad577f9fc2532f43d62c646ea9ef6d569b291aca4a2755df4",
+      "publication_path_or_identifier_adjustments": true,
+      "publication_history": [
+        {
+          "sha256": "9db0150a21f68cdd2c2fccc49dd7a01ca708902ad47be7885de52934eaf4643f",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/linux-asahi/COPYING",
@@ -1460,176 +1656,351 @@
       "file": "sources/mesa/include/drm-uapi/asahi_drm.h",
       "origin": "modified mesa source",
       "original_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
-      "published_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "ecca9b24615a873cc1292bae175ca4dd4efebc2156d3cb4afec15369460d788a",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/lib/agx_device.c",
       "origin": "modified mesa source",
       "original_sha256": "07094cb4ad3b075a04561ae89a5a9f01a8c2660f468d54e5a632d264d492f1e0",
-      "published_sha256": "07094cb4ad3b075a04561ae89a5a9f01a8c2660f468d54e5a632d264d492f1e0",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "68bff768112362db4a818f4a29231b570476b2487cf8716cfe92a2e16710492e",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "07094cb4ad3b075a04561ae89a5a9f01a8c2660f468d54e5a632d264d492f1e0",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/lib/agx_device.h",
       "origin": "modified mesa source",
       "original_sha256": "87f1f5e5c63ecc339a42a8e2dffaff45696d5022debb95ff506ab593a18895d8",
-      "published_sha256": "87f1f5e5c63ecc339a42a8e2dffaff45696d5022debb95ff506ab593a18895d8",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "19dcca4d0cd2c37dd759b604f39b0c3eb86d264885421bdf019fbdd613e3a461",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "87f1f5e5c63ecc339a42a8e2dffaff45696d5022debb95ff506ab593a18895d8",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/meson.build",
       "origin": "modified mesa source",
       "original_sha256": "181b0097931620b3473aab5500a1117d1ee32b1407316a356e6c24fa92d35c14",
-      "published_sha256": "181b0097931620b3473aab5500a1117d1ee32b1407316a356e6c24fa92d35c14",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "e00440ce7e00512d0d649997cf1ee33f5b6e8dfde0a475c598cfae6c15280f15",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "181b0097931620b3473aab5500a1117d1ee32b1407316a356e6c24fa92d35c14",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_android.c",
       "origin": "modified mesa source",
       "original_sha256": "3bce7bd2f9545403113c21434c38f569258b64e8862f27c5850cbfce4211e11d",
-      "published_sha256": "3bce7bd2f9545403113c21434c38f569258b64e8862f27c5850cbfce4211e11d",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "c639651e7bbaddeac55a311add9141cfcb08f2b529a4e41dfd96a977ec08550e",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "3bce7bd2f9545403113c21434c38f569258b64e8862f27c5850cbfce4211e11d",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_android.h",
       "origin": "modified mesa source",
       "original_sha256": "f4abdad657d521df3c700a0f56c7167608ba845dbe93ca2f8950a8198be5d5c3",
-      "published_sha256": "f4abdad657d521df3c700a0f56c7167608ba845dbe93ca2f8950a8198be5d5c3",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "3d4e371c5f32373330f972ff4e452622cb685cef29cfa37623b5ba25832f1b55",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "f4abdad657d521df3c700a0f56c7167608ba845dbe93ca2f8950a8198be5d5c3",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_buffer.c",
       "origin": "modified mesa source",
       "original_sha256": "b71d1f12a2bdfc63d1007f03343862d71770e2068a5dae86ce6666bf77b4d208",
-      "published_sha256": "b71d1f12a2bdfc63d1007f03343862d71770e2068a5dae86ce6666bf77b4d208",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "69e14810d99220b1596170af1d8fe9027efba94d8ce7d8aa7fbc1a00cc9e3ede",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "b71d1f12a2bdfc63d1007f03343862d71770e2068a5dae86ce6666bf77b4d208",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_device.c",
       "origin": "modified mesa source",
       "original_sha256": "6fc1bc6d2a988c28eaf7ead23013637db723c3092a069a0004d21c91501bb01c",
-      "published_sha256": "6fc1bc6d2a988c28eaf7ead23013637db723c3092a069a0004d21c91501bb01c",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "ebb91e684021c66c17d589ef66e50b352023a8a832a0b2531d2be3fdfded39a7",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "6fc1bc6d2a988c28eaf7ead23013637db723c3092a069a0004d21c91501bb01c",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_device.h",
       "origin": "modified mesa source",
       "original_sha256": "d6182293c96bf4518349929ba3b45241b97a558f86cf18f12830544483496612",
-      "published_sha256": "d6182293c96bf4518349929ba3b45241b97a558f86cf18f12830544483496612",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "7ad0782ac70a5c3bf6386198593db16c59f4bd2adf3fc809d6e067e2139f0fae",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "d6182293c96bf4518349929ba3b45241b97a558f86cf18f12830544483496612",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_device_memory.c",
       "origin": "modified mesa source",
       "original_sha256": "67abf9737e3b3108683655172da8424a3883e1916bccf789046580647216f9af",
-      "published_sha256": "67abf9737e3b3108683655172da8424a3883e1916bccf789046580647216f9af",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "26243f75d139374aec9a0dd935ed8d27fafa260556f35dd4d27da154cff0c2da",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "67abf9737e3b3108683655172da8424a3883e1916bccf789046580647216f9af",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_image.c",
       "origin": "modified mesa source",
       "original_sha256": "d5223ed52addffe4b3dea51817dfcc02d2420a6273030781c35a3043b7310d3e",
-      "published_sha256": "d5223ed52addffe4b3dea51817dfcc02d2420a6273030781c35a3043b7310d3e",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "4a02e2262db5f55374049f27d69a5d27257034437c3d2dcf504cf39065638868",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "d5223ed52addffe4b3dea51817dfcc02d2420a6273030781c35a3043b7310d3e",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_image.h",
       "origin": "modified mesa source",
       "original_sha256": "fa497a6575237de8031df92e89c4070205e9c3987082afd708b18e9938c3c5dc",
-      "published_sha256": "fa497a6575237de8031df92e89c4070205e9c3987082afd708b18e9938c3c5dc",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "19deeec596403bbf92a418cb7c099346eceee0efbdc3ba4ead4aa137bd0b92ee",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "fa497a6575237de8031df92e89c4070205e9c3987082afd708b18e9938c3c5dc",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_physical_device.c",
       "origin": "modified mesa source",
       "original_sha256": "73ecf7140ad5e165737c6a24c6f4b07011f447e98c19cd777de64227e970c535",
-      "published_sha256": "73ecf7140ad5e165737c6a24c6f4b07011f447e98c19cd777de64227e970c535",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "3f608ed16f8d445290663935731eacff0bc322eb4eb2ee6eae078d822f48bd2e",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "73ecf7140ad5e165737c6a24c6f4b07011f447e98c19cd777de64227e970c535",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_queue.c",
       "origin": "modified mesa source",
       "original_sha256": "d29231369edb669b6845aa43639c7e2eee52e290285ddb01fbe59fcb16ec761c",
-      "published_sha256": "d29231369edb669b6845aa43639c7e2eee52e290285ddb01fbe59fcb16ec761c",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "7de5932ad88de596f703324b60b27ce0b8378938c0bbc92cc371bcdf62736762",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "d29231369edb669b6845aa43639c7e2eee52e290285ddb01fbe59fcb16ec761c",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/hk_queue.h",
       "origin": "modified mesa source",
       "original_sha256": "cfdd5bc1655b66b16edc68adab45d1d1f3b8cb1fa49c749c94963c9c21100f38",
-      "published_sha256": "cfdd5bc1655b66b16edc68adab45d1d1f3b8cb1fa49c749c94963c9c21100f38",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "25788f37b15b9f65c276505e899fc2304e574ac8cbda57360029d667fe49338d",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "cfdd5bc1655b66b16edc68adab45d1d1f3b8cb1fa49c749c94963c9c21100f38",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/asahi/vulkan/meson.build",
       "origin": "modified mesa source",
       "original_sha256": "312deff5ab7edb16910e598f5b9f055ff24cf526dd616c2462831cf8e2b4879a",
-      "published_sha256": "312deff5ab7edb16910e598f5b9f055ff24cf526dd616c2462831cf8e2b4879a",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "9977a503321c74cae58e9dd330757108e8dc54348071759448b97bb6fcdc7bfd",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "312deff5ab7edb16910e598f5b9f055ff24cf526dd616c2462831cf8e2b4879a",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/mesa/src/compiler/clc/clc_helpers.cpp",
       "origin": "modified mesa source",
       "original_sha256": "f0a5c30eb3b1f1ac4bf5257e877190b7141184ea3e53fc0a4933c473da4cda55",
-      "published_sha256": "f0a5c30eb3b1f1ac4bf5257e877190b7141184ea3e53fc0a4933c473da4cda55",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "170aa9c1c62f95067eddc5ac126dfc1f43153370f1193f029b0203b8091e10aa",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "f0a5c30eb3b1f1ac4bf5257e877190b7141184ea3e53fc0a4933c473da4cda55",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/mesa/googlebook-port.patch",
       "origin": "aggregate diff against recorded upstream commit",
       "original_sha256": "239cf7a2ea0d281c800a567ae24cbc2887f83b87651463494b3249974cbfd171",
-      "published_sha256": "239cf7a2ea0d281c800a567ae24cbc2887f83b87651463494b3249974cbfd171",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "2c0dfe5833b0e2cbe712536c79ac25df41c8b523cf84f0f9884c5b042a3823e8",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "239cf7a2ea0d281c800a567ae24cbc2887f83b87651463494b3249974cbfd171",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/minigbm/cros_gralloc/cros_gralloc_buffer.cc",
       "origin": "modified minigbm source",
       "original_sha256": "3f78bd8b10268d66a00c9c88073607fb90a026bcb16de47edfdb6c177570d9ce",
-      "published_sha256": "3f78bd8b10268d66a00c9c88073607fb90a026bcb16de47edfdb6c177570d9ce",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "e3050137c4e19002370ad6f8482634fb1091868ac590966b935ebb7718cf1ac7",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "3f78bd8b10268d66a00c9c88073607fb90a026bcb16de47edfdb6c177570d9ce",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/minigbm/cros_gralloc/cros_gralloc_driver.cc",
       "origin": "modified minigbm source",
       "original_sha256": "cc4d669994d24c53235ed728500224b6cfd26db9048f3cba6c21fdaac1115234",
-      "published_sha256": "cc4d669994d24c53235ed728500224b6cfd26db9048f3cba6c21fdaac1115234",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "30f353a18a7295f585f88e71a27ed8e922863f4a06ca4f88861042555a1ecf5b",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "cc4d669994d24c53235ed728500224b6cfd26db9048f3cba6c21fdaac1115234",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/minigbm/drv.c",
       "origin": "modified minigbm source",
       "original_sha256": "f863d213b67610786d1c5832ac973ac531448c92fe89defbe0ca932402689be9",
-      "published_sha256": "f863d213b67610786d1c5832ac973ac531448c92fe89defbe0ca932402689be9",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "b5c75dc8f63539d98c8c65aacdbe800da9a7a090e62bac908eaddf72833cd055",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "f863d213b67610786d1c5832ac973ac531448c92fe89defbe0ca932402689be9",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/minigbm/drv_helpers.h",
       "origin": "modified minigbm source",
       "original_sha256": "8b51f4382ff845bd9eac6eb277cb4c88449bf7647ef073f0c1bfe45dd3f1c5d3",
-      "published_sha256": "8b51f4382ff845bd9eac6eb277cb4c88449bf7647ef073f0c1bfe45dd3f1c5d3",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "0c7b40f187efeeebb0ea12b673b99f41a8eb2192cf683fbc708a1d18ef2a9a3a",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "8b51f4382ff845bd9eac6eb277cb4c88449bf7647ef073f0c1bfe45dd3f1c5d3",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/minigbm/dumb_driver.c",
       "origin": "modified minigbm source",
       "original_sha256": "81e3b3ffe72ebb2827511fcabdd66b98ff8d6cf5f6dcfa26e4ae94d8ed2819e4",
-      "published_sha256": "81e3b3ffe72ebb2827511fcabdd66b98ff8d6cf5f6dcfa26e4ae94d8ed2819e4",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "991ca8b743f965d74a31374d73c6afc9581e6839e63887a6aec431533e441b73",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "81e3b3ffe72ebb2827511fcabdd66b98ff8d6cf5f6dcfa26e4ae94d8ed2819e4",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/minigbm/virtgpu.c",
       "origin": "modified minigbm source",
       "original_sha256": "53eca69fc2caa4f42be004007f53e9f3c4826a0df0e383ac628bf784f99e5a4d",
-      "published_sha256": "53eca69fc2caa4f42be004007f53e9f3c4826a0df0e383ac628bf784f99e5a4d",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "a28fdaa1646d4682f66587bee3b411955b24d20c801fe87e332a1bc91250f509",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "53eca69fc2caa4f42be004007f53e9f3c4826a0df0e383ac628bf784f99e5a4d",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/minigbm/googlebook-port.patch",
       "origin": "aggregate diff against recorded upstream commit",
       "original_sha256": "79e88c1593b10ad4703e60089c8c4800a4405514cab3e9c96499b351830ad599",
-      "published_sha256": "79e88c1593b10ad4703e60089c8c4800a4405514cab3e9c96499b351830ad599",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "9de014dd07bd55f3ba608be495b64cb3bee1488d9c058a7ba5a8f3f59e014fd3",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "79e88c1593b10ad4703e60089c8c4800a4405514cab3e9c96499b351830ad599",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/minigbm/LICENSE",
@@ -1642,15 +2013,29 @@
       "file": "sources/drm-hwcomposer/drm/ResourceManager.cpp",
       "origin": "modified drm-hwcomposer source",
       "original_sha256": "556741db71803eeb8bb0e3fb975b748935cb120f6ee0e92447f16302aa35af52",
-      "published_sha256": "556741db71803eeb8bb0e3fb975b748935cb120f6ee0e92447f16302aa35af52",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "3d2ccaa2eb1332c9b1340f6bd7dc46dbc36df3932f4bef11d17fd6d64bdafb4d",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "556741db71803eeb8bb0e3fb975b748935cb120f6ee0e92447f16302aa35af52",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/drm-hwcomposer/googlebook-port.patch",
       "origin": "aggregate diff against recorded upstream commit",
       "original_sha256": "0bb6fd8280ad874619cb057a9b5bf09d4c855e4038f15f0152f021a6d0208245",
-      "published_sha256": "0bb6fd8280ad874619cb057a9b5bf09d4c855e4038f15f0152f021a6d0208245",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "f07feada00e49dd551e49faacbf5ab0b43a68c0e057d58aa701228aff6cd6888",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "0bb6fd8280ad874619cb057a9b5bf09d4c855e4038f15f0152f021a6d0208245",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/drm-hwcomposer/NOTICE",
@@ -1663,15 +2048,29 @@
       "file": "sources/speakersafetyd/src/main.rs",
       "origin": "modified speakersafetyd source",
       "original_sha256": "f335aea60504e5b833a0598237be441e25fd0ce708c630395e397a23361744cf",
-      "published_sha256": "f335aea60504e5b833a0598237be441e25fd0ce708c630395e397a23361744cf",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "289f62963795e202cd0d0c69e3306805b54de9eabe4a64d3be2773c9922d6b04",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "f335aea60504e5b833a0598237be441e25fd0ce708c630395e397a23361744cf",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/speakersafetyd/googlebook-port.patch",
       "origin": "aggregate diff against recorded upstream commit",
       "original_sha256": "c5bf7614c2330d96e2385df63bd10c50788ecc3067e1e9253c7af26bbe4611f8",
-      "published_sha256": "c5bf7614c2330d96e2385df63bd10c50788ecc3067e1e9253c7af26bbe4611f8",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "df88fd1514301eb0ab43884304ae3fd62d5644a3505287c52cfad28b0562982a",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "c5bf7614c2330d96e2385df63bd10c50788ecc3067e1e9253c7af26bbe4611f8",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/speakersafetyd/LICENSE",
@@ -1684,15 +2083,29 @@
       "file": "sources/alsa-lib/configure.ac",
       "origin": "modified alsa-lib source",
       "original_sha256": "41390d0a0ab75a5a77afbd712f539d6fe30530b9d29552f5c3152c304f5d9988",
-      "published_sha256": "41390d0a0ab75a5a77afbd712f539d6fe30530b9d29552f5c3152c304f5d9988",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "90464cadb607b0d119dd762187c6207283e4aac57ccd69bff37f86ac3db5bc51",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "41390d0a0ab75a5a77afbd712f539d6fe30530b9d29552f5c3152c304f5d9988",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/alsa-lib/googlebook-port.patch",
       "origin": "aggregate diff against recorded upstream commit",
       "original_sha256": "31a55a06d333bf4ffd379613d8b283f87c417a004202b7e1cd27f6bf0f1f7200",
-      "published_sha256": "31a55a06d333bf4ffd379613d8b283f87c417a004202b7e1cd27f6bf0f1f7200",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "4642592217de5e721d2c2645423be69c50186a1f91edaf809c69803c0fa72881",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "31a55a06d333bf4ffd379613d8b283f87c417a004202b7e1cd27f6bf0f1f7200",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/alsa-lib/COPYING",
@@ -1705,22 +2118,43 @@
       "file": "patches/linux-asahi/privileged-priority.patch",
       "origin": "priority change or tested kernel configuration",
       "original_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
-      "published_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "99ad630c86802ac5a071cbdff6ce274ac381299b9e4f1cc715b8eeceb1d2f9bb",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/mesa/privileged-priority.patch",
       "origin": "priority change or tested kernel configuration",
       "original_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
-      "published_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "2d3b7983d149a3cf9db9f91b6e764b2c73cd3e66c1b0c33b1f24637f25853dbd",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/mesa/android-vulkan-full.patch",
       "origin": "priority change or tested kernel configuration",
       "original_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
-      "published_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "c9e3b0ef3d9734c6db1e7d82dd479f23145f9a7ee63e96f00dd81627aeb68a21",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "config/kernel25.config",
@@ -1768,71 +2202,141 @@
       "file": "LICENSES/MIT.txt",
       "origin": "upstream SPDX license text",
       "original_sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
-      "published_sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "29ba069e11794549a03ba0f916dec13b8aaa4a2efa9a4dff4201a7955e01e112",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "LICENSES/GPL-2.0.txt",
       "origin": "upstream SPDX license text",
       "original_sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
-      "published_sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "77dc7854b1bdc02d96ab5e531e1023482c94dc4a24d28637e2d3d26554b33346",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "LICENSES/LGPL-2.1.txt",
       "origin": "upstream SPDX license text",
       "original_sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229",
-      "published_sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "ea5d8d6696739ea26c6676fd030882130c8dd47d1fd31ee85619a20241d90085",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "LICENSES/LGPL-2.0.txt",
       "origin": "upstream SPDX license text",
       "original_sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433",
-      "published_sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "568a2e7a1329d6f567c0baa0ae186c9c5330f1bea66bcf831efd47a061abac2b",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "LICENSES/BSD-2-Clause.txt",
       "origin": "upstream SPDX license text",
       "original_sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
-      "published_sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "344feeecfa96f2c54717731371205ee8f5a193468d707994a1edb58c51c08705",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "LICENSES/BSD-3-Clause.txt",
       "origin": "upstream SPDX license text",
       "original_sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
-      "published_sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "c3dc748f5e725cf5ed89784fe78e4ff1b05d309bf1e7ade4c572e8fde1b8406c",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "LICENSES/Apache-2.0.txt",
       "origin": "upstream SPDX license text",
       "original_sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12",
-      "published_sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "4ed9e2b296b570d6b17b3ea846a3f5fbef9c7204c5be681c4b9335797653bc47",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "LICENSES/Linux-syscall-note.txt",
       "origin": "upstream SPDX exception",
       "original_sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
-      "published_sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "f65b43c0f7c66b8d46cdf5897286fd182c21167eaa9b2c07c66c44890e08bdd0",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "sources/m1n1/proxyclient/m1n1/hv/virtio.py",
       "origin": "MIT upstream m1n1 host transport with local pipe/EOF fix",
       "original_sha256": "9edfe44872af6ef17de2723fb41d70902f282ac1143850332410cc89c6d143cb",
-      "published_sha256": "9edfe44872af6ef17de2723fb41d70902f282ac1143850332410cc89c6d143cb",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "633865eb888d9ea56cdaed81b6100bd292cb9b1740a93eb2e61fbc5b061157f6",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "9edfe44872af6ef17de2723fb41d70902f282ac1143850332410cc89c6d143cb",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "patches/m1n1/googlebook-port.patch",
       "origin": "diff against official m1n1 v1.9.9 commit",
       "original_sha256": "60a2eab47dcb60adce8f448113f98b378b6e7bf8869307b414d709c91aaf9883",
-      "published_sha256": "60a2eab47dcb60adce8f448113f98b378b6e7bf8869307b414d709c91aaf9883",
-      "publication_path_or_identifier_adjustments": false
+      "published_sha256": "41324d8ab026d414df9f3d34799bb4da7f3afe33884e9d8349700feb899e59cd",
+      "publication_path_or_identifier_adjustments": false,
+      "publication_history": [
+        {
+          "sha256": "60a2eab47dcb60adce8f448113f98b378b6e7bf8869307b414d709c91aaf9883",
+          "superseded_by": "2026-10-17 license notice audit"
+        }
+      ],
+      "license_publication_adjustment": true
     },
     {
       "file": "docs/engineering/early-bringup-kernel12.md",
@@ -1850,6 +2354,13 @@
       "origin": "official upstream m1n1 license",
       "original_sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
       "published_sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "tools/check_license_inventory.py",
+      "origin": "original source-release inventory validator",
+      "original_sha256": "d52a7caa2385f1b578b3b73700c3ce225afbdac3fafe5f7978562914d2de3b77",
+      "published_sha256": "75258ac0887ae19f03b0a71c246a9fad0b2329f6411302ee2beec3a9ed0096ec",
       "publication_path_or_identifier_adjustments": false
     }
   ],

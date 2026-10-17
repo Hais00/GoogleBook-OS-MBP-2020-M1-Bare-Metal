@@ -97,5 +97,13 @@
     "exported_modified_sources": [
       "proxyclient/m1n1/hv/virtio.py"
     ]
+  },
+  {
+    "name": "swiftshader",
+    "repository": "https://github.com/google/swiftshader.git",
+    "commit": "cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5",
+    "exported_modified_sources": [],
+    "published_patch": "scripts/swiftshader-android.patch",
+    "distribution_scope": "patch and notices only; no binaries or complete source checkout"
   }
 ]

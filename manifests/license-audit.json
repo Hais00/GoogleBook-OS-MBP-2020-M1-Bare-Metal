@@ -1,0 +1,3704 @@
+{
+  "audit_date": "2026-10-17",
+  "scope": "published source/config files, patch archives, pinned upstream licenses, and current contribution policies; no binary legal-clearance claim",
+  "files": [
+    {
+      "file": "sources/linux-asahi/arch/arm64/tools/gen-kernel-hwcaps.sh",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "arch/arm64/tools/gen-kernel-hwcaps.sh",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "35435e9e33ac742dfcc34f164515210d178c92171cef86aac653341288274737"
+    },
+    {
+      "file": "sources/linux-asahi/block/partitions/efi.c",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "block/partitions/efi.c",
+      "license_expression": "GPL-2.0-or-later",
+      "original_spdx": "GPL-2.0-or-later",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "acdc00432da01e1ab2614c7d263f16f205d7d4ec59724d5c5e1ca4058b0d8146"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/adp/adp_drv.c",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "drivers/gpu/drm/adp/adp_drv.c",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0-only",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "adcbdbbd33f7085abfb4900c12684e63aa8e03a41320d63d46bdb94053fbe78c"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/asahi/file.rs",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "drivers/gpu/drm/asahi/file.rs",
+      "license_expression": "GPL-2.0-only OR MIT",
+      "original_spdx": "GPL-2.0-only OR MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "f9175e827c828ebb902a891c55714f82de1d23d794eceb8643d533cf4af356ff"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/drm_crtc.c",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "drivers/gpu/drm/drm_crtc.c",
+      "license_expression": "HPND-sell-variant",
+      "original_spdx": null,
+      "basis": "verbatim file permission notice, matched to SPDX HPND-sell-variant",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "6da40ce2ddf9b5480d8a58f67caed3d3298d9b97d24075200f9b8ddb0ad17380"
+    },
+    {
+      "file": "sources/linux-asahi/include/uapi/drm/asahi_drm.h",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "include/uapi/drm/asahi_drm.h",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "ecca9b24615a873cc1292bae175ca4dd4efebc2156d3cb4afec15369460d788a"
+    },
+    {
+      "file": "sources/linux-asahi/mm/Kconfig",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "mm/Kconfig",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0-only",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "608a96715955c6965231768de0cd8f6339b82371c6fba4917ba1fa61a432de98"
+    },
+    {
+      "file": "sources/linux-asahi/mm/Makefile",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "mm/Makefile",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "ab75a8d5eb7463b6c4309029308c6790a2f97a476b8572dc6782144778d876d9"
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim-internal.h",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "mm/memfd-ashmem-shim-internal.h",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "8be364781d7245fc154eb16ab294ec1dab18ef165fed33c33786a4533ded89c9",
+      "derived_from": {
+        "repository": "https://android.googlesource.com/kernel/common",
+        "commit": "563a3050191027317f4c6206c4c69da9e9fc699e",
+        "path": "mm/memfd-ashmem-shim-internal.h",
+        "sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
+        "license": "GPL-2.0-only"
+      }
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.c",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "mm/memfd-ashmem-shim.c",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "0bcc54235548c7300540ddaf327cf60d066df537f7b801a6b0ce6f6401af7c2a",
+      "derived_from": {
+        "repository": "https://android.googlesource.com/kernel/common",
+        "commit": "563a3050191027317f4c6206c4c69da9e9fc699e",
+        "path": "mm/memfd-ashmem-shim.c",
+        "sha256": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
+        "license": "GPL-2.0-only"
+      }
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.h",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "mm/memfd-ashmem-shim.h",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "d6d7316e4f5eeaef76ec1679a68a6ae907b79ed9a9b817d17cde24d8d609e4f7",
+      "derived_from": {
+        "repository": "https://android.googlesource.com/kernel/common",
+        "commit": "563a3050191027317f4c6206c4c69da9e9fc699e",
+        "path": "mm/memfd-ashmem-shim.h",
+        "sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
+        "license": "GPL-2.0-only"
+      }
+    },
+    {
+      "file": "sources/linux-asahi/mm/shmem.c",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "mm/shmem.c",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "51fada507ef117db0c36209010e169fee5331df2a561cbfe11c91e5710e6494d"
+    },
+    {
+      "file": "sources/linux-asahi/scripts/Makefile.vmlinux",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "scripts/Makefile.vmlinux",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0-only",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "4d134a195b1f47539a77941cafe7867e3ac3bae3e2c6750601c05c184da98263"
+    },
+    {
+      "file": "sources/linux-asahi/scripts/mod/file2alias.c",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "scripts/mod/file2alias.c",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": null,
+      "basis": "file GPL statement and pinned kernel COPYING default",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "94b796a66dd56ca4078e1526b557e21c90060a95393d9723326ff22a12922c81"
+    },
+    {
+      "file": "sources/linux-asahi/usr/gen_init_cpio.c",
+      "component": "linux-asahi",
+      "upstream_commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "upstream_path": "usr/gen_init_cpio.c",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "56403200e131d57d34e1cd9c710acc946d3d2c6bd6fe80ad68b93ad395f57aab"
+    },
+    {
+      "file": "sources/mesa/include/drm-uapi/asahi_drm.h",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "include/drm-uapi/asahi_drm.h",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "ecca9b24615a873cc1292bae175ca4dd4efebc2156d3cb4afec15369460d788a"
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/lib/agx_device.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "68bff768112362db4a818f4a29231b570476b2487cf8716cfe92a2e16710492e"
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.h",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/lib/agx_device.h",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "19dcca4d0cd2c37dd759b604f39b0c3eb86d264885421bdf019fbdd613e3a461"
+    },
+    {
+      "file": "sources/mesa/src/asahi/meson.build",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/meson.build",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "e00440ce7e00512d0d649997cf1ee33f5b6e8dfde0a475c598cfae6c15280f15"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_android.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "c639651e7bbaddeac55a311add9141cfcb08f2b529a4e41dfd96a977ec08550e",
+      "derived_from": {
+        "repository": "https://gitlab.freedesktop.org/mesa/mesa.git",
+        "commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+        "path": "src/panfrost/vulkan/panvk_android.c",
+        "sha256": "28510d2f435a1baa554de4b367fc1c8fe9401ab38275555392f75ddd344abee5",
+        "license": "MIT"
+      }
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.h",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_android.h",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "3d4e371c5f32373330f972ff4e452622cb685cef29cfa37623b5ba25832f1b55",
+      "derived_from": {
+        "repository": "https://gitlab.freedesktop.org/mesa/mesa.git",
+        "commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+        "path": "src/panfrost/vulkan/panvk_android.h",
+        "sha256": "293e5379f1801fbfd3d7dbf85014777dbe5cb3d8a74d3df11cde62617af705a6",
+        "license": "MIT"
+      }
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_buffer.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_buffer.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "69e14810d99220b1596170af1d8fe9027efba94d8ce7d8aa7fbc1a00cc9e3ede"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_device.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "ebb91e684021c66c17d589ef66e50b352023a8a832a0b2531d2be3fdfded39a7"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.h",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_device.h",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "7ad0782ac70a5c3bf6386198593db16c59f4bd2adf3fc809d6e067e2139f0fae"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device_memory.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_device_memory.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "26243f75d139374aec9a0dd935ed8d27fafa260556f35dd4d27da154cff0c2da"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_image.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "4a02e2262db5f55374049f27d69a5d27257034437c3d2dcf504cf39065638868"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.h",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_image.h",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "19deeec596403bbf92a418cb7c099346eceee0efbdc3ba4ead4aa137bd0b92ee"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_physical_device.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_physical_device.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "3f608ed16f8d445290663935731eacff0bc322eb4eb2ee6eae078d822f48bd2e"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.c",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_queue.c",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "7de5932ad88de596f703324b60b27ce0b8378938c0bbc92cc371bcdf62736762"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.h",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/hk_queue.h",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "25788f37b15b9f65c276505e899fc2304e574ac8cbda57360029d667fe49338d"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/meson.build",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/asahi/vulkan/meson.build",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "9977a503321c74cae58e9dd330757108e8dc54348071759448b97bb6fcdc7bfd"
+    },
+    {
+      "file": "sources/mesa/src/compiler/clc/clc_helpers.cpp",
+      "component": "mesa",
+      "upstream_commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "upstream_path": "src/compiler/clc/clc_helpers.cpp",
+      "license_expression": "MIT",
+      "original_spdx": null,
+      "basis": "complete permission notice in the file",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "170aa9c1c62f95067eddc5ac126dfc1f43153370f1193f029b0203b8091e10aa"
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_buffer.cc",
+      "component": "minigbm",
+      "upstream_commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "upstream_path": "cros_gralloc/cros_gralloc_buffer.cc",
+      "license_expression": "BSD-3-Clause",
+      "original_spdx": null,
+      "basis": "file explicitly refers to the pinned component LICENSE",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "e3050137c4e19002370ad6f8482634fb1091868ac590966b935ebb7718cf1ac7"
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_driver.cc",
+      "component": "minigbm",
+      "upstream_commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "upstream_path": "cros_gralloc/cros_gralloc_driver.cc",
+      "license_expression": "BSD-3-Clause",
+      "original_spdx": null,
+      "basis": "file explicitly refers to the pinned component LICENSE",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "30f353a18a7295f585f88e71a27ed8e922863f4a06ca4f88861042555a1ecf5b"
+    },
+    {
+      "file": "sources/minigbm/drv.c",
+      "component": "minigbm",
+      "upstream_commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "upstream_path": "drv.c",
+      "license_expression": "BSD-3-Clause",
+      "original_spdx": null,
+      "basis": "file explicitly refers to the pinned component LICENSE",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "b5c75dc8f63539d98c8c65aacdbe800da9a7a090e62bac908eaddf72833cd055"
+    },
+    {
+      "file": "sources/minigbm/drv_helpers.h",
+      "component": "minigbm",
+      "upstream_commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "upstream_path": "drv_helpers.h",
+      "license_expression": "BSD-3-Clause",
+      "original_spdx": null,
+      "basis": "file explicitly refers to the pinned component LICENSE",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "0c7b40f187efeeebb0ea12b673b99f41a8eb2192cf683fbc708a1d18ef2a9a3a"
+    },
+    {
+      "file": "sources/minigbm/dumb_driver.c",
+      "component": "minigbm",
+      "upstream_commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "upstream_path": "dumb_driver.c",
+      "license_expression": "BSD-3-Clause",
+      "original_spdx": null,
+      "basis": "file explicitly refers to the pinned component LICENSE",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "991ca8b743f965d74a31374d73c6afc9581e6839e63887a6aec431533e441b73"
+    },
+    {
+      "file": "sources/minigbm/virtgpu.c",
+      "component": "minigbm",
+      "upstream_commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "upstream_path": "virtgpu.c",
+      "license_expression": "BSD-3-Clause",
+      "original_spdx": null,
+      "basis": "file explicitly refers to the pinned component LICENSE",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "a28fdaa1646d4682f66587bee3b411955b24d20c801fe87e332a1bc91250f509"
+    },
+    {
+      "file": "sources/drm-hwcomposer/drm/ResourceManager.cpp",
+      "component": "drm-hwcomposer",
+      "upstream_commit": "a87112ca8e78a5d401368bd44672bd73f79fe9af",
+      "upstream_path": "drm/ResourceManager.cpp",
+      "license_expression": "Apache-2.0",
+      "original_spdx": null,
+      "basis": "retained full Apache-2.0 file header and component NOTICE",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "3d2ccaa2eb1332c9b1340f6bd7dc46dbc36df3932f4bef11d17fd6d64bdafb4d"
+    },
+    {
+      "file": "sources/speakersafetyd/src/main.rs",
+      "component": "speakersafetyd",
+      "upstream_commit": "615674e75dc68639d550171e33ba3946538d03b0",
+      "upstream_path": "src/main.rs",
+      "license_expression": "GPL-2.0-only",
+      "original_spdx": "GPL-2.0-only",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "289f62963795e202cd0d0c69e3306805b54de9eabe4a64d3be2773c9922d6b04"
+    },
+    {
+      "file": "sources/alsa-lib/configure.ac",
+      "component": "alsa-lib",
+      "upstream_commit": "a47c8bc3fef190e7eb463283230263c82208597a",
+      "upstream_path": "configure.ac",
+      "license_expression": "LicenseRef-ALSA-Package-LGPL-2.1",
+      "original_spdx": null,
+      "basis": "untagged configure.ac; exact package COPYING retained; no file-specific or-later grant inferred",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "90464cadb607b0d119dd762187c6207283e4aac57ccd69bff37f86ac3db5bc51"
+    },
+    {
+      "file": "sources/m1n1/proxyclient/m1n1/hv/virtio.py",
+      "component": "m1n1",
+      "upstream_commit": "809541515659bf4e504807fd72bc0a539be5eee7",
+      "upstream_path": "proxyclient/m1n1/hv/virtio.py",
+      "license_expression": "MIT",
+      "original_spdx": "MIT",
+      "basis": "retained file-level SPDX header",
+      "copyright_lines_preserved": true,
+      "modification_notice_date": "2026-10-17",
+      "sha256": "633865eb888d9ea56cdaed81b6100bd292cb9b1740a93eb2e61fbc5b061157f6"
+    },
+    {
+      "file": "scripts/alsa_owner_inventory.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "bd9c0dafbe2d56201d9803283cbd8685ab5241a6ea80c6163122bec50d85082d"
+    },
+    {
+      "file": "scripts/analyze_product_manifests.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "c807138dd4ddd23d2054a5b53ed18bdd111e1e5ab39fb9cc3cb34d6064aeb7d6"
+    },
+    {
+      "file": "scripts/android_hardware_watch.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "3f2c0ce486ebab580cffdd540d65ca4579bbe20738a5bc1baa236830b62fc676"
+    },
+    {
+      "file": "scripts/android_log_policy.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "34a84330f31eac3c01ae4bc6d09199309b1666cd1c09f020b7c3d1f58a248f32"
+    },
+    {
+      "file": "scripts/android_lp_state.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "c31d6398cd323bb8da67eade19d282ba12f26599753e7cd1fc2efd5d73af420e"
+    },
+    {
+      "file": "scripts/android_m1_owner_inventory.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "2b2116993ed7dd80e4d4af796421eec8093ef421462015b70e138ceac5665f2d"
+    },
+    {
+      "file": "scripts/android_native_input_capture.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "890a61819eeef46fc9d4738602f19cb46d634e2508e25c2b183e6e549d9e2546"
+    },
+    {
+      "file": "scripts/android_uart_log_cost_probe.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "51a3d18732197a946052bba858927125d3028eb3d4a1a29f76116755c6e8bc25"
+    },
+    {
+      "file": "scripts/android_vm_boot_watch.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "1edecbb9dbb3dc6375b8340969237ee66116d88285c9113cf812770aa53c5591"
+    },
+    {
+      "file": "scripts/android_vm_probe.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "5485346ef461aeaf7ae759c8db89eb269f62f932c6e1ef10371bdd54169b4b97"
+    },
+    {
+      "file": "scripts/apple_drm_backend_gate.cpp",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "c00a7a0b8e0fe32ca1b4d3b314f39990b7f87522738fd60b5a5805b1d8d18f9c"
+    },
+    {
+      "file": "scripts/apple_graphics_policy.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "80040f5fa8ed09c4da77b6eca5bd01d15c3f1ef1f7c2a35c512e7f12d6798ad2"
+    },
+    {
+      "file": "scripts/archive_android_stage.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "3478fa7ffd9a01f5c75efc0330e2f9f6d966eb02b25e8dc3a1b076d03175cf11"
+    },
+    {
+      "file": "scripts/asahi_priority_permissions_probe.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "77577521c40d4e45b50d6270310d8f4d2d05d277ebccddea5ec557e29ea841bd"
+    },
+    {
+      "file": "scripts/assemble_bootable_image.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "5fce69a8999f132682467a599f116b8935eda94d45424cf97c245c4137c487bb"
+    },
+    {
+      "file": "scripts/audio_local_binder_probe.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "5ea409f5eb1ece14665cf9ee7bacf3f43cb8363d94de5e2bc51d29089e6ad3cf"
+    },
+    {
+      "file": "scripts/audio_local_binderfs.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "128252b1a0972b12699df131b49c4d541e9448469cd7fb64725d9e47a6904d54"
+    },
+    {
+      "file": "scripts/audio_local_log_capture.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "d06eb84cdee627ed095221979e6aee1bf3dc09381d78eefd70db2f2cb30762c8"
+    },
+    {
+      "file": "scripts/audio_local_policy.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "425f0d578d712af35bf59f2242545a6a0ac9e0c6a470d86dcd173c99ba9f1e6f"
+    },
+    {
+      "file": "scripts/audio_local_properties.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "96e35193ed1aa7742f71a9f2e649693ffb995a7b085e55d7dff6b0860bf7407c"
+    },
+    {
+      "file": "scripts/audio_local_runtime.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "30d0f923b691156c4ebc6280cf38bba0c7077072dec067d314ab3aead27a9841"
+    },
+    {
+      "file": "scripts/audio_no_agm.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "31f3184c3c7865075f0a74fc97192d19d19f61fa263997bd38638e4911cf63b4"
+    },
+    {
+      "file": "scripts/audit_m1_profile.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "c7ddacff28c187c9b85e331344dbaf6794dcf9f2788675b5418c5e35346ef825"
+    },
+    {
+      "file": "scripts/audit_product_library_users.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "07186525448d999000f836a5a7d3fc5ba41af4688215670966d05b267931e3ec"
+    },
+    {
+      "file": "scripts/avd-cm3-vectors.ld",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "1e9d06953496a469807bd8b07dc2cc4bd672a20ab9c785964dd6817f3c8861ae"
+    },
+    {
+      "file": "scripts/boot_config.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "ba0e00d545ad0368ad52eaf2d5e5e82389a51d237fb43788f177b52145136008"
+    },
+    {
+      "file": "scripts/boot_usb_debug.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "d034ca0a6a34c3e795b8318858a21c99d2c55c64a5268e544e29cc9fb4d7b169"
+    },
+    {
+      "file": "scripts/bootcontrol_m1.cpp",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "6041e0a9cb31730eaa260ea3d5c1c06d0bf5144e26b7c62b81ebda832df0d3b0"
+    },
+    {
+      "file": "scripts/build_bluetooth_linux.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "b0ce69f50661e3feb1ab9fb505c8da5f8f7a6c1b10d2a648fb450d949883c60d"
+    },
+    {
+      "file": "scripts/build_clean_m1_kernel.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "ca8e7b72b7f520fab40b24b9ff827dd668843f963f03ab4e605f780e1c72ef99"
+    },
+    {
+      "file": "scripts/build_codec_probe.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "51e0628da01a01718b3e146ade2a6ed3d3087599b507dd6fccf43c922f3a531e"
+    },
+    {
+      "file": "scripts/build_egl_probe.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "5d9e1108cd6d749c28bc94a38b0e9682a64995d1613719767a9ec1b8f1182bd5"
+    },
+    {
+      "file": "scripts/build_erofs_scratch.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f2acd803794ccb76059fef03d998b898492df5fb0fb2e274ee5fc8cc3a6101b2"
+    },
+    {
+      "file": "scripts/build_fixed_super.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "e9969adf0f87cf19cc82fc42f5ce55df3b0b8bb0e87a0d9c35a6bfc3971d51e6"
+    },
+    {
+      "file": "scripts/build_gatekeeper_nonsecure.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "b251dbda01433e19eae92428199d9d72db2389019e311ce91a4e7b4aab704bde"
+    },
+    {
+      "file": "scripts/build_graphics.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "cccd81c0384b1ced8dc8d3763f77ec3028fc53df60b5d5b59992b809572ee47b"
+    },
+    {
+      "file": "scripts/build_hwc_drm.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "807f15c4db8f963970356e7b44b4a71dc0b1b96497ca405bd13609b0ed5b6e32"
+    },
+    {
+      "file": "scripts/build_hwc_owner_test.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "0c0ca1d58f08e53f2ac7186b57ed34505ac5486c22e4de2ee1d3edf35e1e7ffe"
+    },
+    {
+      "file": "scripts/build_kernel.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "a754a52977faf2393bfc92fe2ddbe5e44a6adf66ccbc98227621be2819e5c716"
+    },
+    {
+      "file": "scripts/build_m1_audio_local_tests.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "7fa89b35a81ddb77ff42e820565c6f7d3b1857e67ce94113d47d27c0fb9ec3a0"
+    },
+    {
+      "file": "scripts/build_m1_avd_firmware.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "ae862fbe9f921592d7719384de636d552dd37d34c7f2fc55a43e3f59fcd8b82e"
+    },
+    {
+      "file": "scripts/build_m1_bluetooth_audio.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "36a0b4d4f749ff0f8588511654c707b0b9298543a892424a455843084325506a"
+    },
+    {
+      "file": "scripts/build_m1_lights.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "d3f47601417b1aa63198cbfb86194d7fde7150e4497262634e946921882b774b"
+    },
+    {
+      "file": "scripts/build_m1_native_audio.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "5772a69e9a07ce64a5373182db6acf63eea84b60097e9fec4e423f8b953a1bc4"
+    },
+    {
+      "file": "scripts/build_m1_native_audio_abi.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "bcec5db9e03a896a85fc8af6ad18484ea8870606d116b09f72acbf96c3f52a20"
+    },
+    {
+      "file": "scripts/build_m1_speakersafetyd.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "6a79246212d5e18e237c985c511edf9be36a6903b92444e0fc8b8decb6becb13"
+    },
+    {
+      "file": "scripts/build_m1_touchbar.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "b8549c53f0d21b5600bf87702438f23961a45f0ddce71f326f555b7464ca38ce"
+    },
+    {
+      "file": "scripts/build_m1_wifi.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "8d307e965bfb261b0433de190282b930d47118bbce7d7535bb48c79ab337f60d"
+    },
+    {
+      "file": "scripts/build_m1_wifi_tests.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "df8b93d3465cbd891a6ef89e93835d06213be4d997a4a476a6a9a49e9cabf502"
+    },
+    {
+      "file": "scripts/build_mesa_android.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "003e659deb55c569d0f55667cc07def2e6f38190ce560c4c537bfb3fb9ad24b5"
+    },
+    {
+      "file": "scripts/build_native_alsa_lib.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "ad7bcb0fe4439c890941209942b9b914a4f8e9fee992e3626bbb1f375923f1b4"
+    },
+    {
+      "file": "scripts/build_owner_inventory_bootstrap.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "79e38b1e7b157f8d5071ae62ba9a40292986d744e4ea5b0c7566dfa10608b0f9"
+    },
+    {
+      "file": "scripts/build_ram_bootstrap.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f988d6ba2a7b887666feb383862417a96a807c37270933035d6b25b1411c9529"
+    },
+    {
+      "file": "scripts/build_usb_debug_bundle.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "96de5b2b4fecb9695f8d27fd2a232f85dfee098c049c771d7bef8932fb644d4b"
+    },
+    {
+      "file": "scripts/build_usb_gadget_linux.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "ac15de3a86ee646eec33389d9c1de4a18409eb53ef65e393bdb781b5256480e6"
+    },
+    {
+      "file": "scripts/build_usb_linux.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "acbec94b30d35d879f25a2c5514c423f917c99f455c627ca986375564e364e0f"
+    },
+    {
+      "file": "scripts/codec_decode_probe.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "c3b5f7959f6abbbaf7ff4b503d6dba824873233fb4d24c409e36505cff297a12"
+    },
+    {
+      "file": "scripts/codec_inventory_probe.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "05d14bc7290f3a4675d6f19a7c596e78fedae058112dcde079cf7c31a60372fd"
+    },
+    {
+      "file": "scripts/configure_native_m1_profile.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "69a16752db96b52ec28a4f9e6093d39d4e17f553132861f10a5955cda3413de6"
+    },
+    {
+      "file": "scripts/debug_android_boot_vm.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "3a865f7dc2424bfb0c9c4a32ebf8840d7f8655abb48e98136b720721905a4b91"
+    },
+    {
+      "file": "scripts/egl_android_probe.c",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "9b0d247f25129e30aee758fb1b179b8958c6f13fe9b3e9ba7ee8d3f04dbf0312"
+    },
+    {
+      "file": "scripts/fetch_hwc_aidl.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "6c98ff6dba1af90120961e9feaf22d97e05428fc9a5a5bda57143fc93c2bea39"
+    },
+    {
+      "file": "scripts/fetch_m1_native_audio_references.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "20b3c210869b9f3e400fe921d686ed02181efba6202084c1f7feb561141817be"
+    },
+    {
+      "file": "scripts/fetch_security_aidl.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "1e81c7b1e3c4c81e9f84f5e36e2a55d1f5545976b6cc889549f9c4380da71845"
+    },
+    {
+      "file": "scripts/firmware_manifest.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "bf6a8cfdc23daa929a6e17f8268c1921e10ed610f51a73afca12da723ca3cd39"
+    },
+    {
+      "file": "scripts/gatekeeper_nonsecure_test.cpp",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "be71b042802590098bd7f7776cfa78d76ebc600be352c3a94ef30afec080ac8b"
+    },
+    {
+      "file": "scripts/init.googlebook-usb-linux.rc",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "c4600cc7d01745601eb3c4e963fee055406b1a10a425c2fb6773a724e4130d36"
+    },
+    {
+      "file": "scripts/install_fixed_m1.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "a78ffd1bbd6c1b882107c79c2af49e51dfe39ebc9fe46651ca291815321c9483"
+    },
+    {
+      "file": "scripts/inventory_product_golden.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "d5e3ebfa34b8e456d1d7e65d1e30bb96cdde2988248fd4aef5796aee1da19d18"
+    },
+    {
+      "file": "scripts/kernel-googlebook.config",
+      "component": "port-or-header-declared",
+      "license_expression": "GPL-2.0-only",
+      "basis": "generated kernel configuration distributed with the GPL kernel component; no independent authorship inferred",
+      "sha256": "420f573770be1f4a521f7421808e137fca03bafbc43669890b53861859fbde48"
+    },
+    {
+      "file": "scripts/kernel-host-include/byteswap.h",
+      "component": "port-or-header-declared",
+      "license_expression": "GPL-2.0-only",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "6ee1c9d6cb69be6e82033c6822bebc6528d3e812b76de7d09a2deac3d7a51865"
+    },
+    {
+      "file": "scripts/kernel-host-include/elf.h",
+      "component": "port-or-header-declared",
+      "license_expression": "GPL-2.0-only",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "981d0e010a038fd1c212be0d507770d792df2282ee3f4e1eb0939f58873cfd16"
+    },
+    {
+      "file": "scripts/kernel-host-include/endian.h",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "7568fb241b6b0612e5423cd04dd31cdd3733c0ca5b55d49690cf2f4c7e9e3318"
+    },
+    {
+      "file": "scripts/keymint_software.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "e9fee54347da296d654d435074519397deba876b3f9c82100c24ff0d421c5f1a"
+    },
+    {
+      "file": "scripts/kvm_execution_smoke.c",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "7bb5078ca03af6f52ff0538de45e306c5363066f73555e6b04b8858b8693d198"
+    },
+    {
+      "file": "scripts/m1_bluetooth_audio_playback_test.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "186521caf8841516db40f71a9a235b571ffbef84a71a93fa873347bde4274a37"
+    },
+    {
+      "file": "scripts/m1_bluetooth_audio_service.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "e29744967526160836169e3833cc32744f7b3453b3ee13bf0a71929729739aab"
+    },
+    {
+      "file": "scripts/m1_hwc_owner_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "2349b368c261c271f3d1ed8a06fd064be1acaef6154d2dbb8a0e097e06be0e26"
+    },
+    {
+      "file": "scripts/m1_input_key_state.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "4b8d9055a2cbda0f14dafbbc080d08ba7216fe6ec28fe856bf595e3251fc87e2"
+    },
+    {
+      "file": "scripts/m1_input_key_state.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "e4d13a3499c3be6b5d6592b7e0240f2171a81693e9e794575f121a7cace2308d"
+    },
+    {
+      "file": "scripts/m1_input_key_state_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "ebec41d45ce8073ee45ff19b4a800e92c96177f264e2e4851f00c54b6580f3c0"
+    },
+    {
+      "file": "scripts/m1_lights.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "2b993b222bafbdfc7db7278cc9f215e7519688fdef3fb91195fffa2789a8cc43"
+    },
+    {
+      "file": "scripts/m1_lights.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "488f563c330d1ee001e9ba7e7bd255b8a04a7d0bbb4d7f0e738e1d6ae5fc176d"
+    },
+    {
+      "file": "scripts/m1_lights_service.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "13e6fe62ec7f3a9b4c22ad7148694501b216fab25218c19c2050e7e1764eb375"
+    },
+    {
+      "file": "scripts/m1_lights_service.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "1fec785f5efef1af418cb3b3a28c1349d92dd2afb5c7d4febcce583306b5790d"
+    },
+    {
+      "file": "scripts/m1_lights_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "ba661948ec9ffdbef3bcfd5cf78ebf4a447808931bb2a150493c6bd9c82c6f0a"
+    },
+    {
+      "file": "scripts/m1_native_audio.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "64c9e2638ad8caa2d3980f5eabdec319c375471f26814682bb432d9d6741521a"
+    },
+    {
+      "file": "scripts/m1_native_audio_configuration.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "9ee45ab7afcadb7909d7eab469ca6af410af4f3f50725e484396f6967c1e8752"
+    },
+    {
+      "file": "scripts/m1_native_audio_local_probe.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "916b07581716cf0cfcabefae8c530595ec4fd2411a0ddc54a23aa853fd5a6989"
+    },
+    {
+      "file": "scripts/m1_native_audio_pcm.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "abca22656b7f0331270946665dec8395d239609591507431cfce5eee20f14015"
+    },
+    {
+      "file": "scripts/m1_native_audio_pcm.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "9b9bda99530d683200f5b501b6ed1dd11f7b8fe0c9063a15ddad9c9c2945429b"
+    },
+    {
+      "file": "scripts/m1_ram_image_update.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "6f4c434705658c2e5a874cb65b07a54ac5f9e73425586aef06e90307ef66f529"
+    },
+    {
+      "file": "scripts/m1_touchbar.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "be8179a9621859a41dd8d4b9937ed3f9f02fa61b9bf7f51c789b297e7585511f"
+    },
+    {
+      "file": "scripts/m1_touchbar_model.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "9bcbea6daa6c984d59bc504cd796b79cf880fbf4953278ec21dd6fba29493053"
+    },
+    {
+      "file": "scripts/m1_touchbar_model.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "f3f94926b3c72de7605ad4552cfedf5424511b3c7d6714f09bddcc0f48ed48bc"
+    },
+    {
+      "file": "scripts/m1_touchbar_model_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "b25a32a369386d632d44ccbc2c15ab44605ffab0a44cc379e868eb70caf3fdf0"
+    },
+    {
+      "file": "scripts/m1_wifi_census.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "bf775db464770c8905abe521c47855fc97c837fcf37855ed66b17f6ca8d84d34"
+    },
+    {
+      "file": "scripts/m1_wifi_hal.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "7c59618214faff7c98093deaff8dd476d1ccc0abba44b62eacf9a4fc2b17e3b1"
+    },
+    {
+      "file": "scripts/m1_wifi_hal_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "630be5a045e99ee8426e1f3b6bc2ca4b8f06e4bb96568d08e2b936e26a360f53"
+    },
+    {
+      "file": "scripts/m1_wifi_linux.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "887ed69969ec549894d09147aeeaaaf2a25626d9ae37d5ac40b6f2d27c86bd7c"
+    },
+    {
+      "file": "scripts/m1_wifi_linux.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "3f34fd5c0617541c54ae0cdb7710c0480f1c41ee135de8b9187addd2b111c15f"
+    },
+    {
+      "file": "scripts/m1_wifi_mode_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "4a4d39e1f1394cccc1fa236114fe1805bb52bebf05519740397720d5e977f872"
+    },
+    {
+      "file": "scripts/minigbm_sync_failure_test.c",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "3b3e6aad995e242c79ca8af3259f170bea338aec574b561fb8ae9193b4ba11a4"
+    },
+    {
+      "file": "scripts/native_audio_local_runtime.sh",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "290535a6e784154dc59543028d0a677c889e95e61ba337729461985178c1918a"
+    },
+    {
+      "file": "scripts/prepare_m1_audio_local_runtime.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "d4bd4511266b17fcf3851ea67a2ffed3d432a4e3f7b4540688e848bef418a7d1"
+    },
+    {
+      "file": "scripts/prepare_m1_install.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "93353b89a3df1a4559045239f0ba98702e864b827f846d1945011fc0e2eaea91"
+    },
+    {
+      "file": "scripts/prepare_m1_native_audio_local.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "c6f138b495b61e9715e15038245f94e599639efe4a865b1d4e7496223394103d"
+    },
+    {
+      "file": "scripts/prepare_m1_wifi_firmware.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "cec30a0856d0792072e91a7123824996154ecc56fb712bb4e33cff26ee60ead8"
+    },
+    {
+      "file": "scripts/prepare_manifest_firmware_initrd.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "2939963d65c245c2df24b6fc4df37119f097e3da689cbd63263b8ccc0b12fcb8"
+    },
+    {
+      "file": "scripts/prepare_native_trial_payload.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "af0fda84f855c8bed4f4b7cc2df3ac1afa222ecd381757fa2b1b88f42b65d29e"
+    },
+    {
+      "file": "scripts/prepare_ram_update_plan.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "2e1bca3f4590d42b296c9efda97c14f546960d775895f104891e4c1f95df34ab"
+    },
+    {
+      "file": "scripts/prepare_system_ext_m1.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "4ed5239e966d3020648acd2aea08c521deddefbc18fc5dd38a0c57d7454a9862"
+    },
+    {
+      "file": "scripts/prepare_system_m1.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "84b83a432bb783f262704e51987d69deb4c478ad0d9b1c7cbf3a9e200395bd79"
+    },
+    {
+      "file": "scripts/prepare_vendor_namespace_test.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f438b8ca10c2194f1f080e1af33a0c32fbdeb1cbf6057082e20ea04e15d4baf4"
+    },
+    {
+      "file": "scripts/project_paths.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "80785c68dd86e5ed30f2a1b6588d8a0af16b0a133f654079c077b2b2465dce82"
+    },
+    {
+      "file": "scripts/prune_qcom_apks.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f31eb816189c66d131cc2a9c46caffbddb90959b880ec449e1313cf6d7ea33f0"
+    },
+    {
+      "file": "scripts/prune_qcom_services.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f3aa84d80518806be98929de4a0e27bd9baac8df50c1a7793ec65f9c756cb20b"
+    },
+    {
+      "file": "scripts/prune_qspm_service.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "e8e06470e745910fb0b6e48a18f791519e017d3abc4f259905d26d701480d1c5"
+    },
+    {
+      "file": "scripts/qemu_img_framework_main.c",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "39fb21e4e848a2e6af7b403e48c4c3a778ff78940b6e33039b508ded1413028d"
+    },
+    {
+      "file": "scripts/run_m1_audio_local_runtime.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "fd4e2056d136aacbd87714a6da0dc9c10a567e566502349dec7beaca2d359aa3"
+    },
+    {
+      "file": "scripts/run_m1_native_audio_local.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "e0209e1a670344664a019acb03d068db5c881e7430af5012b443075a3231fa68"
+    },
+    {
+      "file": "scripts/selinux_boot_smoke.c",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "1077b5d69466b098f80373989014ff5ddb15fd1c92e9e0fa4ce346e884088d33"
+    },
+    {
+      "file": "scripts/selinux_graphics_probe.c",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f38c4704192b71cc10ab73c6308eb0d9314fac2e2a47647ee962ed62c3c6c9d9"
+    },
+    {
+      "file": "scripts/stage_gatekeeper_nonsecure.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "b583e087f3e34941da03cd3204088a04f7f8d783eeb5a7bc47ef5e919952fb10"
+    },
+    {
+      "file": "scripts/stage_linux_device_hals.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "177c21a12f9c3342f6c667bc5fedfd905af19c9217dc819e30ccd80c0c0cad92"
+    },
+    {
+      "file": "scripts/stage_m1_bluetooth_audio.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "883dc66d0651245e2251fcbb25023ae98f345c45c2339e1bf52110791c37157d"
+    },
+    {
+      "file": "scripts/stage_m1_bluetooth_rfkill.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "efa2a2a3caa2f398de77ab34062847dda2b9fad1eb4959f1f1b5209d422e20d7"
+    },
+    {
+      "file": "scripts/stage_m1_input.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "67dc54795128080dd83ef7f5e51ab86c78a3144531c5c31a0e366b1dbcf8dbd1"
+    },
+    {
+      "file": "scripts/stage_m1_input_policy.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "82d6b9a4603a36c57627d30e4ffc5c0dd166b53daff4e4325ef8df5d533590f9"
+    },
+    {
+      "file": "scripts/stage_m1_native_audio.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "afd721f6385d30a2097c29a7e865ce1d207a2cadaba54121bd1685a758cbdfa6"
+    },
+    {
+      "file": "scripts/stage_m1_native_audio_address.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "32b3312485f75e59c86f59060199896ee6d317a404f2d1c92c359b10a95a7210"
+    },
+    {
+      "file": "scripts/stage_m1_native_audio_recovery.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "7260f19f9c6e29467442b674372f305f55990977891ac087bd2978fa062e1b80"
+    },
+    {
+      "file": "scripts/stage_m1_power_profile.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "634ab13a9b6b9342821a2a65ac41bc77e1e569d5a38189e9ac229529255184f2"
+    },
+    {
+      "file": "scripts/stage_m1_vulkan_multiqueue.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "088dff3513b4ec9a760dcc9bbafec3a1d0ab47917c6001e2fc6f5c9696367c88"
+    },
+    {
+      "file": "scripts/stage_m1_vulkan_priority.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "95f9d71bfb88ada5cda5a19265e3069b03ad2843dfa66414965494b1bf9e75c8"
+    },
+    {
+      "file": "scripts/stage_m1_vulkan_profile.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "2fe2c345a7b27f52528fc162ed42f478590235b6e423bfb506c1d8c6c364b89c"
+    },
+    {
+      "file": "scripts/stage_m1_wifi.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "33df90e9debc29db4ff9a8e93d0a9198f08ac95c457510b42f74b44de1675b5b"
+    },
+    {
+      "file": "scripts/stage_m1_wifi_firmware.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "1215fff8d91363ed47ec263baccfe0148267cdc01aef47e7a6009db56647351c"
+    },
+    {
+      "file": "scripts/stage_native_egl.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "4aa592d49c60f6c8bf3b9de95796524da152f6d26a1e6fae5629cf41d526ff7d"
+    },
+    {
+      "file": "scripts/stage_software_codecs.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "fbb0a2e68b338ca8dcbff9fb0b42ff008bfae7717f0ccceb0fdf262ec757fd23"
+    },
+    {
+      "file": "scripts/stage_usb_linux.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "cc9646a5c037e1989d40deb1138f5b25adc249881e179c06601fb10ef02c1e9e"
+    },
+    {
+      "file": "scripts/strace-android-compat.h",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "676876c01c214d595c34f13786efa3353b82bb1d2da4a27254fa3fcba9425676"
+    },
+    {
+      "file": "scripts/test_android_lp_state.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "1fec2a3b97551955ae29973334e841300764eb48ec9c41ad31c3a6248695845a"
+    },
+    {
+      "file": "scripts/test_archived_ram_update.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "7eef4aeafc40e5c624be591fd621a43fa05ecaaa82331e9ade8cfea2591c009c"
+    },
+    {
+      "file": "scripts/test_avd_bootstrap_firmware.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "b96e1cc14577f6045f644896504213e24ee989e6c074a336a93ea822970f18e9"
+    },
+    {
+      "file": "scripts/test_deduplicated_bootstrap.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "bcb0f30f8489253f10ebcf506c8e266cd2dfcff10b6262ae4558412ffee1453e"
+    },
+    {
+      "file": "scripts/test_drm_fence_runtime.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "4e7c40bb14ed6c55bf3c171c5167b9ab5665966a339baf92042be6d019702b94"
+    },
+    {
+      "file": "scripts/test_kernel22_android_boot.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "0e3417477b5b7503541813b5f0713e2d6c1fe8d8dd41086cba5e346e305bc314"
+    },
+    {
+      "file": "scripts/test_kernel_early_android.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f88b55e931be69d99b8a98c209b40fe72f83df7b1d7f5e05c05e7d2dfbd909a8"
+    },
+    {
+      "file": "scripts/test_m1_speaker_dependency_runtime.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "b2765f9e59a8c1d898d02b3d79295fd59758dad228dbb899c3b0a30c43380c28"
+    },
+    {
+      "file": "scripts/test_m1_touchbar_model.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "68fa61a1f52e89efd445da444f3772d228ea0b62389bbb538abdbcff671ca52b"
+    },
+    {
+      "file": "scripts/test_ram_bootstrap_vm.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "f9a26820c4d9b87683d278f4df0d763ef30af062ed3807a6fa6347a9666ee689"
+    },
+    {
+      "file": "scripts/test_restored_firmware_runtime.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "8a384d70bb80b8e5bfd56a3bc807ab7ce06c5ca6504d92a0a5c62e88364d0735"
+    },
+    {
+      "file": "scripts/test_vendor_erofs_kernel_runtime.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "e3086da8a1a7bd0e18e36f2618bbe15590e09191eaf6b27ac5e313120e6a36b3"
+    },
+    {
+      "file": "scripts/test_vendor_zstd_kernel_runtime.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "68d26946b2e9771eaff69cd8891e9656b38898bf711eea90c52c383033c3c582"
+    },
+    {
+      "file": "scripts/tests/test_firmware_manifest.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "421ed974e0b85841bd03937a0120bb95257a79c78d270401088d045ca28d89e3"
+    },
+    {
+      "file": "scripts/update_android_vm_overlay.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "bbec3f0abbd4147ff32b4f3ffecc6c10ebeb76457aacd35258c4612ce349fd21"
+    },
+    {
+      "file": "scripts/usb_linux_gadget.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "75aa3b4cfb68855f5fbee5a5a4b86148bc98b00c4fb33d531b5e9761fc12d20a"
+    },
+    {
+      "file": "scripts/usb_linux_gadget.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "c5b8c6c96b486bbd4f3881c8158ef4041bd0096cc3b0e8c56dba6053731bf9d2"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "5fd76c6b4f0f78151a19df45e1babdaee53c31e30ed3f5a07eaabdd6d4bb0f4b"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "ab0b3a5c0b16b04ee0342d2b225baab002e287a597a58c77f4b9500aa355c13c"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "9becf26d923fe4ac3b0b2d23e74154dc9fab87f58cb1b94ac86b049ef62dd5ff"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_service.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "1e4bf653c77da7b563aabe754915b18353afece92bd5fe395e01d0d90396b99e"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_service_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "f54cf7732b86acf759271c5bbde1be82694eb931ab250ec17c9afb5f5dbd3478"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "dca2b336bac45f46d710b12dcb32793e791b53b99392b5bd3c0c583313005a6f"
+    },
+    {
+      "file": "scripts/usb_linux_service.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "8c2197df73d42b89c879ba91a49b9640f56bd6c6a52dece9069317f71d9556d1"
+    },
+    {
+      "file": "scripts/usb_linux_service_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "9e564d94794c37220c6445dc03fcc4c6cb857601bc6eacab6246eff543cf06cd"
+    },
+    {
+      "file": "scripts/usb_linux_typec.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "6a8e815665532a88e2939d0ab16aae54c0f17231a8fbfd9b5c4b035515ac0497"
+    },
+    {
+      "file": "scripts/usb_linux_typec.h",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "466069dddb813c9b24aa696f3e8c5f44ef91c151d19f50f8f1090e08e944afd2"
+    },
+    {
+      "file": "scripts/usb_linux_typec_test.cpp",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "8c058a68de959709ea31a465704685f33f7ccc199ea3bf0405822ee6b9e8853b"
+    },
+    {
+      "file": "scripts/validate_vendor_image.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "fb740ca482622329dd95589e12d77017db768d67dc3d1f1ebac71b60fb5aecc2"
+    },
+    {
+      "file": "scripts/verify_erofs_readback.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "aeffcebb938eb1920dc9e0371d8e520d2fb2786af15735be313e889747b3a95d"
+    },
+    {
+      "file": "scripts/vulkan_android_interop_probe.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "13bbfe8e3848af26d870109bada4325caea218e42ae6327430679ea24314ca59"
+    },
+    {
+      "file": "scripts/vulkan_hal_probe.c",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "2579abcc8670cd1011807a9e4baaa5c9d7d2afa8b60433c88724b9e4a90c7922"
+    },
+    {
+      "file": "scripts/vulkan_priority_probe.c",
+      "component": "port-or-header-declared",
+      "license_expression": "Apache-2.0",
+      "basis": "existing leading file-level SPDX declaration",
+      "sha256": "e6f60b377e7c620ecb8ecab7923a6e19d0f6718bf6694f3e5e4ad61739465c8b"
+    },
+    {
+      "file": "config/device.env.example",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original port glue/configuration licensed by the repository maintainer declaration; not an upstream relicense",
+      "sha256": "74aa25917851de47546a591b68ba9c3aef0d489d7ccef588ef5e160aef6b635b"
+    },
+    {
+      "file": "config/kernel25.config",
+      "component": "port-or-header-declared",
+      "license_expression": "GPL-2.0-only",
+      "basis": "generated kernel configuration distributed with the GPL kernel component; no independent authorship inferred",
+      "sha256": "be60da788d6b40b37b5f3d55c05db2c19e472b8e198690452263b6184e3429aa"
+    },
+    {
+      "file": "tools/check_license_inventory.py",
+      "component": "port",
+      "license_expression": "MIT",
+      "basis": "original inventory validator under the retained project MIT grant; leading SPDX and copyright declaration",
+      "sha256": "75258ac0887ae19f03b0a71c246a9fad0b2329f6411302ee2beec3a9ed0096ec"
+    }
+  ],
+  "patches": [
+    {
+      "file": "patches/alsa-lib/googlebook-port.patch",
+      "component": "alsa-lib",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "configure.ac"
+      ],
+      "sha256": "4642592217de5e721d2c2645423be69c50186a1f91edaf809c69803c0fa72881",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "configure.ac",
+          "license_expression": "LicenseRef-ALSA-Package-LGPL-2.1",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/drm-hwcomposer/googlebook-port.patch",
+      "component": "drm-hwcomposer",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "drm/ResourceManager.cpp"
+      ],
+      "sha256": "f07feada00e49dd551e49faacbf5ab0b43a68c0e057d58aa701228aff6cd6888",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "drm/ResourceManager.cpp",
+          "license_expression": "Apache-2.0",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/linux-asahi/googlebook-port.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "arch/arm64/tools/gen-kernel-hwcaps.sh",
+        "block/partitions/efi.c",
+        "drivers/gpu/drm/adp/adp_drv.c",
+        "drivers/gpu/drm/asahi/file.rs",
+        "drivers/gpu/drm/drm_crtc.c",
+        "include/uapi/drm/asahi_drm.h",
+        "mm/Kconfig",
+        "mm/Makefile",
+        "mm/memfd-ashmem-shim-internal.h",
+        "mm/memfd-ashmem-shim.c",
+        "mm/memfd-ashmem-shim.h",
+        "mm/shmem.c",
+        "scripts/Makefile.vmlinux",
+        "scripts/mod/file2alias.c",
+        "usr/gen_init_cpio.c"
+      ],
+      "sha256": "8eddaae02ecbef6ad577f9fc2532f43d62c646ea9ef6d569b291aca4a2755df4",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "arch/arm64/tools/gen-kernel-hwcaps.sh",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "block/partitions/efi.c",
+          "license_expression": "GPL-2.0-or-later",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "drivers/gpu/drm/adp/adp_drv.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "drivers/gpu/drm/asahi/file.rs",
+          "license_expression": "GPL-2.0-only OR MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "drivers/gpu/drm/drm_crtc.c",
+          "license_expression": "HPND-sell-variant",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "include/uapi/drm/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/Kconfig",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/Makefile",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/memfd-ashmem-shim-internal.h",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/memfd-ashmem-shim.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/memfd-ashmem-shim.h",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/shmem.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "scripts/Makefile.vmlinux",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "scripts/mod/file2alias.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "usr/gen_init_cpio.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/linux-asahi/privileged-priority.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "drivers/gpu/drm/asahi/file.rs",
+        "include/uapi/drm/asahi_drm.h"
+      ],
+      "sha256": "99ad630c86802ac5a071cbdff6ce274ac381299b9e4f1cc715b8eeceb1d2f9bb",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "drivers/gpu/drm/asahi/file.rs",
+          "license_expression": "GPL-2.0-only OR MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "include/uapi/drm/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/linux-asahi/upstream-fence-fixes/01-bbea9e696f0cca2573b58f89bfbb19af03595c5a.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "drivers/gpu/drm/drm_crtc.c"
+      ],
+      "sha256": "a60a51670c5b312f7b2dc1960658939ab7db98f53d2ca66f651e804bf1063428",
+      "verbatim_upstream_patch": true,
+      "file_license_scopes": [
+        {
+          "path": "drivers/gpu/drm/drm_crtc.c",
+          "license_expression": "HPND-sell-variant",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/linux-asahi/upstream-fence-fixes/02-57acb869490b504996ea46cbb80af49e35ec66e1.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "drivers/gpu/drm/drm_crtc.c"
+      ],
+      "sha256": "fac27da93132adc84f5ec8350fdfa82f2aa2ce646b9f9affefa7566f8acf7459",
+      "verbatim_upstream_patch": true,
+      "file_license_scopes": [
+        {
+          "path": "drivers/gpu/drm/drm_crtc.c",
+          "license_expression": "HPND-sell-variant",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/m1n1/googlebook-port.patch",
+      "component": "m1n1",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "proxyclient/m1n1/hv/virtio.py"
+      ],
+      "sha256": "41324d8ab026d414df9f3d34799bb4da7f3afe33884e9d8349700feb899e59cd",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "proxyclient/m1n1/hv/virtio.py",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/mesa/android-vulkan-full.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/asahi/vulkan/hk_android.c",
+        "src/asahi/vulkan/hk_android.h",
+        "src/asahi/vulkan/hk_buffer.c",
+        "src/asahi/vulkan/hk_device_memory.c",
+        "src/asahi/vulkan/hk_image.c",
+        "src/asahi/vulkan/hk_image.h",
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/meson.build",
+        "src/asahi/vulkan/hk_device.c",
+        "src/asahi/vulkan/hk_device.h",
+        "src/asahi/vulkan/hk_queue.c",
+        "src/asahi/vulkan/hk_queue.h",
+        "src/asahi/lib/agx_device.c",
+        "src/asahi/lib/agx_device.h",
+        "include/drm-uapi/asahi_drm.h"
+      ],
+      "sha256": "c9e3b0ef3d9734c6db1e7d82dd479f23145f9a7ee63e96f00dd81627aeb68a21",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/asahi/vulkan/hk_android.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_buffer.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device_memory.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/meson.build",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "include/drm-uapi/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/mesa/googlebook-port.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "include/drm-uapi/asahi_drm.h",
+        "src/asahi/lib/agx_device.c",
+        "src/asahi/lib/agx_device.h",
+        "src/asahi/meson.build",
+        "src/asahi/vulkan/hk_android.c",
+        "src/asahi/vulkan/hk_android.h",
+        "src/asahi/vulkan/hk_buffer.c",
+        "src/asahi/vulkan/hk_device.c",
+        "src/asahi/vulkan/hk_device.h",
+        "src/asahi/vulkan/hk_device_memory.c",
+        "src/asahi/vulkan/hk_image.c",
+        "src/asahi/vulkan/hk_image.h",
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/hk_queue.c",
+        "src/asahi/vulkan/hk_queue.h",
+        "src/asahi/vulkan/meson.build",
+        "src/compiler/clc/clc_helpers.cpp"
+      ],
+      "sha256": "2c0dfe5833b0e2cbe712536c79ac25df41c8b523cf84f0f9884c5b042a3823e8",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "include/drm-uapi/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/meson.build",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_buffer.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device_memory.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/meson.build",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/compiler/clc/clc_helpers.cpp",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/mesa/privileged-priority.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/hk_queue.c",
+        "src/asahi/lib/agx_device.c",
+        "src/asahi/lib/agx_device.h",
+        "include/drm-uapi/asahi_drm.h"
+      ],
+      "sha256": "2d3b7983d149a3cf9db9f91b6e764b2c73cd3e66c1b0c33b1f24637f25853dbd",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "include/drm-uapi/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/minigbm/googlebook-port.patch",
+      "component": "minigbm",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "cros_gralloc/cros_gralloc_buffer.cc",
+        "cros_gralloc/cros_gralloc_driver.cc",
+        "drv.c",
+        "drv_helpers.h",
+        "dumb_driver.c",
+        "virtgpu.c"
+      ],
+      "sha256": "9de014dd07bd55f3ba608be495b64cb3bee1488d9c058a7ba5a8f3f59e014fd3",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "cros_gralloc/cros_gralloc_buffer.cc",
+          "license_expression": "BSD-3-Clause",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "cros_gralloc/cros_gralloc_driver.cc",
+          "license_expression": "BSD-3-Clause",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "drv.c",
+          "license_expression": "BSD-3-Clause",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "drv_helpers.h",
+          "license_expression": "BSD-3-Clause",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "dumb_driver.c",
+          "license_expression": "BSD-3-Clause",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "virtgpu.c",
+          "license_expression": "BSD-3-Clause",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "patches/speakersafetyd/googlebook-port.patch",
+      "component": "speakersafetyd",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/main.rs"
+      ],
+      "sha256": "df88fd1514301eb0ab43884304ae3fd62d5644a3505287c52cfad28b0562982a",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/main.rs",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/kernel-adp-scanout-pitch.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "drivers/gpu/drm/adp/adp_drv.c"
+      ],
+      "sha256": "912ed669e7d8067093da7d4e7543a922d6138e29f229f688b42f80bfe878bee8",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "drivers/gpu/drm/adp/adp_drv.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/kernel-android-memfd.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "mm/Kconfig",
+        "mm/Makefile",
+        "mm/shmem.c",
+        "mm/memfd-ashmem-shim.c",
+        "mm/memfd-ashmem-shim.h",
+        "mm/memfd-ashmem-shim-internal.h"
+      ],
+      "sha256": "55c462e7e59155fe8828a29a463cc96ddae9c5ee58d44c6e31f33c1533554964",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "mm/Kconfig",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/Makefile",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/shmem.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/memfd-ashmem-shim.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/memfd-ashmem-shim.h",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "mm/memfd-ashmem-shim-internal.h",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/kernel-asahi-privileged-priority.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "drivers/gpu/drm/asahi/file.rs",
+        "include/uapi/drm/asahi_drm.h"
+      ],
+      "sha256": "99ad630c86802ac5a071cbdff6ce274ac381299b9e4f1cc715b8eeceb1d2f9bb",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "drivers/gpu/drm/asahi/file.rs",
+          "license_expression": "GPL-2.0-only OR MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "include/uapi/drm/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/kernel-macos-m1.patch",
+      "component": "linux-asahi",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "arch/arm64/tools/gen-kernel-hwcaps.sh",
+        "block/partitions/efi.c",
+        "scripts/Makefile.vmlinux",
+        "scripts/mod/file2alias.c",
+        "usr/gen_init_cpio.c"
+      ],
+      "sha256": "d93a34b2ac847737ef97bea32d5106d7db2a3b6deadb3c756f713e728e3dd9c8",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "arch/arm64/tools/gen-kernel-hwcaps.sh",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "block/partitions/efi.c",
+          "license_expression": "GPL-2.0-or-later",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "scripts/Makefile.vmlinux",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "scripts/mod/file2alias.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "usr/gen_init_cpio.c",
+          "license_expression": "GPL-2.0-only",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/mesa-asahi-privileged-priority.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/hk_queue.c",
+        "src/asahi/lib/agx_device.c",
+        "src/asahi/lib/agx_device.h",
+        "include/drm-uapi/asahi_drm.h"
+      ],
+      "sha256": "2d3b7983d149a3cf9db9f91b6e764b2c73cd3e66c1b0c33b1f24637f25853dbd",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "include/drm-uapi/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-multiqueue.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/asahi/lib/agx_device.c",
+        "src/asahi/lib/agx_device.h",
+        "src/asahi/vulkan/hk_buffer.c",
+        "src/asahi/vulkan/hk_device.c",
+        "src/asahi/vulkan/hk_device.h",
+        "src/asahi/vulkan/hk_device_memory.c",
+        "src/asahi/vulkan/hk_image.c",
+        "src/asahi/vulkan/hk_image.h",
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/hk_queue.c",
+        "src/asahi/vulkan/hk_queue.h",
+        "src/asahi/vulkan/meson.build",
+        "src/asahi/vulkan/hk_android.c",
+        "src/asahi/vulkan/hk_android.h"
+      ],
+      "sha256": "d0b7723432a412137b8798e8b33beed288d5036bdc72dd7f224da2d0311d8420",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/asahi/lib/agx_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_buffer.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device_memory.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/meson.build",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-priority.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/asahi/vulkan/hk_android.c",
+        "src/asahi/vulkan/hk_android.h",
+        "src/asahi/vulkan/hk_buffer.c",
+        "src/asahi/vulkan/hk_device_memory.c",
+        "src/asahi/vulkan/hk_image.c",
+        "src/asahi/vulkan/hk_image.h",
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/meson.build",
+        "src/asahi/vulkan/hk_device.c",
+        "src/asahi/vulkan/hk_device.h",
+        "src/asahi/vulkan/hk_queue.c",
+        "src/asahi/vulkan/hk_queue.h",
+        "src/asahi/lib/agx_device.c",
+        "src/asahi/lib/agx_device.h"
+      ],
+      "sha256": "44af4973f52beb912dcbc3616985c3af06c76736898eec6d0206e5193d807966",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/asahi/vulkan/hk_android.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_buffer.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device_memory.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/meson.build",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/asahi/vulkan/hk_buffer.c",
+        "src/asahi/vulkan/hk_device_memory.c",
+        "src/asahi/vulkan/hk_image.c",
+        "src/asahi/vulkan/hk_image.h",
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/meson.build",
+        "src/asahi/vulkan/hk_android.c",
+        "src/asahi/vulkan/hk_android.h"
+      ],
+      "sha256": "747c0d1905096d851be6fcbc87841a0d114c2795da1e385e7e45250efc1f265a",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/asahi/vulkan/hk_buffer.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device_memory.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/meson.build",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-full-priority.patch",
+      "component": "mesa",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "src/asahi/vulkan/hk_android.c",
+        "src/asahi/vulkan/hk_android.h",
+        "src/asahi/vulkan/hk_buffer.c",
+        "src/asahi/vulkan/hk_device_memory.c",
+        "src/asahi/vulkan/hk_image.c",
+        "src/asahi/vulkan/hk_image.h",
+        "src/asahi/vulkan/hk_physical_device.c",
+        "src/asahi/vulkan/meson.build",
+        "src/asahi/vulkan/hk_device.c",
+        "src/asahi/vulkan/hk_device.h",
+        "src/asahi/vulkan/hk_queue.c",
+        "src/asahi/vulkan/hk_queue.h",
+        "src/asahi/lib/agx_device.c",
+        "src/asahi/lib/agx_device.h",
+        "include/drm-uapi/asahi_drm.h"
+      ],
+      "sha256": "c9e3b0ef3d9734c6db1e7d82dd479f23145f9a7ee63e96f00dd81627aeb68a21",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "src/asahi/vulkan/hk_android.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_android.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_buffer.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device_memory.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_image.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_physical_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/meson.build",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/vulkan/hk_queue.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.c",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "src/asahi/lib/agx_device.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        },
+        {
+          "path": "include/drm-uapi/asahi_drm.h",
+          "license_expression": "MIT",
+          "basis": "published file-level source inventory"
+        }
+      ]
+    },
+    {
+      "file": "scripts/swiftshader-android.patch",
+      "component": "swiftshader",
+      "license_scope": "per modified upstream file; not root MIT",
+      "upstream_files": [
+        "CMakeLists.txt",
+        "src/Reactor/ExecutableMemory.cpp",
+        "src/Vulkan/CMakeLists.txt"
+      ],
+      "sha256": "3768721af418a72ae0e146b7aa37c7ffcb2718ea280fd7351e8a65dac3ac7db6",
+      "verbatim_upstream_patch": false,
+      "file_license_scopes": [
+        {
+          "path": "CMakeLists.txt",
+          "license_expression": "Apache-2.0",
+          "basis": "SwiftShader package LICENSE and Apache-2.0 file headers; new port fragments retained under component terms",
+          "upstream_source_sha256": "da596c489c1bec44a8a661b8cd6fc85ebb748f227191d8857d944c0f9ac7c65d"
+        },
+        {
+          "path": "src/Reactor/ExecutableMemory.cpp",
+          "license_expression": "Apache-2.0",
+          "basis": "SwiftShader package LICENSE and Apache-2.0 file headers; new port fragments retained under component terms",
+          "upstream_source_sha256": "ee9c32ca56de045c1b5f7173c7a784ee7f97757b611524df2043198851d286fe"
+        },
+        {
+          "path": "src/Vulkan/CMakeLists.txt",
+          "license_expression": "Apache-2.0",
+          "basis": "SwiftShader package LICENSE and Apache-2.0 file headers; new port fragments retained under component terms",
+          "upstream_source_sha256": "38cb69993626fc4d30fbeee7cece9a5c1dd41bc9c2638bb74c4f2c2d6fa94fce"
+        }
+      ]
+    }
+  ],
+  "publication_notice_changes": [
+    {
+      "file": "sources/linux-asahi/arch/arm64/tools/gen-kernel-hwcaps.sh",
+      "before_sha256": "0d1615969e269ce6621e1c42d8c5a4ef3d48f8dfffb255cc21cc67988857e0e7",
+      "after_sha256": "35435e9e33ac742dfcc34f164515210d178c92171cef86aac653341288274737",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/block/partitions/efi.c",
+      "before_sha256": "0602b06cd5ae380a33e3de865dde4a40e40ccdd54ab335442a097c035a734f02",
+      "after_sha256": "acdc00432da01e1ab2614c7d263f16f205d7d4ec59724d5c5e1ca4058b0d8146",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/adp/adp_drv.c",
+      "before_sha256": "77aaeff412a8a54db873b305705d7f74538f0d1aed4035e9b62388d0519b4d1c",
+      "after_sha256": "adcbdbbd33f7085abfb4900c12684e63aa8e03a41320d63d46bdb94053fbe78c",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/asahi/file.rs",
+      "before_sha256": "53ad70f052fef3c8e75f5e504b5b8719ff8f53dd3a9919c5311041209aa68f11",
+      "after_sha256": "f9175e827c828ebb902a891c55714f82de1d23d794eceb8643d533cf4af356ff",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/drm_crtc.c",
+      "before_sha256": "fba8c3eb7311d496cabfab848c86b418d2f94b70caff9edaeb98f870469e06c9",
+      "after_sha256": "6da40ce2ddf9b5480d8a58f67caed3d3298d9b97d24075200f9b8ddb0ad17380",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/include/uapi/drm/asahi_drm.h",
+      "before_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+      "after_sha256": "ecca9b24615a873cc1292bae175ca4dd4efebc2156d3cb4afec15369460d788a",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/mm/Kconfig",
+      "before_sha256": "30bddcfc1bea77c00440e8b675372d50e0059ae682a618131f4ca757ace00eab",
+      "after_sha256": "608a96715955c6965231768de0cd8f6339b82371c6fba4917ba1fa61a432de98",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/mm/Makefile",
+      "before_sha256": "9b23c5d6516101da9bb73bd445a5268bad33a123626c1b59233f475ba80b8704",
+      "after_sha256": "ab75a8d5eb7463b6c4309029308c6790a2f97a476b8572dc6782144778d876d9",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim-internal.h",
+      "before_sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
+      "after_sha256": "8be364781d7245fc154eb16ab294ec1dab18ef165fed33c33786a4533ded89c9",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.c",
+      "before_sha256": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
+      "after_sha256": "0bcc54235548c7300540ddaf327cf60d066df537f7b801a6b0ce6f6401af7c2a",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.h",
+      "before_sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
+      "after_sha256": "d6d7316e4f5eeaef76ec1679a68a6ae907b79ed9a9b817d17cde24d8d609e4f7",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/mm/shmem.c",
+      "before_sha256": "d2d9455c7277cd1543ec1a89664ff384b5fa435635205c9357a85a68c06eb268",
+      "after_sha256": "51fada507ef117db0c36209010e169fee5331df2a561cbfe11c91e5710e6494d",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/scripts/Makefile.vmlinux",
+      "before_sha256": "7372c536b4b1f66be9c9d3ec8d970f3dbacad0fe4e440cf6c20538ca4c8e073d",
+      "after_sha256": "4d134a195b1f47539a77941cafe7867e3ac3bae3e2c6750601c05c184da98263",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/scripts/mod/file2alias.c",
+      "before_sha256": "7573025cf9c5dc609a06c7fe29a181e9f438d64429c8360aabe4a8b736c93807",
+      "after_sha256": "94b796a66dd56ca4078e1526b557e21c90060a95393d9723326ff22a12922c81",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/linux-asahi/usr/gen_init_cpio.c",
+      "before_sha256": "3f2dab06f48fd1415cacaf076a953a5571fdb3d613556a70662ad30f6b35252e",
+      "after_sha256": "56403200e131d57d34e1cd9c710acc946d3d2c6bd6fe80ad68b93ad395f57aab",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/include/drm-uapi/asahi_drm.h",
+      "before_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+      "after_sha256": "ecca9b24615a873cc1292bae175ca4dd4efebc2156d3cb4afec15369460d788a",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.c",
+      "before_sha256": "07094cb4ad3b075a04561ae89a5a9f01a8c2660f468d54e5a632d264d492f1e0",
+      "after_sha256": "68bff768112362db4a818f4a29231b570476b2487cf8716cfe92a2e16710492e",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.h",
+      "before_sha256": "87f1f5e5c63ecc339a42a8e2dffaff45696d5022debb95ff506ab593a18895d8",
+      "after_sha256": "19dcca4d0cd2c37dd759b604f39b0c3eb86d264885421bdf019fbdd613e3a461",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/meson.build",
+      "before_sha256": "181b0097931620b3473aab5500a1117d1ee32b1407316a356e6c24fa92d35c14",
+      "after_sha256": "e00440ce7e00512d0d649997cf1ee33f5b6e8dfde0a475c598cfae6c15280f15",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.c",
+      "before_sha256": "3bce7bd2f9545403113c21434c38f569258b64e8862f27c5850cbfce4211e11d",
+      "after_sha256": "c639651e7bbaddeac55a311add9141cfcb08f2b529a4e41dfd96a977ec08550e",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.h",
+      "before_sha256": "f4abdad657d521df3c700a0f56c7167608ba845dbe93ca2f8950a8198be5d5c3",
+      "after_sha256": "3d4e371c5f32373330f972ff4e452622cb685cef29cfa37623b5ba25832f1b55",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_buffer.c",
+      "before_sha256": "b71d1f12a2bdfc63d1007f03343862d71770e2068a5dae86ce6666bf77b4d208",
+      "after_sha256": "69e14810d99220b1596170af1d8fe9027efba94d8ce7d8aa7fbc1a00cc9e3ede",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.c",
+      "before_sha256": "6fc1bc6d2a988c28eaf7ead23013637db723c3092a069a0004d21c91501bb01c",
+      "after_sha256": "ebb91e684021c66c17d589ef66e50b352023a8a832a0b2531d2be3fdfded39a7",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.h",
+      "before_sha256": "d6182293c96bf4518349929ba3b45241b97a558f86cf18f12830544483496612",
+      "after_sha256": "7ad0782ac70a5c3bf6386198593db16c59f4bd2adf3fc809d6e067e2139f0fae",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device_memory.c",
+      "before_sha256": "67abf9737e3b3108683655172da8424a3883e1916bccf789046580647216f9af",
+      "after_sha256": "26243f75d139374aec9a0dd935ed8d27fafa260556f35dd4d27da154cff0c2da",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.c",
+      "before_sha256": "d5223ed52addffe4b3dea51817dfcc02d2420a6273030781c35a3043b7310d3e",
+      "after_sha256": "4a02e2262db5f55374049f27d69a5d27257034437c3d2dcf504cf39065638868",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.h",
+      "before_sha256": "fa497a6575237de8031df92e89c4070205e9c3987082afd708b18e9938c3c5dc",
+      "after_sha256": "19deeec596403bbf92a418cb7c099346eceee0efbdc3ba4ead4aa137bd0b92ee",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_physical_device.c",
+      "before_sha256": "73ecf7140ad5e165737c6a24c6f4b07011f447e98c19cd777de64227e970c535",
+      "after_sha256": "3f608ed16f8d445290663935731eacff0bc322eb4eb2ee6eae078d822f48bd2e",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.c",
+      "before_sha256": "d29231369edb669b6845aa43639c7e2eee52e290285ddb01fbe59fcb16ec761c",
+      "after_sha256": "7de5932ad88de596f703324b60b27ce0b8378938c0bbc92cc371bcdf62736762",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.h",
+      "before_sha256": "cfdd5bc1655b66b16edc68adab45d1d1f3b8cb1fa49c749c94963c9c21100f38",
+      "after_sha256": "25788f37b15b9f65c276505e899fc2304e574ac8cbda57360029d667fe49338d",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/meson.build",
+      "before_sha256": "312deff5ab7edb16910e598f5b9f055ff24cf526dd616c2462831cf8e2b4879a",
+      "after_sha256": "9977a503321c74cae58e9dd330757108e8dc54348071759448b97bb6fcdc7bfd",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/mesa/src/compiler/clc/clc_helpers.cpp",
+      "before_sha256": "f0a5c30eb3b1f1ac4bf5257e877190b7141184ea3e53fc0a4933c473da4cda55",
+      "after_sha256": "170aa9c1c62f95067eddc5ac126dfc1f43153370f1193f029b0203b8091e10aa",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_buffer.cc",
+      "before_sha256": "3f78bd8b10268d66a00c9c88073607fb90a026bcb16de47edfdb6c177570d9ce",
+      "after_sha256": "e3050137c4e19002370ad6f8482634fb1091868ac590966b935ebb7718cf1ac7",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_driver.cc",
+      "before_sha256": "cc4d669994d24c53235ed728500224b6cfd26db9048f3cba6c21fdaac1115234",
+      "after_sha256": "30f353a18a7295f585f88e71a27ed8e922863f4a06ca4f88861042555a1ecf5b",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/minigbm/drv.c",
+      "before_sha256": "f863d213b67610786d1c5832ac973ac531448c92fe89defbe0ca932402689be9",
+      "after_sha256": "b5c75dc8f63539d98c8c65aacdbe800da9a7a090e62bac908eaddf72833cd055",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/minigbm/drv_helpers.h",
+      "before_sha256": "8b51f4382ff845bd9eac6eb277cb4c88449bf7647ef073f0c1bfe45dd3f1c5d3",
+      "after_sha256": "0c7b40f187efeeebb0ea12b673b99f41a8eb2192cf683fbc708a1d18ef2a9a3a",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/minigbm/dumb_driver.c",
+      "before_sha256": "81e3b3ffe72ebb2827511fcabdd66b98ff8d6cf5f6dcfa26e4ae94d8ed2819e4",
+      "after_sha256": "991ca8b743f965d74a31374d73c6afc9581e6839e63887a6aec431533e441b73",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/minigbm/virtgpu.c",
+      "before_sha256": "53eca69fc2caa4f42be004007f53e9f3c4826a0df0e383ac628bf784f99e5a4d",
+      "after_sha256": "a28fdaa1646d4682f66587bee3b411955b24d20c801fe87e332a1bc91250f509",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/drm-hwcomposer/drm/ResourceManager.cpp",
+      "before_sha256": "556741db71803eeb8bb0e3fb975b748935cb120f6ee0e92447f16302aa35af52",
+      "after_sha256": "3d2ccaa2eb1332c9b1340f6bd7dc46dbc36df3932f4bef11d17fd6d64bdafb4d",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/speakersafetyd/src/main.rs",
+      "before_sha256": "f335aea60504e5b833a0598237be441e25fd0ce708c630395e397a23361744cf",
+      "after_sha256": "289f62963795e202cd0d0c69e3306805b54de9eabe4a64d3be2773c9922d6b04",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/alsa-lib/configure.ac",
+      "before_sha256": "41390d0a0ab75a5a77afbd712f539d6fe30530b9d29552f5c3152c304f5d9988",
+      "after_sha256": "90464cadb607b0d119dd762187c6207283e4aac57ccd69bff37f86ac3db5bc51",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "sources/m1n1/proxyclient/m1n1/hv/virtio.py",
+      "before_sha256": "9edfe44872af6ef17de2723fb41d70902f282ac1143850332410cc89c6d143cb",
+      "after_sha256": "633865eb888d9ea56cdaed81b6100bd292cb9b1740a93eb2e61fbc5b061157f6",
+      "change": "license identification and dated modification notice only"
+    },
+    {
+      "file": "scripts/kernel-host-include/byteswap.h",
+      "before_sha256": "3b900a351c193ed31af75bc7c9fcc801a3d819320fcbabd1f779fc65c83e47ac",
+      "after_sha256": "6ee1c9d6cb69be6e82033c6822bebc6528d3e812b76de7d09a2deac3d7a51865",
+      "change": "dated modification notice only"
+    },
+    {
+      "file": "scripts/kernel-host-include/elf.h",
+      "before_sha256": "aad8fd7e9fdd062523ecf423e771c58d3c16690cc11780da8d24e6ba17a6e465",
+      "after_sha256": "981d0e010a038fd1c212be0d507770d792df2282ee3f4e1eb0939f58873cfd16",
+      "change": "dated modification notice only"
+    },
+    {
+      "file": "patches/linux-asahi/privileged-priority.patch",
+      "before_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+      "after_sha256": "99ad630c86802ac5a071cbdff6ce274ac381299b9e4f1cc715b8eeceb1d2f9bb",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "patches/mesa/android-vulkan-full.patch",
+      "before_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+      "after_sha256": "c9e3b0ef3d9734c6db1e7d82dd479f23145f9a7ee63e96f00dd81627aeb68a21",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "patches/mesa/privileged-priority.patch",
+      "before_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+      "after_sha256": "2d3b7983d149a3cf9db9f91b6e764b2c73cd3e66c1b0c33b1f24637f25853dbd",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/kernel-adp-scanout-pitch.patch",
+      "before_sha256": "ee453a9ae86cfa2676e88be4f5159cdade5befe507ef722e2a798057fcd4bc67",
+      "after_sha256": "912ed669e7d8067093da7d4e7543a922d6138e29f229f688b42f80bfe878bee8",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/kernel-android-memfd.patch",
+      "before_sha256": "540ae7105ec2ce03d6b2d1db5e413250bd21ce924baf457d6e64d00f5a50898b",
+      "after_sha256": "55c462e7e59155fe8828a29a463cc96ddae9c5ee58d44c6e31f33c1533554964",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/kernel-asahi-privileged-priority.patch",
+      "before_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+      "after_sha256": "99ad630c86802ac5a071cbdff6ce274ac381299b9e4f1cc715b8eeceb1d2f9bb",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/kernel-macos-m1.patch",
+      "before_sha256": "0f2eb4537929a4c4b394bc1d42596fd991ac045337aea52e9984cacd9cae4e7b",
+      "after_sha256": "d93a34b2ac847737ef97bea32d5106d7db2a3b6deadb3c756f713e728e3dd9c8",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/mesa-asahi-privileged-priority.patch",
+      "before_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+      "after_sha256": "2d3b7983d149a3cf9db9f91b6e764b2c73cd3e66c1b0c33b1f24637f25853dbd",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-multiqueue.patch",
+      "before_sha256": "6709d73da72f5be8b99c7ade542c684c7848b468db0221b113d3b233c861d32c",
+      "after_sha256": "d0b7723432a412137b8798e8b33beed288d5036bdc72dd7f224da2d0311d8420",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-priority.patch",
+      "before_sha256": "b9639a01b577b9c67a66319a8b737ce817493570ae324d8e34b1274d878a267a",
+      "after_sha256": "44af4973f52beb912dcbc3616985c3af06c76736898eec6d0206e5193d807966",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android.patch",
+      "before_sha256": "8b89d1e1af6c254f33427f204e497cf2697b533647790983dc0d59170e0b5c30",
+      "after_sha256": "747c0d1905096d851be6fcbc87841a0d114c2795da1e385e7e45250efc1f265a",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-full-priority.patch",
+      "before_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+      "after_sha256": "c9e3b0ef3d9734c6db1e7d82dd479f23145f9a7ee63e96f00dd81627aeb68a21",
+      "change": "patch provenance/license preamble only"
+    },
+    {
+      "file": "scripts/swiftshader-android.patch",
+      "before_sha256": "bac2969e9f370fd75aa072f9797c343219db08d30a7fd92b662322b8234131e2",
+      "after_sha256": "3768721af418a72ae0e146b7aa37c7ffcb2718ea280fd7351e8a65dac3ac7db6",
+      "change": "patch provenance/license preamble only"
+    }
+  ],
+  "license_text_cleanup": [
+    {
+      "file": "LICENSES/Apache-2.0.txt",
+      "previous_sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12",
+      "sha256": "4ed9e2b296b570d6b17b3ea846a3f5fbef9c7204c5be681c4b9335797653bc47",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    },
+    {
+      "file": "LICENSES/BSD-2-Clause.txt",
+      "previous_sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
+      "sha256": "344feeecfa96f2c54717731371205ee8f5a193468d707994a1edb58c51c08705",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    },
+    {
+      "file": "LICENSES/BSD-3-Clause.txt",
+      "previous_sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
+      "sha256": "c3dc748f5e725cf5ed89784fe78e4ff1b05d309bf1e7ade4c572e8fde1b8406c",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    },
+    {
+      "file": "LICENSES/GPL-2.0.txt",
+      "previous_sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+      "sha256": "77dc7854b1bdc02d96ab5e531e1023482c94dc4a24d28637e2d3d26554b33346",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    },
+    {
+      "file": "LICENSES/LGPL-2.0.txt",
+      "previous_sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433",
+      "sha256": "568a2e7a1329d6f567c0baa0ae186c9c5330f1bea66bcf831efd47a061abac2b",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    },
+    {
+      "file": "LICENSES/LGPL-2.1.txt",
+      "previous_sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229",
+      "sha256": "ea5d8d6696739ea26c6676fd030882130c8dd47d1fd31ee85619a20241d90085",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    },
+    {
+      "file": "LICENSES/Linux-syscall-note.txt",
+      "previous_sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
+      "sha256": "f65b43c0f7c66b8d46cdf5897286fd182c21167eaa9b2c07c66c44890e08bdd0",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    },
+    {
+      "file": "LICENSES/MIT.txt",
+      "previous_sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "sha256": "29ba069e11794549a03ba0f916dec13b8aaa4a2efa9a4dff4201a7955e01e112",
+      "change": "Removed kernel-only usage metadata; license body retained"
+    }
+  ],
+  "special_cases": [
+    {
+      "file": "sources/alsa-lib/configure.ac",
+      "finding": "No per-file SPDX. Preserve package LGPL-2.1 COPYING; do not infer an or-later grant from another ALSA source file. LicenseRef is defined by the verbatim COPYING text."
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/drm_crtc.c",
+      "finding": "HPND-sell-variant terms include copyright/permission notices in supporting documentation and an advertising-name restriction."
+    }
+  ],
+  "upstream_submissions_made": false,
+  "AI_assistance_disclosed": true,
+  "upstream_evidence": [
+    {
+      "component": "linux-asahi",
+      "commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "path": "COPYING",
+      "sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "git_blob_sha1": "a635a38ef9405fdfcfe97f3a435393c1e9cae971",
+      "url": "https://github.com/AsahiLinux/linux/blob/94fb23346d522edf53722357c426a3e58030beea/COPYING",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "linux-asahi",
+      "commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "path": "Documentation/process/license-rules.rst",
+      "sha256": "635a61aa47349007033c64fcdf403d33be35040b62284494bbbd4a9b546ec06d",
+      "git_blob_sha1": "b0176bb8a46535024ad41b625537254020fa50ea",
+      "url": "https://github.com/AsahiLinux/linux/blob/94fb23346d522edf53722357c426a3e58030beea/Documentation/process/license-rules.rst",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "linux-asahi",
+      "commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "path": "Documentation/process/submitting-patches.rst",
+      "sha256": "c0354e53cebfabe679c77277beeac08e02ca1101314f21a1bc4057710863a9a1",
+      "git_blob_sha1": "d7290e208e72df9d6269e38ff5bcadc7a38c337b",
+      "url": "https://github.com/AsahiLinux/linux/blob/94fb23346d522edf53722357c426a3e58030beea/Documentation/process/submitting-patches.rst",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "linux-asahi",
+      "commit": "94fb23346d522edf53722357c426a3e58030beea",
+      "path": "README",
+      "sha256": "2844b0b2cafe22741724c4fdda79b1259de48743f12ad40ce408adb1ef00ceda",
+      "git_blob_sha1": "e6549b2a7aac3785cc6f25aabe3a63f158ac5ed1",
+      "url": "https://github.com/AsahiLinux/linux/blob/94fb23346d522edf53722357c426a3e58030beea/README",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "mesa",
+      "commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "path": "README.rst",
+      "sha256": "03f0fd62094179bb70fb885042baa4254d392f5f7bb64e4d8856bec8a5ff8386",
+      "git_blob_sha1": "d9f2f06e9b0f9a64535bd33c814656e2871c88dd",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/06f9e28304d5d3f109c33535c1c25b9df5769af2/README.rst",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "mesa",
+      "commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "path": "docs/license.rst",
+      "sha256": "0d1a0472ecc81830e75c20d59b0ea02841e3db21255e0ebad97ab682c54d6615",
+      "git_blob_sha1": "704f8162b48467ffa77908460570c803901c73d2",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/06f9e28304d5d3f109c33535c1c25b9df5769af2/docs/license.rst",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "mesa",
+      "commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+      "path": "docs/submittingpatches.rst",
+      "sha256": "167a6251147c1a4efad7bd4bd48511f9953591f85763646d619509dc4e48a08d",
+      "git_blob_sha1": "cd2daf2ffbd217904d46f053247d880713206c92",
+      "url": "https://gitlab.freedesktop.org/mesa/mesa/-/blob/06f9e28304d5d3f109c33535c1c25b9df5769af2/docs/submittingpatches.rst",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "minigbm",
+      "commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+      "path": "LICENSE",
+      "sha256": "8610954adbca6c6b85d8b1ae5613b44b0014e437d32fcad6683bb27541411686",
+      "git_blob_sha1": "3bd5095873dc6a78265e3d9ae2e7418e46596d34",
+      "url": "https://chromium.googlesource.com/chromiumos/platform/minigbm/+/a2d42f09d696b04e6ded5ad38596d8554ffd8988/LICENSE",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "drm-hwcomposer",
+      "commit": "a87112ca8e78a5d401368bd44672bd73f79fe9af",
+      "path": "MODULE_LICENSE_APACHE2",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "url": "https://gitlab.freedesktop.org/drm-hwcomposer/drm-hwcomposer/-/blob/a87112ca8e78a5d401368bd44672bd73f79fe9af/MODULE_LICENSE_APACHE2",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "drm-hwcomposer",
+      "commit": "a87112ca8e78a5d401368bd44672bd73f79fe9af",
+      "path": "NOTICE",
+      "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+      "git_blob_sha1": "6b0b1270ff0ca8f03867efcd09ba6ddb6392b1e1",
+      "url": "https://gitlab.freedesktop.org/drm-hwcomposer/drm-hwcomposer/-/blob/a87112ca8e78a5d401368bd44672bd73f79fe9af/NOTICE",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "drm-hwcomposer",
+      "commit": "a87112ca8e78a5d401368bd44672bd73f79fe9af",
+      "path": "README.md",
+      "sha256": "d6238bf9795afb8834cf9ddc6c7ed46bd79c73f77defea694e9f172e73dd0de2",
+      "git_blob_sha1": "76cfd6cf5294e26361d006be1dc71da93cbb8783",
+      "url": "https://gitlab.freedesktop.org/drm-hwcomposer/drm-hwcomposer/-/blob/a87112ca8e78a5d401368bd44672bd73f79fe9af/README.md",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "speakersafetyd",
+      "commit": "615674e75dc68639d550171e33ba3946538d03b0",
+      "path": "LICENCE.MIT",
+      "sha256": "b8ccaf94cb87451dfdbc96343ef0b47cdefe83f7b71bd3b9e6c3debd544e434f",
+      "git_blob_sha1": "2781c5a9921c0d402c7d9b3d439ad8caba91c07c",
+      "url": "https://github.com/AsahiLinux/speakersafetyd/blob/615674e75dc68639d550171e33ba3946538d03b0/LICENCE.MIT",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "speakersafetyd",
+      "commit": "615674e75dc68639d550171e33ba3946538d03b0",
+      "path": "LICENSE",
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+      "git_blob_sha1": "9efa6fbc962836e243e20f7f23db062e2c077d28",
+      "url": "https://github.com/AsahiLinux/speakersafetyd/blob/615674e75dc68639d550171e33ba3946538d03b0/LICENSE",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "speakersafetyd",
+      "commit": "615674e75dc68639d550171e33ba3946538d03b0",
+      "path": "README.md",
+      "sha256": "0a7ebb2a5119850b30bf48ddf492d15b60e6b372021b273528162cb96f83cbca",
+      "git_blob_sha1": "f3baf8c5dac8e63cd6973a8254c0b8c56c3ecc89",
+      "url": "https://github.com/AsahiLinux/speakersafetyd/blob/615674e75dc68639d550171e33ba3946538d03b0/README.md",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "alsa-lib",
+      "commit": "a47c8bc3fef190e7eb463283230263c82208597a",
+      "path": "COPYING",
+      "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+      "git_blob_sha1": "ae23fcfda2da8599b52baff4c257847205d78c56",
+      "url": "https://github.com/alsa-project/alsa-lib/blob/a47c8bc3fef190e7eb463283230263c82208597a/COPYING",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "alsa-lib",
+      "commit": "a47c8bc3fef190e7eb463283230263c82208597a",
+      "path": "README.md",
+      "sha256": "52e4b1f472cd942690cd9e61d2baea9d61e777bba68f1a694b1f68fe23df1e39",
+      "git_blob_sha1": "2cf6a0771586abf0ff231cb479118366376f3344",
+      "url": "https://github.com/alsa-project/alsa-lib/blob/a47c8bc3fef190e7eb463283230263c82208597a/README.md",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "alsa-lib",
+      "commit": "a47c8bc3fef190e7eb463283230263c82208597a",
+      "path": "aserver/COPYING",
+      "sha256": "bfe16cf823bcff261fc6a062c07ee96660e3c39678f42f39a788a68dbc234ced",
+      "git_blob_sha1": "b07ad0d080524f352975153efb2a6057196e214e",
+      "url": "https://github.com/alsa-project/alsa-lib/blob/a47c8bc3fef190e7eb463283230263c82208597a/aserver/COPYING",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "avd-fw",
+      "commit": "220b1e70c9d7dcccbf66d5194e372300aa3c5a32",
+      "path": "LICENSE",
+      "sha256": "6a4ce06ab14079af339a8e30570a8dc175ffb8d0b5fb6e2c159b22283450639b",
+      "git_blob_sha1": "74e04b2f04be08869dc1511a27fdcc38ee57b5f5",
+      "url": "https://github.com/AsahiLinux/avd-fw/blob/220b1e70c9d7dcccbf66d5194e372300aa3c5a32/LICENSE",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "m1n1",
+      "commit": "809541515659bf4e504807fd72bc0a539be5eee7",
+      "path": "LICENSE",
+      "sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
+      "git_blob_sha1": "aff0557da45ae68209934ef48887a8112663ca45",
+      "url": "https://github.com/AsahiLinux/m1n1/blob/809541515659bf4e504807fd72bc0a539be5eee7/LICENSE",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "m1n1",
+      "commit": "809541515659bf4e504807fd72bc0a539be5eee7",
+      "path": "README.md",
+      "sha256": "0b52b29a5d4e161adb31cf25f8aed28772e4dff0761a0db0f32c7966d4b1dc8c",
+      "git_blob_sha1": "407526b36546d3a38d90fe2263f88c255c775f43",
+      "url": "https://github.com/AsahiLinux/m1n1/blob/809541515659bf4e504807fd72bc0a539be5eee7/README.md",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "swiftshader",
+      "commit": "cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5",
+      "path": "CONTRIBUTING.txt",
+      "sha256": "e5111e7cd0d3f2c924743f5e2bd456050646023b60cbbef1d05d2a88251138cd",
+      "git_blob_sha1": "2cedc8e3be1f0b38793e56f206568f8e891b3f59",
+      "url": "https://github.com/google/swiftshader/blob/cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5/CONTRIBUTING.txt",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "swiftshader",
+      "commit": "cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5",
+      "path": "CONTRIBUTORS.txt",
+      "sha256": "64eecff82d34282a14452920548296eb9558bad3fda5fb91704506e7871a9989",
+      "git_blob_sha1": "7199b17844ad5eb76678c4b15dd4e03859b00103",
+      "url": "https://github.com/google/swiftshader/blob/cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5/CONTRIBUTORS.txt",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "swiftshader",
+      "commit": "cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5",
+      "path": "LICENSE.txt",
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "git_blob_sha1": "75b52484ea471f882c29e02693b4f02dba175b5e",
+      "url": "https://github.com/google/swiftshader/blob/cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5/LICENSE.txt",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    },
+    {
+      "component": "swiftshader",
+      "commit": "cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5",
+      "path": "README.md",
+      "sha256": "c3c94f5326754464bd242970f1f629898d31c032d4e183ea49c4b3645a905fdb",
+      "git_blob_sha1": "de5e1ce5977cfe99ac75ef2018efbddef629c71a",
+      "url": "https://github.com/google/swiftshader/blob/cddb5c91b23ff70a1f607ea31610aa0d7f4b5ad5/README.md",
+      "review_scope": "license/copyright/contribution documentation at the pinned revision"
+    }
+  ],
+  "current_policy_references": [
+    {
+      "url": "https://asahilinux.org/llm-policy/",
+      "checked": "2026-10-17",
+      "finding": "Broad prohibition on material AI-assisted Asahi contributions; distinct from source-license identification."
+    },
+    {
+      "url": "https://docs.mesa3d.org/submittingpatches.html",
+      "checked": "2026-10-17",
+      "finding": "Submitter responsibility, human oversight, AI disclosure, direct human-authored upstream communication; maintainer rules may add constraints."
+    },
+    {
+      "url": "https://source.android.com/docs/setup/contribute/licenses",
+      "checked": "2026-10-17",
+      "finding": "AOSP contributor agreements and retained copyright/license headers; not every AOSP-origin file is Apache."
+    }
+  ],
+  "limitations": [
+    "Source-only audit; no complete binary dependency/corresponding-source clearance.",
+    "Original-port MIT classification is the project maintainer declaration, not independent authorship/copyrightability proof.",
+    "ALSA configure.ac is untagged; exact package COPYING retained without inferring an or-later grant.",
+    "Historical commits are not rewritten; original third-party grants remain authoritative."
+  ],
+  "license_text_aliases": [
+    {
+      "file": "LICENSES/GPL-2.0-only.txt",
+      "same_license_version_body_as": "LICENSES/GPL-2.0.txt",
+      "sha256": "77dc7854b1bdc02d96ab5e531e1023482c94dc4a24d28637e2d3d26554b33346",
+      "scope": "The file-level grant determines only/or-later; a shared version text does not change that grant."
+    },
+    {
+      "file": "LICENSES/GPL-2.0-or-later.txt",
+      "same_license_version_body_as": "LICENSES/GPL-2.0.txt",
+      "sha256": "77dc7854b1bdc02d96ab5e531e1023482c94dc4a24d28637e2d3d26554b33346",
+      "scope": "The file-level grant determines only/or-later; a shared version text does not change that grant."
+    },
+    {
+      "file": "LICENSES/LGPL-2.1-only.txt",
+      "same_license_version_body_as": "LICENSES/LGPL-2.1.txt",
+      "sha256": "ea5d8d6696739ea26c6676fd030882130c8dd47d1fd31ee85619a20241d90085",
+      "scope": "The file-level grant determines only/or-later; a shared version text does not change that grant."
+    }
+  ],
+  "project_mit_grant": {
+    "file": "LICENSES/MIT-Project.txt",
+    "sha256": "34481dfef636fda4b9fd68ec1426ae8967c3e9679ba7b35781b85c5fb3a9376b",
+    "previous_location": "LICENSE",
+    "license_text_unchanged": true,
+    "scope": "original port material explicitly identified as MIT; not upstream files"
+  },
+  "top_level_license_index": true,
+  "license_documents": [
+    {
+      "file": "sources/alsa-lib/COPYING",
+      "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "sources/drm-hwcomposer/NOTICE",
+      "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "sources/linux-asahi/COPYING",
+      "sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "sources/m1n1/LICENSE",
+      "sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "sources/minigbm/LICENSE",
+      "sha256": "8610954adbca6c6b85d8b1ae5613b44b0014e437d32fcad6683bb27541411686",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "sources/speakersafetyd/LICENSE",
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/linux-drm-crtc-original-notice.txt",
+      "sha256": "dacd3e0a7be86fbe7983a06e42493d405f1e38a5690c7c626ccf06db3c9b7a8a",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/alsa-lib/COPYING",
+      "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/avd-fw/LICENSE",
+      "sha256": "6a4ce06ab14079af339a8e30570a8dc175ffb8d0b5fb6e2c159b22283450639b",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/drm-hwcomposer/NOTICE",
+      "sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/linux-asahi/COPYING",
+      "sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/m1n1/LICENSE",
+      "sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/minigbm/LICENSE",
+      "sha256": "8610954adbca6c6b85d8b1ae5613b44b0014e437d32fcad6683bb27541411686",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/speakersafetyd/LICENCE.MIT",
+      "sha256": "b8ccaf94cb87451dfdbc96343ef0b47cdefe83f7b71bd3b9e6c3debd544e434f",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/speakersafetyd/LICENSE",
+      "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/swiftshader/LICENSE.txt",
+      "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "notices/upstream/swiftshader/modified-file-notices.txt",
+      "sha256": "b2dc9e1031bbe181085e8fc40051dd6811fb0357d276d9dbfbbb3c3d51577884",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/Apache-2.0.txt",
+      "sha256": "4ed9e2b296b570d6b17b3ea846a3f5fbef9c7204c5be681c4b9335797653bc47",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/BSD-2-Clause.txt",
+      "sha256": "344feeecfa96f2c54717731371205ee8f5a193468d707994a1edb58c51c08705",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/BSD-3-Clause.txt",
+      "sha256": "c3dc748f5e725cf5ed89784fe78e4ff1b05d309bf1e7ade4c572e8fde1b8406c",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/GPL-2.0-only.txt",
+      "sha256": "77dc7854b1bdc02d96ab5e531e1023482c94dc4a24d28637e2d3d26554b33346",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/GPL-2.0-or-later.txt",
+      "sha256": "77dc7854b1bdc02d96ab5e531e1023482c94dc4a24d28637e2d3d26554b33346",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/GPL-2.0.txt",
+      "sha256": "77dc7854b1bdc02d96ab5e531e1023482c94dc4a24d28637e2d3d26554b33346",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/HPND-sell-variant.txt",
+      "sha256": "235abc578371bf9861e3d6eee0a9ad16228f9be18408e17fc569c6a98ba69d5f",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/LGPL-2.0.txt",
+      "sha256": "568a2e7a1329d6f567c0baa0ae186c9c5330f1bea66bcf831efd47a061abac2b",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/LGPL-2.1-only.txt",
+      "sha256": "ea5d8d6696739ea26c6676fd030882130c8dd47d1fd31ee85619a20241d90085",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/LGPL-2.1.txt",
+      "sha256": "ea5d8d6696739ea26c6676fd030882130c8dd47d1fd31ee85619a20241d90085",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/LicenseRef-ALSA-Package-LGPL-2.1.txt",
+      "sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/Linux-syscall-note.txt",
+      "sha256": "f65b43c0f7c66b8d46cdf5897286fd182c21167eaa9b2c07c66c44890e08bdd0",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/MIT-Project.txt",
+      "sha256": "34481dfef636fda4b9fd68ec1426ae8967c3e9679ba7b35781b85c5fb3a9376b",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    },
+    {
+      "file": "LICENSES/MIT.txt",
+      "sha256": "29ba069e11794549a03ba0f916dec13b8aaa4a2efa9a4dff4201a7955e01e112",
+      "role": "license text or retained attribution notice; not automatically project MIT"
+    }
+  ]
+}

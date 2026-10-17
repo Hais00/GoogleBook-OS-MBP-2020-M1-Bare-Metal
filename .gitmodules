@@ -29,3 +29,7 @@
 [submodule "upstream/m1n1"]
 	path = upstream/m1n1
 	url = https://github.com/AsahiLinux/m1n1.git
+
+[submodule "upstream/swiftshader"]
+	path = upstream/swiftshader
+	url = https://github.com/google/swiftshader.git

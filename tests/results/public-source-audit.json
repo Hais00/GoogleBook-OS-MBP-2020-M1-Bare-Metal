@@ -44,9 +44,10 @@
       "clean_apply_and_exact_snapshot_match": true
     }
   ],
-  "python_files_parsed": 97,
+  "python_files_parsed": 98,
   "shell_files_syntax_checked": 11,
   "private_paths_identifiers_credentials_and_binaries_scan_pass": true,
   "source_export_hashes_verified": true,
-  "physical_device_accessed": false
+  "physical_device_accessed": false,
+  "license_publication_checks": "license-audit-checks.json"
 }

@@ -73,4 +73,8 @@ A compatible Android base image and device firmware must be obtained separately.
 
 ## Licensing
 
-Original port glue and documentation are covered by [LICENSE](LICENSE), except where a file specifies or inherits an upstream license. Derived components retain their original terms, including the kernel’s and speakersafetyd’s GPL obligations. See [Third-party notices](THIRD_PARTY_NOTICES.md), component COPYING files, and [`LICENSES/`](LICENSES/).
+**This is a multi-license source collection.** The top-level `LICENSE` is an index of component-specific grants. See [Licensing scope](LICENSING.md), the [license audit](docs/license-audit.md), and the file/patch-member inventory before redistribution.
+
+Original port documentation and the port glue identified as MIT in the inventory are covered by the [project MIT grant](LICENSES/MIT-Project.txt). Third-party files retain their specific grants. Derived components retain their original terms, including the kernel’s and speakersafetyd’s GPL obligations. See [Third-party notices](THIRD_PARTY_NOTICES.md), component COPYING files, and [`LICENSES/`](LICENSES/).
+
+Port-specific work used AI assistance. Upstream contribution restrictions and required human review are documented in the [audit](docs/license-audit.md#contribution-policies-and-ai-disclosure); no upstream approval is claimed.

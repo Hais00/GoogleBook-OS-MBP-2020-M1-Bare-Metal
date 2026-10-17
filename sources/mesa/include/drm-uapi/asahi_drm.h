@@ -1,4 +1,7 @@
 /* SPDX-License-Identifier: MIT */
+// Modified for GoogleBook OS on 2026-10-17.
+// Port integration changes; original copyright and license notices retained.
+// See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 /*
  * Copyright (C) The Asahi Linux Contributors
  * Copyright (C) 2018-2023 Collabora Ltd.

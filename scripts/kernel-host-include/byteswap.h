@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: GPL-2.0 */
+/* Modified for GoogleBook OS on 2026-10-17; existing GPL terms retained. */
 #ifndef _BYTESWAP_H
 #define _BYTESWAP_H
 

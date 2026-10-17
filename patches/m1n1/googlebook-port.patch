@@ -1,7 +1,17 @@
+GoogleBook OS source changes recorded 2026-10-17.
+Licensing is per file; see manifests/license-audit.json and THIRD_PARTY_NOTICES.md.
+
 diff --git a/proxyclient/m1n1/hv/virtio.py b/proxyclient/m1n1/hv/virtio.py
 --- a/proxyclient/m1n1/hv/virtio.py
 +++ b/proxyclient/m1n1/hv/virtio.py
-@@ -5,6 +5,7 @@
+@@ -1,10 +1,14 @@
+ # SPDX-License-Identifier: MIT
++# Modified for GoogleBook OS on 2026-10-17.
++# Port integration changes; original copyright and license notices retained.
++# See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
+ from construct import Struct, Int8ul, Int16ul, Int32sl, Int32ul, Int64ul
+ from subprocess import Popen, PIPE
+ import pathlib
  import struct
  import os
  import sys
@@ -9,7 +19,7 @@ diff --git a/proxyclient/m1n1/hv/virtio.py b/proxyclient/m1n1/hv/virtio.py
  
  from ..utils import *
  
-@@ -74,13 +75,19 @@
+@@ -74,13 +78,19 @@
              self.tag = tag.encode("ascii")
          else:
              self.tag = tag
@@ -36,7 +46,7 @@ diff --git a/proxyclient/m1n1/hv/virtio.py b/proxyclient/m1n1/hv/virtio.py
  
      @property
      def config_data(self):
-@@ -99,11 +106,26 @@
+@@ -99,11 +109,26 @@
          return 1
  
      def call(self, req):

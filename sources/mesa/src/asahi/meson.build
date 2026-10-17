@@ -1,3 +1,6 @@
+# Modified for GoogleBook OS on 2026-10-17.
+# Port integration changes; original copyright and license notices retained.
+# See THIRD_PARTY_NOTICES.md and manifests/license-audit.json.
 # Copyright 2018 Rob Clark
 # Copyright 2019 Collabora, Ltd.
 # SPDX-License-Identifier: MIT
