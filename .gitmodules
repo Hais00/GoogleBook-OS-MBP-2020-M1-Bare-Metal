@@ -1,0 +1,31 @@
+[submodule "upstream/linux-asahi"]
+	path = upstream/linux-asahi
+	url = https://github.com/AsahiLinux/linux.git
+
+[submodule "upstream/mesa"]
+	path = upstream/mesa
+	url = https://gitlab.freedesktop.org/mesa/mesa.git
+
+[submodule "upstream/minigbm"]
+	path = upstream/minigbm
+	url = https://chromium.googlesource.com/chromiumos/platform/minigbm
+
+[submodule "upstream/drm-hwcomposer"]
+	path = upstream/drm-hwcomposer
+	url = https://gitlab.freedesktop.org/drm-hwcomposer/drm-hwcomposer.git
+
+[submodule "upstream/speakersafetyd"]
+	path = upstream/speakersafetyd
+	url = https://github.com/AsahiLinux/speakersafetyd.git
+
+[submodule "upstream/alsa-lib"]
+	path = upstream/alsa-lib
+	url = https://github.com/alsa-project/alsa-lib.git
+
+[submodule "upstream/avd-fw"]
+	path = upstream/avd-fw
+	url = https://github.com/AsahiLinux/avd-fw.git
+
+[submodule "upstream/m1n1"]
+	path = upstream/m1n1
+	url = https://github.com/AsahiLinux/m1n1.git

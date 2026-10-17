@@ -1,0 +1,54 @@
+{
+  "recorded_utc": "2026-10-17T18:11:27.540477+00:00",
+  "local_tests": {
+    "kernel25_build_pass": true,
+    "kernel25_artifacts": {
+      "Image": {
+        "bytes": 43076096,
+        "sha256": "299a1f4be32397d9bed0cbcac5a0414ff619a3a51836b170f33702b6e6d7959a"
+      },
+      "t8103-j293.dtb": {
+        "bytes": 66832,
+        "sha256": "ea32173df3b0f782bf610f38fb390f90a777c16d4a4b2822c58b924bc6088328"
+      },
+      "config": {
+        "bytes": 250195,
+        "sha256": "be60da788d6b40b37b5f3d55c05db2c19e472b8e198690452263b6184e3429aa"
+      }
+    },
+    "Mesa_driver_sha256": "567f4b275f244d82c7e4ed969e7e4e72d5cb35dfb85f0a56fe99037d02eec301",
+    "kernel_and_Mesa_UAPI_headers_identical": true,
+    "Mesa_clean_base_apply_and_source_compare_pass": true,
+    "vendor_image": {
+      "sha256": "9b1e1b38d6a7cf0bd795ebf247d4595cbc76cb028267a40740cb9dadec1fc15c",
+      "bytes": 404631552,
+      "entries": 3385,
+      "regular_files_hashed": 2801,
+      "metadata_and_security_xattrs_verified": true
+    },
+    "kernel25_full_vendor_read": {
+      "pass": true,
+      "same_production_kernel_compressed_payloads_verified": true,
+      "inodes": 3385,
+      "regular_files_hashed": 2801,
+      "owners_modes_types_and_symlinks_match": true,
+      "security_xattrs_scope": "Verified separately by full EROFS readback in the build VM; this fixture does not load Android SELinux policy",
+      "physical_device_written": false
+    }
+  },
+  "previous_M1_evidence": {
+    "driver_sha256": "74dfa67a80f4325974ab3adeb50d4bf888c8e41300d23a96dc868d7c92f6b3d8",
+    "actual_HWUI_pipeline": "Skia (Vulkan)",
+    "actual_HWUI_frames": 97,
+    "two_queue_GPU_ordering_pass": true,
+    "AHB_import_export_and_four_swapchain_frames_pass": true,
+    "visual_confirmation": true,
+    "SELinux": "Enforcing"
+  },
+  "new_priority_pair_M1_hardware_tested": false,
+  "hardware_testing_stopped_at_user_request": true,
+  "new_SurfaceFlinger_Vulkan_qualified": false,
+  "hardware_Codec2_qualified": false,
+  "Vulkan_CTS_claimed": false,
+  "exact_public_image_reproduction_claimed": false
+}

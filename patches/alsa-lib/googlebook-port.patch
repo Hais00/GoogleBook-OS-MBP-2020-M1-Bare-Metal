@@ -1,0 +1,31 @@
+diff --git a/configure.ac b/configure.ac
+--- a/configure.ac
++++ b/configure.ac
+@@ -283,9 +283,11 @@
+   AS_HELP_STRING([--with-pthread], [Use pthread (default = yes)]),
+   [ have_pthread="$withval" ], [ have_pthread="yes" ])
+ if test "$have_pthread" = "yes"; then
+-  AC_CHECK_LIB([pthread], [pthread_join], [HAVE_LIBPTHREAD="yes"])
++  AC_SEARCH_LIBS([pthread_join], [pthread], [HAVE_LIBPTHREAD="yes"])
+   if test "$HAVE_LIBPTHREAD" = "yes"; then
+-    ALSA_DEPLIBS="$ALSA_DEPLIBS -lpthread"
++    if test "$ac_cv_search_pthread_join" != "none required"; then
++      ALSA_DEPLIBS="$ALSA_DEPLIBS $ac_cv_search_pthread_join"
++    fi
+     AC_DEFINE([HAVE_LIBPTHREAD], 1, [Have libpthread])
+   fi
+ else
+@@ -317,9 +319,11 @@
+   AS_HELP_STRING([--with-librt], [Use librt for monotonic clock (default = yes)]),
+   [ have_librt="$withval" ], [ have_librt="yes" ])
+ if test "$have_librt" = "yes"; then
+-  AC_CHECK_LIB([rt], [clock_gettime], [HAVE_LIBRT="yes"])
++  AC_SEARCH_LIBS([clock_gettime], [rt], [HAVE_LIBRT="yes"])
+   if test "$HAVE_LIBRT" = "yes" ; then
+-    ALSA_DEPLIBS="$ALSA_DEPLIBS -lrt"
++    if test "$ac_cv_search_clock_gettime" != "none required"; then
++      ALSA_DEPLIBS="$ALSA_DEPLIBS $ac_cv_search_clock_gettime"
++    fi
+     AC_DEFINE([HAVE_LIBRT], 1, [Have librt])
+     AC_DEFINE([HAVE_CLOCK_GETTIME], 1, [Have clock gettime])
+   fi

@@ -1,0 +1,134 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0ef4a68..999b79e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -33,7 +33,8 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+     set(LINUX TRUE)
+ elseif(CMAKE_SYSTEM_NAME MATCHES "Android")
+     set(ANDROID TRUE)
+-    set(CMAKE_CXX_FLAGS "-DANDROID_NDK_BUILD")
++    string(APPEND CMAKE_CXX_FLAGS " -DANDROID_NDK_BUILD")
++    add_compile_definitions(SWIFTSHADER_EXTERNAL_MEMORY_ANDROID_HARDWARE_BUFFER=1)
+ elseif(WIN32)
+ elseif(APPLE)
+ elseif(FUCHSIA)
+@@ -339,10 +340,12 @@ macro(set_shared_library_export_map TARGET DIR)
+         if(NOT SWIFTSHADER_MSAN AND NOT SWIFTSHADER_ASAN AND NOT SWIFTSHADER_TSAN AND NOT SWIFTSHADER_UBSAN)
+             set_property(TARGET ${TARGET} APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-undefined,error")
+         endif()
+-    elseif(LINUX OR FUCHSIA)
++    elseif(LINUX OR FUCHSIA OR ANDROID)
+         # NOTE: The Fuchsia linker script is needed to export the vk_icdInitializeConnectToServiceCallback
+         # entry point (a private implementation detail betwen the Fuchsia Vulkan loader and the ICD).
+-        if ((FUCHSIA) AND ("${TARGET}" STREQUAL "vk_swiftshader"))
++        if ((ANDROID) AND ("${TARGET}" STREQUAL "vk_swiftshader"))
++          set(LINKER_VERSION_SCRIPT "android_vk_swiftshader.lds")
++        elseif ((FUCHSIA) AND ("${TARGET}" STREQUAL "vk_swiftshader"))
+           set(LINKER_VERSION_SCRIPT "fuchsia_vk_swiftshader.lds")
+         else()
+           set(LINKER_VERSION_SCRIPT "${TARGET}.lds")
+@@ -854,6 +857,8 @@ elseif(APPLE)
+     target_compile_definitions(vk_base INTERFACE "VK_USE_PLATFORM_METAL_EXT")
+ elseif(FUCHSIA)
+     target_compile_definitions(vk_base INTERFACE "VK_USE_PLATFORM_FUCHSIA")
++elseif(ANDROID)
++    target_compile_definitions(vk_base INTERFACE "VK_USE_PLATFORM_ANDROID_KHR")
+ else()
+     message(FATAL_ERROR "Platform does not support Vulkan yet")
+ endif()
+diff --git a/src/Reactor/ExecutableMemory.cpp b/src/Reactor/ExecutableMemory.cpp
+index db5145b..387167a 100644
+--- a/src/Reactor/ExecutableMemory.cpp
++++ b/src/Reactor/ExecutableMemory.cpp
+@@ -33,7 +33,7 @@
+ #	include <unistd.h>
+ #endif
+ 
+-#if defined(__ANDROID__) && !defined(ANDROID_HOST_BUILD) && !defined(ANDROID_NDK_BUILD)
++#if defined(__ANDROID__) && !defined(ANDROID_HOST_BUILD)
+ #	include <sys/prctl.h>
+ #endif
+ 
+@@ -142,7 +142,7 @@ int permissionsToMmapProt(int permissions)
+ #endif  // !defined(_WIN32) && !defined(__Fuchsia__)
+ 
+ #if defined(__linux__) && defined(REACTOR_ANONYMOUS_MMAP_NAME)
+-#	if !defined(__ANDROID__) || defined(ANDROID_HOST_BUILD) || defined(ANDROID_NDK_BUILD)
++#	if !defined(__ANDROID__) || defined(ANDROID_HOST_BUILD)
+ // Create a file descriptor for anonymous memory with the given
+ // name. Returns -1 on failure.
+ // TODO: remove once libc wrapper exists.
+@@ -176,12 +176,12 @@ int anonymousFd()
+ 	static int fd = memfd_create(MACRO_STRINGIFY(REACTOR_ANONYMOUS_MMAP_NAME), 0);
+ 	return fd;
+ }
+-#	else   // __ANDROID__ && !ANDROID_HOST_BUILD && !ANDROID_NDK_BUILD
++#	else   // __ANDROID__ && !ANDROID_HOST_BUILD
+ int anonymousFd()
+ {
+ 	return -1;
+ }
+-#	endif  // __ANDROID__ && !ANDROID_HOST_BUILD && !ANDROID_NDK_BUILD
++#	endif  // __ANDROID__ && !ANDROID_HOST_BUILD
+ 
+ // Ensure there is enough space in the "anonymous" fd for length.
+ void ensureAnonFileSize(int anonFd, size_t length)
+@@ -301,7 +301,7 @@ void *allocateMemoryPages(size_t bytes, int permissions, bool need_exec)
+ 	{
+ 		mapping = nullptr;
+ 	}
+-#	if defined(__ANDROID__) && !defined(ANDROID_HOST_BUILD) && !defined(ANDROID_NDK_BUILD)
++#	if defined(__ANDROID__) && !defined(ANDROID_HOST_BUILD)
+ 	else
+ 	{
+ 		// On Android, prefer to use a non-standard prctl called
+@@ -311,7 +311,7 @@ void *allocateMemoryPages(size_t bytes, int permissions, bool need_exec)
+ 		prctl(PR_SET_VMA, PR_SET_VMA_ANON_NAME, mapping, length,
+ 		      MACRO_STRINGIFY(REACTOR_ANONYMOUS_MMAP_NAME));
+ 	}
+-#	endif  // __ANDROID__ && !ANDROID_HOST_BUILD && !ANDROID_NDK_BUILD
++#	endif  // __ANDROID__ && !ANDROID_HOST_BUILD
+ #elif defined(__Fuchsia__)
+ 	zx_handle_t vmo;
+ 	if(zx_vmo_create(length, 0, &vmo) != ZX_OK)
+diff --git a/src/Vulkan/CMakeLists.txt b/src/Vulkan/CMakeLists.txt
+index bd05b0f..6001a94 100644
+--- a/src/Vulkan/CMakeLists.txt
++++ b/src/Vulkan/CMakeLists.txt
+@@ -106,6 +106,10 @@ if(WIN32)
+     )
+ endif()
+ 
++if(ANDROID)
++    list(APPEND VULKAN_SRC_FILES VkDeviceMemoryExternalAndroid.cpp)
++endif()
++
+ if(SWIFTSHADER_ENABLE_VULKAN_DEBUGGER)
+     list(APPEND VULKAN_SRC_FILES
+         Debug/Context.cpp
+@@ -158,6 +162,16 @@ add_library(vk_swiftshader SHARED
+     ${VULKAN_SRC_FILES}
+ )
+ 
++if(ANDROID)
++    if(NOT SWIFTSHADER_ANDROID_SYNC_LIBRARY)
++        set(SWIFTSHADER_ANDROID_SYNC_LIBRARY sync)
++    endif()
++    if(NOT SWIFTSHADER_ANDROID_NATIVEWINDOW_LIBRARY)
++        set(SWIFTSHADER_ANDROID_NATIVEWINDOW_LIBRARY nativewindow)
++    endif()
++    target_link_libraries(vk_swiftshader PRIVATE "${SWIFTSHADER_ANDROID_NATIVEWINDOW_LIBRARY}" log "${SWIFTSHADER_ANDROID_SYNC_LIBRARY}")
++endif()
++
+ set_target_properties(vk_swiftshader PROPERTIES
+     POSITION_INDEPENDENT_CODE 1
+     FOLDER "SwiftShader VK"
+@@ -217,6 +231,8 @@ elseif(APPLE)
+     set(VULKAN_API_LIBRARY_NAME "libvulkan.dylib")
+ elseif(FUCHSIA)
+     set(VULKAN_API_LIBRARY_NAME "libvulkan.so")
++elseif(ANDROID)
++    set(VULKAN_API_LIBRARY_NAME "libvulkan.so")
+ else()
+     message(FATAL_ERROR "Platform does not support Vulkan yet")
+ endif()

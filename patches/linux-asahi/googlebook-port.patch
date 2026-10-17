@@ -1,0 +1,649 @@
+diff --git a/arch/arm64/tools/gen-kernel-hwcaps.sh b/arch/arm64/tools/gen-kernel-hwcaps.sh
+--- a/arch/arm64/tools/gen-kernel-hwcaps.sh
++++ b/arch/arm64/tools/gen-kernel-hwcaps.sh
+@@ -17,7 +17,7 @@
+ echo ""
+ 
+ grep -E '^#define HWCAP[0-9]*_[A-Z0-9_]+' $1 | \
+-	sed 's/.*HWCAP\([0-9]*\)_\([A-Z0-9_]\+\).*/#define KERNEL_HWCAP_\2\t__khwcap\1_feature(\2)/'
++	sed 's/.*HWCAP\([0-9]*\)_\([A-Z0-9_][A-Z0-9_]*\).*/#define KERNEL_HWCAP_\2\t__khwcap\1_feature(\2)/'
+ 
+ echo ""
+ echo "#endif /* __ASM_KERNEL_HWCAPS_H */"
+diff --git a/block/partitions/efi.c b/block/partitions/efi.c
+--- a/block/partitions/efi.c
++++ b/block/partitions/efi.c
+@@ -747,6 +747,30 @@
+ 		label_max = min(ARRAY_SIZE(info->volname) - 1,
+ 				ARRAY_SIZE(ptes[i].partition_name));
+ 		utf16_le_to_7bit(ptes[i].partition_name, label_max, info->volname);
++
++		/* GoogleBook M1 installation: supply Android names for these
++		 * explicitly identified, unnamed partitions without rewriting GPT.
++		 * Existing names and every other partition remain unchanged.
++		 */
++		if (IS_ENABLED(CONFIG_ARCH_APPLE) && !info->volname[0]) {
++			static const struct {
++				const char *uuid;
++				const char *name;
++			} googlebook_parts[] = {
++				{ "00000000-0000-4000-8000-000000000001", "super" },
++				{ "00000000-0000-4000-8000-000000000004", "metadata" },
++				{ "00000000-0000-4000-8000-000000000005", "userdata" },
++			};
++			unsigned int p;
++
++			for (p = 0; p < ARRAY_SIZE(googlebook_parts); p++) {
++				if (!strcasecmp(info->uuid, googlebook_parts[p].uuid)) {
++					strscpy(info->volname, googlebook_parts[p].name,
++						sizeof(info->volname));
++					break;
++				}
++			}
++		}
+ 		state->parts[i + 1].has_info = true;
+ 	}
+ 	kfree(ptes);
+diff --git a/drivers/gpu/drm/adp/adp_drv.c b/drivers/gpu/drm/adp/adp_drv.c
+--- a/drivers/gpu/drm/adp/adp_drv.c
++++ b/drivers/gpu/drm/adp/adp_drv.c
+@@ -10,6 +10,7 @@
+ #include <drm/drm_bridge.h>
+ #include <drm/drm_bridge_connector.h>
+ #include <drm/drm_drv.h>
++#include <drm/drm_dumb_buffers.h>
+ #include <drm/drm_fb_dma_helper.h>
+ #include <drm/drm_framebuffer.h>
+ #include <drm/drm_gem_atomic_helper.h>
+@@ -93,10 +94,24 @@
+ 					struct drm_device *drm,
+ 					struct drm_mode_create_dumb *args)
+ {
++	int ret;
++
++	/* Keep the existing allocation-height padding and report an aligned
++	 * scanline pitch to every dumb-buffer client. A 60-pixel XRGB8888
++	 * scanline needs 256 bytes of storage with this alignment, not 240.
++	 */
++	if (args->height > U32_MAX - 63)
++		return -EINVAL;
+ 	args->height = ALIGN(args->height, 64);
+-	args->size = args->pitch * args->height;
+-
+-	return drm_gem_dma_dumb_create_internal(file_priv, drm, args);
++	ret = drm_mode_size_dumb(drm, args, 64, 0);
++	if (ret)
++		return ret;
++
++	ret = drm_gem_dma_dumb_create_internal(file_priv, drm, args);
++	if (!ret)
++		drm_info_once(drm, "scanout allocation %ux%u pitch=%u bytes size=%llu\n",
++			      args->width, args->height, args->pitch, args->size);
++	return ret;
+ }
+ 
+ static const struct drm_driver adp_driver = {
+diff --git a/drivers/gpu/drm/asahi/file.rs b/drivers/gpu/drm/asahi/file.rs
+--- a/drivers/gpu/drm/asahi/file.rs
++++ b/drivers/gpu/drm/asahi/file.rs
+@@ -334,6 +334,15 @@
+             params.features |= uapi::drm_asahi_feature_DRM_ASAHI_FEATURE_SOFT_FAULTS as u64;
+         }
+ 
++        // Report usable priorities to this caller, so unprivileged clients do
++        // not select a scheduling class they cannot create. QUEUE_CREATE must
++        // still recheck current credentials if capabilities were later dropped.
++        // SAFETY: capable() checks current credentials with no pointer inputs.
++        if unsafe { bindings::capable(bindings::CAP_SYS_NICE as i32) } {
++            params.features |=
++                uapi::drm_asahi_feature_DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY as u64;
++        }
++
+         let size = core::mem::size_of::<uapi::drm_asahi_params_global>().min(data.size.try_into()?);
+ 
+         // SAFETY: We only write to this userptr once, so there are no TOCTOU issues.
+@@ -918,10 +927,15 @@
+             return Err(EINVAL);
+         }
+ 
+-        // TODO: Allow with CAP_SYS_NICE
+-        if data.priority >= uapi::drm_asahi_priority_DRM_ASAHI_PRIORITY_HIGH {
+-            cls_pr_debug!(Errors, "queue_create: Invalid priority\n");
+-            return Err(EINVAL);
++        // Elevated firmware scheduling classes can starve other GPU clients.
++        // SAFETY: capable() inspects the current task's credentials and has no
++        // pointer arguments or additional lifetime requirements. Unlike an
++        // euid check, it also honors LSM policy and the initial user namespace.
++        if data.priority >= uapi::drm_asahi_priority_DRM_ASAHI_PRIORITY_HIGH
++            && !unsafe { bindings::capable(bindings::CAP_SYS_NICE as i32) }
++        {
++            cls_pr_debug!(Errors, "queue_create: CAP_SYS_NICE required\n");
++            return Err(EACCES);
+         }
+ 
+         let queues_xa = file.inner().queues();
+diff --git a/drivers/gpu/drm/drm_crtc.c b/drivers/gpu/drm/drm_crtc.c
+--- a/drivers/gpu/drm/drm_crtc.c
++++ b/drivers/gpu/drm/drm_crtc.c
+@@ -154,11 +154,8 @@
+ #endif
+ }
+ 
+-static const struct dma_fence_ops drm_crtc_fence_ops;
+-
+ static struct drm_crtc *fence_to_crtc(struct dma_fence *fence)
+ {
+-	BUG_ON(rcu_access_pointer(fence->ops) != &drm_crtc_fence_ops);
+ 	return container_of(fence->extern_lock, struct drm_crtc, fence_lock);
+ }
+ 
+@@ -493,13 +490,22 @@
+  * drm_crtc_cleanup - Clean up the core crtc usage
+  * @crtc: CRTC to cleanup
+  *
+- * This function cleans up @crtc and removes it from the DRM mode setting
+- * core. Note that the function does *not* free the crtc structure itself,
+- * this is the responsibility of the caller.
++ * This function cleans up @crtc and removes it from the DRM mode setting core,
++ * after first waiting an RCU grace period to ensure @crtc->dev can safely be
++ * dereferenced by our dma_fence_ops.
++ *
++ * Note that the function does *not* free the crtc structure itself, this is the
++ * responsibility of the caller.
+  */
+ void drm_crtc_cleanup(struct drm_crtc *crtc)
+ {
+ 	struct drm_device *dev = crtc->dev;
++
++	/* Ensure our dma_fence_ops remain valid for an RCU grace period after
++	 * the fence is signaled. This is necessary because our dma_fence_ops
++	 * dereference crtc->dev.
++	 */
++	synchronize_rcu();
+ 
+ 	/* Note that the crtc_list is considered to be static; should we
+ 	 * remove the drm_crtc at runtime we would have to decrement all
+diff --git a/include/uapi/drm/asahi_drm.h b/include/uapi/drm/asahi_drm.h
+--- a/include/uapi/drm/asahi_drm.h
++++ b/include/uapi/drm/asahi_drm.h
+@@ -213,6 +213,14 @@
+ 	 * userspace can speculate memory accesses more aggressively.
+ 	 */
+ 	DRM_ASAHI_FEATURE_SOFT_FAULTS = (1UL) << 0,
++	/**
++	 * @DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY: HIGH and REALTIME queue
++	 * priorities are implemented and available to the current caller at
++	 * GET_PARAMS time. This requires CAP_SYS_NICE in the initial user
++	 * namespace. QUEUE_CREATE rechecks it; unauthorized callers get EACCES.
++	 * This reports kernel support, not a hard real-time completion guarantee.
++	 */
++	DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY = (1UL) << 1,
+ };
+ 
+ /**
+@@ -538,14 +546,14 @@
+ 	/**
+ 	 * @DRM_ASAHI_PRIORITY_HIGH: High priority queue.
+ 	 *
+-	 * Reserved for future extension.
++	 * Requires DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY and CAP_SYS_NICE.
+ 	 */
+ 	DRM_ASAHI_PRIORITY_HIGH = 2,
+ 
+ 	/**
+ 	 * @DRM_ASAHI_PRIORITY_REALTIME: Real-time priority queue.
+ 	 *
+-	 * Reserved for future extension.
++	 * Requires DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY and CAP_SYS_NICE.
+ 	 */
+ 	DRM_ASAHI_PRIORITY_REALTIME = 3,
+ };
+diff --git a/mm/Kconfig b/mm/Kconfig
+--- a/mm/Kconfig
++++ b/mm/Kconfig
+@@ -1314,6 +1314,13 @@
+ config MEMFD_CREATE
+ 	bool "Enable memfd_create() system call" if EXPERT
+ 
++config MEMFD_ASHMEM_SHIM
++	bool "Android ashmem ioctl compatibility for memfd"
++	depends on MEMFD_CREATE && SHMEM
++	help
++	  Support the Android common-kernel ashmem ioctl ABI on memfd files.
++	  Size and protection operations use the real inode and memfd seals.
++
+ config SECRETMEM
+ 	default y
+ 	bool "Enable memfd_secret() system call" if EXPERT
+diff --git a/mm/Makefile b/mm/Makefile
+--- a/mm/Makefile
++++ b/mm/Makefile
+@@ -141,6 +141,7 @@
+ obj-$(CONFIG_ZONE_DEVICE) += memremap.o
+ obj-$(CONFIG_HMM_MIRROR) += hmm.o
+ obj-$(CONFIG_MEMFD_CREATE) += memfd.o
++obj-$(CONFIG_MEMFD_ASHMEM_SHIM) += memfd-ashmem-shim.o
+ obj-$(CONFIG_MAPPING_DIRTY_HELPERS) += mapping_dirty_helpers.o
+ obj-$(CONFIG_PTDUMP) += ptdump.o
+ obj-$(CONFIG_PAGE_REPORTING) += page_reporting.o
+diff --git a/mm/memfd-ashmem-shim-internal.h b/mm/memfd-ashmem-shim-internal.h
+new file mode 100644
+--- /dev/null
++++ b/mm/memfd-ashmem-shim-internal.h
+@@ -0,0 +1,52 @@
++// SPDX-License-Identifier: GPL-2.0
++
++/*
++ * Ashmem compatability for memfd
++ *
++ * Copyright (c) 2025, Google LLC.
++ * Author: Isaac J. Manjarres <isaacmanjarres@google.com>
++ */
++
++#ifndef _MM_MEMFD_ASHMEM_SHIM_INTERNAL_H
++#define _MM_MEMFD_ASHMEM_SHIM_INTERNAL_H
++
++#include <linux/compat.h>
++#include <linux/ioctl.h>
++#include <linux/types.h>
++
++#define ASHMEM_NAME_LEN		256
++
++/* Return values from ASHMEM_PIN: Was the mapping purged while unpinned? */
++#define ASHMEM_NOT_PURGED	0
++#define ASHMEM_WAS_PURGED	1
++
++/* Return values from ASHMEM_GET_PIN_STATUS: Is the mapping pinned? */
++#define ASHMEM_IS_UNPINNED	0
++#define ASHMEM_IS_PINNED	1
++
++struct ashmem_pin {
++	__u32 offset;	/* offset into region, in bytes, page-aligned */
++	__u32 len;	/* length forward from offset, in bytes, page-aligned */
++};
++
++#define __ASHMEMIOC		0x77
++
++#define ASHMEM_SET_NAME		_IOW(__ASHMEMIOC, 1, char[ASHMEM_NAME_LEN])
++#define ASHMEM_GET_NAME		_IOR(__ASHMEMIOC, 2, char[ASHMEM_NAME_LEN])
++#define ASHMEM_SET_SIZE		_IOW(__ASHMEMIOC, 3, size_t)
++#define ASHMEM_GET_SIZE		_IO(__ASHMEMIOC, 4)
++#define ASHMEM_SET_PROT_MASK	_IOW(__ASHMEMIOC, 5, unsigned long)
++#define ASHMEM_GET_PROT_MASK	_IO(__ASHMEMIOC, 6)
++#define ASHMEM_PIN		_IOW(__ASHMEMIOC, 7, struct ashmem_pin)
++#define ASHMEM_UNPIN		_IOW(__ASHMEMIOC, 8, struct ashmem_pin)
++#define ASHMEM_GET_PIN_STATUS	_IO(__ASHMEMIOC, 9)
++#define ASHMEM_PURGE_ALL_CACHES	_IO(__ASHMEMIOC, 10)
++#define ASHMEM_GET_FILE_ID		_IOR(__ASHMEMIOC, 11, unsigned long)
++
++/* support of 32bit userspace on 64bit platforms */
++#ifdef CONFIG_COMPAT
++#define COMPAT_ASHMEM_SET_SIZE		_IOW(__ASHMEMIOC, 3, compat_size_t)
++#define COMPAT_ASHMEM_SET_PROT_MASK	_IOW(__ASHMEMIOC, 5, unsigned int)
++#endif
++
++#endif /* _MM_MEMFD_ASHMEM_SHIM_INTERNAL_H */
+diff --git a/mm/memfd-ashmem-shim.c b/mm/memfd-ashmem-shim.c
+new file mode 100644
+--- /dev/null
++++ b/mm/memfd-ashmem-shim.c
+@@ -0,0 +1,240 @@
++// SPDX-License-Identifier: GPL-2.0
++
++/*
++ * Ashmem compatability for memfd
++ *
++ * Copyright (c) 2025, Google LLC.
++ * Author: Isaac J. Manjarres <isaacmanjarres@google.com>
++ */
++
++#include <asm-generic/mman-common.h>
++#include <linux/capability.h>
++#include <linux/fs.h>
++#include <linux/memfd.h>
++#include <linux/uaccess.h>
++
++#include "memfd-ashmem-shim.h"
++#include "memfd-ashmem-shim-internal.h"
++
++/* file_path() returns the path of the file including the root, hence the additional "/". */
++#define MEMFD_PATH_PREFIX "/memfd:"
++#define MEMFD_PATH_PREFIX_LEN (sizeof(MEMFD_PATH_PREFIX) - 1)
++
++/* All memfd files are unlinked, and are therefore suffixed with the " (deleted)" string. */
++#define UNLINKED_FILE_SUFFIX " (deleted)"
++#define UNLINKED_FILE_SUFFIX_LEN (sizeof(UNLINKED_FILE_SUFFIX) - 1)
++
++/*
++ * 1 character for the start of the path (/), NAME_MAX for the maximum length of a full memfd file
++ * name, UNLINKED_FILE_SUFFIX_LEN for the " (deleted)" suffix, and 1 for the NUL terminating
++ * character.
++ */
++#define MAX_FILE_PATH_SIZE (1 + NAME_MAX + UNLINKED_FILE_SUFFIX_LEN + 1)
++
++static char *get_memfd_file_name(struct file *file, char *buf, size_t size)
++{
++	char *name_end;
++	char *path = file_path(file, buf, size);
++
++	if (IS_ERR(path))
++		return path;
++
++	/* Only handle memfds; we cannot make assumptions about other file names. */
++	name_end = strstr(path, UNLINKED_FILE_SUFFIX);
++	if ((strstr(path, MEMFD_PATH_PREFIX) != path) || !name_end)
++		return ERR_PTR(-EINVAL);
++
++	/*
++	 * Since file_path() returns the full path of the file, including the root, the format will
++	 * be:
++	 *
++	 * "/memfd:testbuf (deleted)"
++	 *
++	 * But the ASHMEM_GET_NAME ioctl only returns the name of the buffer without any prefixes
++	 * or suffixes. So, terminate the string at the start of the " (deleted)" suffix so that
++	 * strlen() can be used on it from the start of the name.
++	 */
++	*name_end = '\0';
++
++	/* return a pointer to the start of the name */
++	return &path[MEMFD_PATH_PREFIX_LEN];
++}
++
++static long get_name(struct file *file, void __user *name)
++{
++	char buf[MAX_FILE_PATH_SIZE];
++	char *file_name = get_memfd_file_name(file, buf, sizeof(buf));
++	size_t len;
++
++	if (IS_ERR(file_name))
++		return PTR_ERR(file_name);
++
++	/*
++	 * The expectation is that the user provided buffer is ASHMEM_NAME_LEN in size, which is
++	 * larger than the maximum size of a name for a memfd buffer, so the name should always fit
++	 * within the given buffer.
++	 *
++	 * However, we should ensure that the string will indeed fit in the user provided buffer.
++	 *
++	 * Add 1 to the copy size to account for the NUL terminator
++	 */
++	len = strlen(file_name) + 1;
++	if (len > ASHMEM_NAME_LEN)
++		return -EINVAL;
++
++	return copy_to_user(name, file_name, len) ? -EFAULT : 0;
++}
++
++static long get_prot_mask(struct file *file)
++{
++	long prot_mask = PROT_READ | PROT_EXEC;
++	long seals = memfd_fcntl(file, F_GET_SEALS, 0);
++
++	if (seals < 0)
++		return seals;
++
++	/* memfds are readable and executable by default. Only writability can be changed. */
++	if (!(seals & (F_SEAL_WRITE | F_SEAL_FUTURE_WRITE)))
++		prot_mask |= PROT_WRITE;
++
++	return prot_mask;
++}
++
++static long set_prot_mask(struct file *file, unsigned long prot)
++{
++	long curr_prot = get_prot_mask(file);
++	long ret = 0;
++
++	if (curr_prot < 0)
++		return curr_prot;
++
++	/*
++	 * memfds are always readable and executable; there is no way to remove either mapping
++	 * permission, nor is there a known usecase that requires it.
++	 *
++	 * Attempting to remove either of these mapping permissions will return successfully, but
++	 * will be a nop, as the buffer will still be mappable with these permissions.
++	 */
++	prot |= PROT_READ | PROT_EXEC;
++
++	/* Only allow permissions to be removed. */
++	if ((curr_prot & prot) != prot)
++		return -EINVAL;
++
++	/*
++	 * Removing PROT_WRITE:
++	 *
++	 * We could prevent any other mappings from having write permissions by adding the
++	 * F_SEAL_WRITE mapping. However, that would conflict with known usecases where it is
++	 * desirable to maintain an existing writable mapping, but forbid future writable mappings.
++	 *
++	 * To support those usecases, we use F_SEAL_FUTURE_WRITE.
++	 */
++	if (!(prot & PROT_WRITE))
++		ret = memfd_fcntl(file, F_ADD_SEALS, F_SEAL_FUTURE_WRITE);
++
++	return ret;
++}
++
++/*
++ * memfd_ashmem_shim_ioctl - ioctl handler for ashmem commands
++ * @file: The shmem file.
++ * @cmd: The ioctl command.
++ * @arg: The argument for the ioctl command.
++ *
++ * The purpose of this handler is to allow old applications to continue working
++ * on newer kernels by allowing them to invoke ashmem ioctl commands on memfds.
++ *
++ * The ioctl handler attempts to retain as much compatibility with the ashmem
++ * driver as possible.
++ */
++long memfd_ashmem_shim_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
++{
++	long ret = -ENOTTY;
++	unsigned long inode_nr;
++
++	switch (cmd) {
++	/*
++	 * Older applications won't create memfds and try to use ASHMEM_SET_NAME/ASHMEM_SET_SIZE on
++	 * them intentionally.
++	 *
++	 * Instead, we can end up in this scenario if an old application receives a memfd that was
++	 * created by another process.
++	 *
++	 * However, the current process shouldn't expect to be able to reliably [re]name/size a
++	 * buffer that was shared with it, since the process that shared that buffer with it, or
++	 * any other process that references the buffer could have already mapped it.
++	 *
++	 * Additionally in the case of ASHMEM_SET_SIZE, when processes create memfds that are going
++	 * to be shared with other processes in Android, they also specify the size of the memory
++	 * region and seal the file against any size changes. Therefore, ASHMEM_SET_SIZE should not
++	 * be supported anyway.
++	 *
++	 * Therefore, it is reasonable to return -EINVAL here, as if the buffer was already mapped.
++	 */
++	case ASHMEM_SET_NAME:
++	case ASHMEM_SET_SIZE:
++		ret = -EINVAL;
++		break;
++	case ASHMEM_GET_NAME:
++		ret = get_name(file, (void __user *)arg);
++		break;
++	case ASHMEM_GET_SIZE:
++		ret = i_size_read(file_inode(file));
++		break;
++	case ASHMEM_SET_PROT_MASK:
++		ret = set_prot_mask(file, arg);
++		break;
++	case ASHMEM_GET_PROT_MASK:
++		ret = get_prot_mask(file);
++		break;
++	/*
++	 * Unpinning ashmem buffers was deprecated with the release of Android 10,
++	 * as it did not yield any remarkable benefits. Therefore, ignore pinning
++	 * related requests.
++	 *
++	 * This makes it so that memory is always "pinned" or never entirely freed
++	 * until all references to the ashmem buffer are dropped. The memory occupied
++	 * by the buffer is still subject to being reclaimed (swapped out) under memory
++	 * pressure, but that is not the same as being freed.
++	 *
++	 * This makes it so that:
++	 *
++	 * 1. Memory is always pinned and therefore never purged.
++	 * 2. Requests to unpin memory (make it a candidate for being freed) are ignored.
++	 */
++	case ASHMEM_PIN:
++		ret = ASHMEM_NOT_PURGED;
++		break;
++	case ASHMEM_UNPIN:
++		ret = 0;
++		break;
++	case ASHMEM_GET_PIN_STATUS:
++		ret = ASHMEM_IS_PINNED;
++		break;
++	case ASHMEM_PURGE_ALL_CACHES:
++		ret = capable(CAP_SYS_ADMIN) ? 0 : -EPERM;
++		break;
++	case ASHMEM_GET_FILE_ID:
++		inode_nr = file_inode(file)->i_ino;
++		if (copy_to_user((void __user *)arg, &inode_nr, sizeof(inode_nr)))
++			ret = -EFAULT;
++		else
++			ret = 0;
++		break;
++	}
++
++	return ret;
++}
++
++#ifdef CONFIG_COMPAT
++long memfd_ashmem_shim_compat_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
++{
++	if (cmd == COMPAT_ASHMEM_SET_SIZE)
++		cmd = ASHMEM_SET_SIZE;
++	else if (cmd == COMPAT_ASHMEM_SET_PROT_MASK)
++		cmd = ASHMEM_SET_PROT_MASK;
++
++	return memfd_ashmem_shim_ioctl(file, cmd, arg);
++}
++#endif
+diff --git a/mm/memfd-ashmem-shim.h b/mm/memfd-ashmem-shim.h
+new file mode 100644
+--- /dev/null
++++ b/mm/memfd-ashmem-shim.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#ifndef __MM_MEMFD_ASHMEM_SHIM_H
++#define __MM_MEMFD_ASHMEM_SHIM_H
++
++/*
++ * mm/memfd-ashmem-shim.h
++ *
++ * Ashmem compatability for memfd
++ *
++ * Copyright (c) 2025, Google LLC.
++ * Author: Isaac J. Manjarres <isaacmanjarres@google.com>
++ *
++ */
++
++#include <linux/fs.h>
++
++long memfd_ashmem_shim_ioctl(struct file *file, unsigned int cmd, unsigned long arg);
++#ifdef CONFIG_COMPAT
++long memfd_ashmem_shim_compat_ioctl(struct file *file, unsigned int cmd, unsigned long arg);
++#endif
++#endif /* __MM_MEMFD_ASHMEM_SHIM_H */
+diff --git a/mm/shmem.c b/mm/shmem.c
+--- a/mm/shmem.c
++++ b/mm/shmem.c
+@@ -21,6 +21,9 @@
+  */
+ 
+ #include <linux/fs.h>
++#ifdef CONFIG_MEMFD_ASHMEM_SHIM
++#include "memfd-ashmem-shim.h"
++#endif
+ #include <linux/init.h>
+ #include <linux/vfs.h>
+ #include <linux/mount.h>
+@@ -5212,6 +5215,12 @@
+ 	.fallocate	= shmem_fallocate,
+ 	.setlease	= generic_setlease,
+ #endif
++#ifdef CONFIG_MEMFD_ASHMEM_SHIM
++	.unlocked_ioctl = memfd_ashmem_shim_ioctl,
++#ifdef CONFIG_COMPAT
++	.compat_ioctl = memfd_ashmem_shim_compat_ioctl,
++#endif
++#endif
+ };
+ 
+ static const struct inode_operations shmem_inode_operations = {
+diff --git a/scripts/Makefile.vmlinux b/scripts/Makefile.vmlinux
+--- a/scripts/Makefile.vmlinux
++++ b/scripts/Makefile.vmlinux
+@@ -113,7 +113,7 @@
+ # what kmod expects to parse.
+ quiet_cmd_modules_builtin_modinfo = GEN     $@
+       cmd_modules_builtin_modinfo = $(cmd_objcopy); \
+-                                    sed -i 's/\x00\+$$/\x00/g' $@; \
++                                    /opt/homebrew/bin/gsed -i 's/\x00\+$$/\x00/g' $@; \
+                                     chmod -x $@
+ 
+ OBJCOPYFLAGS_modules.builtin.modinfo := -j .modinfo -O binary
+diff --git a/scripts/mod/file2alias.c b/scripts/mod/file2alias.c
+--- a/scripts/mod/file2alias.c
++++ b/scripts/mod/file2alias.c
+@@ -107,9 +107,11 @@
+ 	__u8 b[16];
+ } guid_t;
+ 
++#ifndef __APPLE__
+ typedef struct {
+ 	__u8 b[16];
+ } uuid_t;
++#endif
+ 
+ #define	UUID_STRING_LEN		36
+ 
+@@ -1267,13 +1269,14 @@
+ static void do_tee_entry(struct module *mod, void *symval)
+ {
+ 	DEF_FIELD_ADDR(symval, tee_client_device_id, uuid);
++	const unsigned char *b = (const unsigned char *)uuid;
+ 
+ 	module_alias_printf(mod, true,
+ 			    "tee:%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x",
+-		uuid->b[0], uuid->b[1], uuid->b[2], uuid->b[3], uuid->b[4],
+-		uuid->b[5], uuid->b[6], uuid->b[7], uuid->b[8], uuid->b[9],
+-		uuid->b[10], uuid->b[11], uuid->b[12], uuid->b[13], uuid->b[14],
+-		uuid->b[15]);
++		b[0], b[1], b[2], b[3], b[4],
++		b[5], b[6], b[7], b[8], b[9],
++		b[10], b[11], b[12], b[13], b[14],
++		b[15]);
+ }
+ 
+ /* Looks like: wmi:guid */
+diff --git a/usr/gen_init_cpio.c b/usr/gen_init_cpio.c
+--- a/usr/gen_init_cpio.c
++++ b/usr/gen_init_cpio.c
+@@ -13,6 +13,17 @@
+ #include <errno.h>
+ #include <ctype.h>
+ #include <limits.h>
++
++#ifndef O_LARGEFILE
++#define O_LARGEFILE 0
++#endif
++
++#ifndef __linux__
++static inline ssize_t copy_file_range(int fd_in, off_t *off_in, int fd_out, off_t *off_out, size_t len, unsigned int flags) {
++    (void)fd_in; (void)off_in; (void)fd_out; (void)off_out; (void)len; (void)flags;
++    return -1;
++}
++#endif
+ 
+ /*
+  * Original work by Jeff Garzik

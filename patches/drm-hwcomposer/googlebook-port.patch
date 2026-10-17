@@ -1,0 +1,29 @@
+diff --git a/drm/ResourceManager.cpp b/drm/ResourceManager.cpp
+--- a/drm/ResourceManager.cpp
++++ b/drm/ResourceManager.cpp
+@@ -43,6 +43,7 @@
+ #if HAS_LIBDISPLAY_INFO
+ #include "utils/EdidWrapper.h"
+ #endif
++#include "utils/DrmDevicePaths.h"
+ #include "utils/log.h"
+ #include "utils/properties.h"
+ 
+@@ -181,15 +182,8 @@
+     }
+   } else {
+     path_pattern.resize(path_pattern.size() - 1);
+-    for (int idx = 0;; ++idx) {
+-      std::ostringstream path;
+-      path << path_pattern << idx;
+-
+-      struct stat buf {};
+-      if (stat(path.str().c_str(), &buf) != 0)
+-        break;
+-
+-      auto dev = DrmDevice::CreateInstance(path.str(), this, idx);
++    for (const auto &node : drmhwc::EnumerateDrmDevicePaths(path_pattern)) {
++      auto dev = DrmDevice::CreateInstance(node.path, this, node.index);
+       if (dev) {
+         drms_.emplace_back(std::move(dev));
+       }

@@ -1,0 +1,19 @@
+{
+  "patches": [
+    {
+      "commit": "bbea9e696f0cca2573b58f89bfbb19af03595c5a",
+      "url": "https://android.googlesource.com/kernel/common/+/bbea9e696f0cca2573b58f89bfbb19af03595c5a",
+      "patch": "/opt/googlebook/project/.agent-work/references/drm-fence-fixes/01-bbea9e696f0cca2573b58f89bfbb19af03595c5a.patch",
+      "sha256": "a60a51670c5b312f7b2dc1960658939ab7db98f53d2ca66f651e804bf1063428",
+      "subject": "FROMLIST: drm/drm_crtc: ensure dma_fence_ops remain valid during device unbind"
+    },
+    {
+      "commit": "57acb869490b504996ea46cbb80af49e35ec66e1",
+      "url": "https://android.googlesource.com/kernel/common/+/57acb869490b504996ea46cbb80af49e35ec66e1",
+      "patch": "/opt/googlebook/project/.agent-work/references/drm-fence-fixes/02-57acb869490b504996ea46cbb80af49e35ec66e1.patch",
+      "sha256": "fac27da93132adc84f5ec8350fdfa82f2aa2ce646b9f9affefa7566f8acf7459",
+      "subject": "FROMLIST: drm/drm_crtc: fix race with dma_fence_signal() in ::get_driver_name()"
+    }
+  ],
+  "reason": "Matches real M1 trial17-d DRM CRTC fence BUG trace; full pair retains RCU lifetime guarantee"
+}

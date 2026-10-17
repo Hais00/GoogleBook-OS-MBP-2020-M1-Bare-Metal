@@ -1,0 +1,177 @@
+diff --git a/cros_gralloc/cros_gralloc_buffer.cc b/cros_gralloc/cros_gralloc_buffer.cc
+--- a/cros_gralloc/cros_gralloc_buffer.cc
++++ b/cros_gralloc/cros_gralloc_buffer.cc
+@@ -363,7 +363,9 @@
+ 
+ 	if (map_flags) {
+ 		if (lock_data_[0]) {
+-			drv_bo_invalidate(bo_, lock_data_[0]);
++			int ret = drv_bo_invalidate(bo_, lock_data_[0]);
++			if (ret)
++				return ret;
+ 			vaddr = lock_data_[0]->vma->addr;
+ 		} else {
+ 			struct rectangle r = *rect;
+@@ -402,8 +404,10 @@
+ 
+ 	if (!--lockcount_) {
+ 		if (lock_data_[0]) {
+-			drv_bo_flush_or_unmap(bo_, lock_data_[0]);
++			int ret = drv_bo_flush_or_unmap(bo_, lock_data_[0]);
+ 			lock_data_[0] = nullptr;
++			if (ret)
++				return ret;
+ 		}
+ 	}
+ 
+diff --git a/cros_gralloc/cros_gralloc_driver.cc b/cros_gralloc/cros_gralloc_driver.cc
+--- a/cros_gralloc/cros_gralloc_driver.cc
++++ b/cros_gralloc/cros_gralloc_driver.cc
+@@ -112,6 +112,9 @@
+ 	drv = drv_create(fd, NULL);
+ 	if (!drv)
+ 		close(fd);
++	else if (drmIsMaster(fd) == 1)
++		/* DCP allocations use the primary node; leave modesetting to HWC. */
++		drmDropMaster(fd);
+ 
+ 	return drv;
+ }
+diff --git a/drv.c b/drv.c
+--- a/drv.c
++++ b/drv.c
+@@ -49,6 +49,8 @@
+ #endif
+ 
+ // Dumb / generic drivers
++extern const struct backend backend_apple;
++extern const struct backend backend_asahi;
+ extern const struct backend backend_evdi;
+ extern const struct backend backend_marvell;
+ extern const struct backend backend_mediatek;
+@@ -66,6 +68,8 @@
+ extern const struct backend backend_mock;
+ 
+ static const struct backend *drv_backend_list[] = {
++	&backend_apple,
++	&backend_asahi,
+ #ifdef DRV_AMDGPU
+ 	&backend_amdgpu,
+ #endif
+@@ -497,10 +501,13 @@
+ 	return NULL;
+ }
+ 
++static int drv_bo_unmap_locked(struct bo *bo, struct mapping *mapping);
++
+ void *drv_bo_map(struct bo *bo, const struct rectangle *rect, uint32_t map_flags,
+ 		 struct mapping **map_data, size_t plane)
+ {
+ 	struct driver *drv = bo->drv;
++	int invalidate_error;
+ 	uint32_t i;
+ 	uint8_t *addr;
+ 	struct mapping mapping = { 0 };
+@@ -569,20 +576,25 @@
+ success:
+ 	*map_data = drv_array_append(drv->mappings, &mapping);
+ exact_match:
+-	drv_bo_invalidate(bo, *map_data);
++	invalidate_error = drv_bo_invalidate(bo, *map_data);
++	if (invalidate_error) {
++		drv_bo_unmap_locked(bo, *map_data);
++		*map_data = NULL;
++		pthread_mutex_unlock(&drv->mappings_lock);
++		errno = invalidate_error < 0 ? -invalidate_error : EIO;
++		return MAP_FAILED;
++	}
+ 	addr = (uint8_t *)((*map_data)->vma->addr);
+ 	addr += drv_bo_get_plane_offset(bo, plane);
+ 	pthread_mutex_unlock(&drv->mappings_lock);
+ 	return (void *)addr;
+ }
+ 
+-int drv_bo_unmap(struct bo *bo, struct mapping *mapping)
++static int drv_bo_unmap_locked(struct bo *bo, struct mapping *mapping)
+ {
+ 	struct driver *drv = bo->drv;
+ 	uint32_t i;
+ 	int ret = 0;
+-
+-	pthread_mutex_lock(&drv->mappings_lock);
+ 
+ 	if (--mapping->refcount)
+ 		goto out;
+@@ -600,7 +612,14 @@
+ 	}
+ 
+ out:
+-	pthread_mutex_unlock(&drv->mappings_lock);
++	return ret;
++}
++
++int drv_bo_unmap(struct bo *bo, struct mapping *mapping)
++{
++	pthread_mutex_lock(&bo->drv->mappings_lock);
++	int ret = drv_bo_unmap_locked(bo, mapping);
++	pthread_mutex_unlock(&bo->drv->mappings_lock);
+ 	return ret;
+ }
+ 
+diff --git a/drv_helpers.h b/drv_helpers.h
+--- a/drv_helpers.h
++++ b/drv_helpers.h
+@@ -19,6 +19,7 @@
+ struct format_metadata;
+ 
+ extern const struct backend backend_dma_heap;
++int drv_dumb_driver_init(struct driver *drv);
+ 
+ uint32_t drv_height_from_format(uint32_t format, uint32_t height, size_t plane);
+ uint32_t drv_vertical_subsampling_from_format(uint32_t format, size_t plane);
+diff --git a/dumb_driver.c b/dumb_driver.c
+--- a/dumb_driver.c
++++ b/dumb_driver.c
+@@ -13,7 +13,7 @@
+ #define INIT_DUMB_DRIVER_WITH_NAME(driver, _name)                                                  \
+ 	const struct backend backend_##driver = {                                                  \
+ 		.name = _name,                                                                     \
+-		.init = dumb_driver_init,                                                          \
++		.init = drv_dumb_driver_init,                                                      \
+ 		.bo_create = drv_dumb_bo_create,                                                   \
+ 		.bo_create_with_modifiers = dumb_bo_create_with_modifiers,                         \
+ 		.bo_destroy = drv_dumb_bo_destroy,                                                 \
+@@ -33,7 +33,7 @@
+ static const uint32_t texture_only_formats[] = { DRM_FORMAT_R8, DRM_FORMAT_NV12, DRM_FORMAT_NV21,
+ 						 DRM_FORMAT_YVU420, DRM_FORMAT_YVU420_ANDROID };
+ 
+-static int dumb_driver_init(struct driver *drv)
++int drv_dumb_driver_init(struct driver *drv)
+ {
+ 	drv_add_combinations(drv, scanout_render_formats, ARRAY_SIZE(scanout_render_formats),
+ 			     &LINEAR_METADATA, BO_USE_RENDER_MASK | BO_USE_SCANOUT);
+@@ -66,6 +66,8 @@
+ }
+ 
+ INIT_DUMB_DRIVER(evdi)
++/* Apple DCP exposes linear DMA GEM buffers that AGX can import through PRIME. */
++INIT_DUMB_DRIVER(apple)
+ INIT_DUMB_DRIVER(komeda)
+ INIT_DUMB_DRIVER(marvell)
+ INIT_DUMB_DRIVER(meson)
+diff --git a/virtgpu.c b/virtgpu.c
+--- a/virtgpu.c
++++ b/virtgpu.c
+@@ -50,6 +50,12 @@
+ 			drv_logi("virtgpu backend not enabling %s\n", params[i].name);
+ 	}
+ 
++	/* A 2D-only virtio device allocates with MODE_CREATE_DUMB. That ioctl
++	 * is restricted to primary nodes; retry a card node instead of accepting
++	 * a render node which will later fail every allocation with EACCES. */
++	if (!params[param_3d].value && drmGetNodeTypeFromFd(drv->fd) == DRM_NODE_RENDER)
++		return -ENOTSUP;
++
+ 	for (uint32_t i = 0; i < ARRAY_SIZE(virtgpu_backends); i++) {
+ 		const struct backend *backend = virtgpu_backends[i];
+ 		ret = backend->init(drv);

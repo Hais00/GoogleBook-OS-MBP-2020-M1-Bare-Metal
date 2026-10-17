@@ -1,0 +1,76 @@
+diff --git a/drivers/gpu/drm/asahi/file.rs b/drivers/gpu/drm/asahi/file.rs
+index 061f289e4..db6823c43 100644
+--- a/drivers/gpu/drm/asahi/file.rs
++++ b/drivers/gpu/drm/asahi/file.rs
+@@ -334,6 +334,15 @@ pub(crate) fn get_params(
+             params.features |= uapi::drm_asahi_feature_DRM_ASAHI_FEATURE_SOFT_FAULTS as u64;
+         }
+ 
++        // Report usable priorities to this caller, so unprivileged clients do
++        // not select a scheduling class they cannot create. QUEUE_CREATE must
++        // still recheck current credentials if capabilities were later dropped.
++        // SAFETY: capable() checks current credentials with no pointer inputs.
++        if unsafe { bindings::capable(bindings::CAP_SYS_NICE as i32) } {
++            params.features |=
++                uapi::drm_asahi_feature_DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY as u64;
++        }
++
+         let size = core::mem::size_of::<uapi::drm_asahi_params_global>().min(data.size.try_into()?);
+ 
+         // SAFETY: We only write to this userptr once, so there are no TOCTOU issues.
+@@ -918,10 +927,15 @@ pub(crate) fn queue_create(
+             return Err(EINVAL);
+         }
+ 
+-        // TODO: Allow with CAP_SYS_NICE
+-        if data.priority >= uapi::drm_asahi_priority_DRM_ASAHI_PRIORITY_HIGH {
+-            cls_pr_debug!(Errors, "queue_create: Invalid priority\n");
+-            return Err(EINVAL);
++        // Elevated firmware scheduling classes can starve other GPU clients.
++        // SAFETY: capable() inspects the current task's credentials and has no
++        // pointer arguments or additional lifetime requirements. Unlike an
++        // euid check, it also honors LSM policy and the initial user namespace.
++        if data.priority >= uapi::drm_asahi_priority_DRM_ASAHI_PRIORITY_HIGH
++            && !unsafe { bindings::capable(bindings::CAP_SYS_NICE as i32) }
++        {
++            cls_pr_debug!(Errors, "queue_create: CAP_SYS_NICE required\n");
++            return Err(EACCES);
+         }
+ 
+         let queues_xa = file.inner().queues();
+diff --git a/include/uapi/drm/asahi_drm.h b/include/uapi/drm/asahi_drm.h
+index de67f1c60..5fb0daac6 100644
+--- a/include/uapi/drm/asahi_drm.h
++++ b/include/uapi/drm/asahi_drm.h
+@@ -213,6 +213,14 @@ enum drm_asahi_feature {
+ 	 * userspace can speculate memory accesses more aggressively.
+ 	 */
+ 	DRM_ASAHI_FEATURE_SOFT_FAULTS = (1UL) << 0,
++	/**
++	 * @DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY: HIGH and REALTIME queue
++	 * priorities are implemented and available to the current caller at
++	 * GET_PARAMS time. This requires CAP_SYS_NICE in the initial user
++	 * namespace. QUEUE_CREATE rechecks it; unauthorized callers get EACCES.
++	 * This reports kernel support, not a hard real-time completion guarantee.
++	 */
++	DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY = (1UL) << 1,
+ };
+ 
+ /**
+@@ -538,14 +546,14 @@ enum drm_asahi_priority {
+ 	/**
+ 	 * @DRM_ASAHI_PRIORITY_HIGH: High priority queue.
+ 	 *
+-	 * Reserved for future extension.
++	 * Requires DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY and CAP_SYS_NICE.
+ 	 */
+ 	DRM_ASAHI_PRIORITY_HIGH = 2,
+ 
+ 	/**
+ 	 * @DRM_ASAHI_PRIORITY_REALTIME: Real-time priority queue.
+ 	 *
+-	 * Reserved for future extension.
++	 * Requires DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY and CAP_SYS_NICE.
+ 	 */
+ 	DRM_ASAHI_PRIORITY_REALTIME = 3,
+ };

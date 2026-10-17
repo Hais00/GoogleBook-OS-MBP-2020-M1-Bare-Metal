@@ -1,0 +1,101 @@
+[
+  {
+    "name": "linux-asahi",
+    "repository": "https://github.com/AsahiLinux/linux.git",
+    "commit": "94fb23346d522edf53722357c426a3e58030beea",
+    "exported_modified_sources": [
+      "arch/arm64/tools/gen-kernel-hwcaps.sh",
+      "block/partitions/efi.c",
+      "drivers/gpu/drm/adp/adp_drv.c",
+      "drivers/gpu/drm/asahi/file.rs",
+      "drivers/gpu/drm/drm_crtc.c",
+      "include/uapi/drm/asahi_drm.h",
+      "mm/Kconfig",
+      "mm/Makefile",
+      "mm/memfd-ashmem-shim-internal.h",
+      "mm/memfd-ashmem-shim.c",
+      "mm/memfd-ashmem-shim.h",
+      "mm/shmem.c",
+      "scripts/Makefile.vmlinux",
+      "scripts/mod/file2alias.c",
+      "usr/gen_init_cpio.c"
+    ]
+  },
+  {
+    "name": "mesa",
+    "repository": "https://gitlab.freedesktop.org/mesa/mesa.git",
+    "commit": "06f9e28304d5d3f109c33535c1c25b9df5769af2",
+    "exported_modified_sources": [
+      "include/drm-uapi/asahi_drm.h",
+      "src/asahi/lib/agx_device.c",
+      "src/asahi/lib/agx_device.h",
+      "src/asahi/meson.build",
+      "src/asahi/vulkan/hk_android.c",
+      "src/asahi/vulkan/hk_android.h",
+      "src/asahi/vulkan/hk_buffer.c",
+      "src/asahi/vulkan/hk_device.c",
+      "src/asahi/vulkan/hk_device.h",
+      "src/asahi/vulkan/hk_device_memory.c",
+      "src/asahi/vulkan/hk_image.c",
+      "src/asahi/vulkan/hk_image.h",
+      "src/asahi/vulkan/hk_physical_device.c",
+      "src/asahi/vulkan/hk_queue.c",
+      "src/asahi/vulkan/hk_queue.h",
+      "src/asahi/vulkan/meson.build",
+      "src/compiler/clc/clc_helpers.cpp"
+    ]
+  },
+  {
+    "name": "minigbm",
+    "repository": "https://chromium.googlesource.com/chromiumos/platform/minigbm",
+    "commit": "a2d42f09d696b04e6ded5ad38596d8554ffd8988",
+    "exported_modified_sources": [
+      "cros_gralloc/cros_gralloc_buffer.cc",
+      "cros_gralloc/cros_gralloc_driver.cc",
+      "drv.c",
+      "drv_helpers.h",
+      "dumb_driver.c",
+      "virtgpu.c"
+    ]
+  },
+  {
+    "name": "drm-hwcomposer",
+    "repository": "https://gitlab.freedesktop.org/drm-hwcomposer/drm-hwcomposer.git",
+    "commit": "a87112ca8e78a5d401368bd44672bd73f79fe9af",
+    "exported_modified_sources": [
+      "drm/ResourceManager.cpp"
+    ]
+  },
+  {
+    "name": "speakersafetyd",
+    "repository": "https://github.com/AsahiLinux/speakersafetyd.git",
+    "commit": "615674e75dc68639d550171e33ba3946538d03b0",
+    "exported_modified_sources": [
+      "src/main.rs"
+    ]
+  },
+  {
+    "name": "alsa-lib",
+    "repository": "https://github.com/alsa-project/alsa-lib.git",
+    "commit": "a47c8bc3fef190e7eb463283230263c82208597a",
+    "exported_modified_sources": [
+      "configure.ac"
+    ]
+  },
+  {
+    "name": "avd-fw",
+    "repository": "https://github.com/AsahiLinux/avd-fw.git",
+    "commit": "220b1e70c9d7dcccbf66d5194e372300aa3c5a32",
+    "exported_modified_sources": []
+  },
+  {
+    "name": "m1n1",
+    "repository": "https://github.com/AsahiLinux/m1n1.git",
+    "commit": "809541515659bf4e504807fd72bc0a539be5eee7",
+    "reference_tag": "v1.9.9",
+    "role": "upstream boot/debug reference; exact private operator wrappers not published",
+    "exported_modified_sources": [
+      "proxyclient/m1n1/hv/virtio.py"
+    ]
+  }
+]

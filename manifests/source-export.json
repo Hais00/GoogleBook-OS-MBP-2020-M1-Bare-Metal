@@ -1,0 +1,1840 @@
+{
+  "date_utc": "2026-10-17T18:09:17.765358+00:00",
+  "source_scope": "port-owned implementations, changed upstream files, patches, test sources and build recipes; no Android/Apple binaries or private captures",
+  "records": [
+    {
+      "file": "scripts/alsa_owner_inventory.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bd9c0dafbe2d56201d9803283cbd8685ab5241a6ea80c6163122bec50d85082d",
+      "published_sha256": "bd9c0dafbe2d56201d9803283cbd8685ab5241a6ea80c6163122bec50d85082d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/analyze_product_manifests.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "741f4ea56206cb40287f6192e6c73408729eb9947629b80b7eb0264aa2eaa389",
+      "published_sha256": "c807138dd4ddd23d2054a5b53ed18bdd111e1e5ab39fb9cc3cb34d6064aeb7d6",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/android_hardware_watch.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3f2c0ce486ebab580cffdd540d65ca4579bbe20738a5bc1baa236830b62fc676",
+      "published_sha256": "3f2c0ce486ebab580cffdd540d65ca4579bbe20738a5bc1baa236830b62fc676",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/android_log_policy.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "34a84330f31eac3c01ae4bc6d09199309b1666cd1c09f020b7c3d1f58a248f32",
+      "published_sha256": "34a84330f31eac3c01ae4bc6d09199309b1666cd1c09f020b7c3d1f58a248f32",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/android_lp_state.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "c31d6398cd323bb8da67eade19d282ba12f26599753e7cd1fc2efd5d73af420e",
+      "published_sha256": "c31d6398cd323bb8da67eade19d282ba12f26599753e7cd1fc2efd5d73af420e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/android_m1_owner_inventory.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2b2116993ed7dd80e4d4af796421eec8093ef421462015b70e138ceac5665f2d",
+      "published_sha256": "2b2116993ed7dd80e4d4af796421eec8093ef421462015b70e138ceac5665f2d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/android_native_input_capture.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "890a61819eeef46fc9d4738602f19cb46d634e2508e25c2b183e6e549d9e2546",
+      "published_sha256": "890a61819eeef46fc9d4738602f19cb46d634e2508e25c2b183e6e549d9e2546",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/android_uart_log_cost_probe.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "51a3d18732197a946052bba858927125d3028eb3d4a1a29f76116755c6e8bc25",
+      "published_sha256": "51a3d18732197a946052bba858927125d3028eb3d4a1a29f76116755c6e8bc25",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/android_vm_boot_watch.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1edecbb9dbb3dc6375b8340969237ee66116d88285c9113cf812770aa53c5591",
+      "published_sha256": "1edecbb9dbb3dc6375b8340969237ee66116d88285c9113cf812770aa53c5591",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/android_vm_probe.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "5485346ef461aeaf7ae759c8db89eb269f62f932c6e1ef10371bdd54169b4b97",
+      "published_sha256": "5485346ef461aeaf7ae759c8db89eb269f62f932c6e1ef10371bdd54169b4b97",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/apple_drm_backend_gate.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "c00a7a0b8e0fe32ca1b4d3b314f39990b7f87522738fd60b5a5805b1d8d18f9c",
+      "published_sha256": "c00a7a0b8e0fe32ca1b4d3b314f39990b7f87522738fd60b5a5805b1d8d18f9c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/apple_graphics_policy.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "80040f5fa8ed09c4da77b6eca5bd01d15c3f1ef1f7c2a35c512e7f12d6798ad2",
+      "published_sha256": "80040f5fa8ed09c4da77b6eca5bd01d15c3f1ef1f7c2a35c512e7f12d6798ad2",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/archive_android_stage.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3478fa7ffd9a01f5c75efc0330e2f9f6d966eb02b25e8dc3a1b076d03175cf11",
+      "published_sha256": "3478fa7ffd9a01f5c75efc0330e2f9f6d966eb02b25e8dc3a1b076d03175cf11",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/asahi_priority_permissions_probe.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "77577521c40d4e45b50d6270310d8f4d2d05d277ebccddea5ec557e29ea841bd",
+      "published_sha256": "77577521c40d4e45b50d6270310d8f4d2d05d277ebccddea5ec557e29ea841bd",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/assemble_bootable_image.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "5fce69a8999f132682467a599f116b8935eda94d45424cf97c245c4137c487bb",
+      "published_sha256": "5fce69a8999f132682467a599f116b8935eda94d45424cf97c245c4137c487bb",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audio_local_binder_probe.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "5ea409f5eb1ece14665cf9ee7bacf3f43cb8363d94de5e2bc51d29089e6ad3cf",
+      "published_sha256": "5ea409f5eb1ece14665cf9ee7bacf3f43cb8363d94de5e2bc51d29089e6ad3cf",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audio_local_binderfs.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "128252b1a0972b12699df131b49c4d541e9448469cd7fb64725d9e47a6904d54",
+      "published_sha256": "128252b1a0972b12699df131b49c4d541e9448469cd7fb64725d9e47a6904d54",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audio_local_log_capture.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "d06eb84cdee627ed095221979e6aee1bf3dc09381d78eefd70db2f2cb30762c8",
+      "published_sha256": "d06eb84cdee627ed095221979e6aee1bf3dc09381d78eefd70db2f2cb30762c8",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audio_local_policy.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "425f0d578d712af35bf59f2242545a6a0ac9e0c6a470d86dcd173c99ba9f1e6f",
+      "published_sha256": "425f0d578d712af35bf59f2242545a6a0ac9e0c6a470d86dcd173c99ba9f1e6f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audio_local_properties.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "96e35193ed1aa7742f71a9f2e649693ffb995a7b085e55d7dff6b0860bf7407c",
+      "published_sha256": "96e35193ed1aa7742f71a9f2e649693ffb995a7b085e55d7dff6b0860bf7407c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audio_local_runtime.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "30d0f923b691156c4ebc6280cf38bba0c7077072dec067d314ab3aead27a9841",
+      "published_sha256": "30d0f923b691156c4ebc6280cf38bba0c7077072dec067d314ab3aead27a9841",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audio_no_agm.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "31f3184c3c7865075f0a74fc97192d19d19f61fa263997bd38638e4911cf63b4",
+      "published_sha256": "31f3184c3c7865075f0a74fc97192d19d19f61fa263997bd38638e4911cf63b4",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/audit_m1_profile.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2b2b4332ce46c3ea76a49fb1b0b8d36f916c188d3d36e2bccbf6a2c25636c1f9",
+      "published_sha256": "c7ddacff28c187c9b85e331344dbaf6794dcf9f2788675b5418c5e35346ef825",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/audit_product_library_users.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "07186525448d999000f836a5a7d3fc5ba41af4688215670966d05b267931e3ec",
+      "published_sha256": "07186525448d999000f836a5a7d3fc5ba41af4688215670966d05b267931e3ec",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/avd-cm3-vectors.ld",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1e9d06953496a469807bd8b07dc2cc4bd672a20ab9c785964dd6817f3c8861ae",
+      "published_sha256": "1e9d06953496a469807bd8b07dc2cc4bd672a20ab9c785964dd6817f3c8861ae",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/boot_config.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b8897c3591e01d992b583dce71d566a6adc57c1ebbd62d9f90f6a0fd1e7d8097",
+      "published_sha256": "ba0e00d545ad0368ad52eaf2d5e5e82389a51d237fb43788f177b52145136008",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/boot_usb_debug.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "11ee2fc4addb77524cba1ce2c649fdf9ed19df0c53b62a2623a33f3fcbfa92c5",
+      "published_sha256": "d034ca0a6a34c3e795b8318858a21c99d2c55c64a5268e544e29cc9fb4d7b169",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/bootcontrol_m1.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "6041e0a9cb31730eaa260ea3d5c1c06d0bf5144e26b7c62b81ebda832df0d3b0",
+      "published_sha256": "6041e0a9cb31730eaa260ea3d5c1c06d0bf5144e26b7c62b81ebda832df0d3b0",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_bluetooth_linux.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bd3b81e6ed46b4dce35c62d7c324b7e10557409ea231762001f9cb9840baad83",
+      "published_sha256": "b0ce69f50661e3feb1ab9fb505c8da5f8f7a6c1b10d2a648fb450d949883c60d",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_clean_m1_kernel.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "5cd72c5669bbcf1661d5a45c17d5512bb28166187013e4c0719f3c1dfc1406bf",
+      "published_sha256": "ca8e7b72b7f520fab40b24b9ff827dd668843f963f03ab4e605f780e1c72ef99",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_codec_probe.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "51e0628da01a01718b3e146ade2a6ed3d3087599b507dd6fccf43c922f3a531e",
+      "published_sha256": "51e0628da01a01718b3e146ade2a6ed3d3087599b507dd6fccf43c922f3a531e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_egl_probe.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "5d9e1108cd6d749c28bc94a38b0e9682a64995d1613719767a9ec1b8f1182bd5",
+      "published_sha256": "5d9e1108cd6d749c28bc94a38b0e9682a64995d1613719767a9ec1b8f1182bd5",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_erofs_scratch.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f2acd803794ccb76059fef03d998b898492df5fb0fb2e274ee5fc8cc3a6101b2",
+      "published_sha256": "f2acd803794ccb76059fef03d998b898492df5fb0fb2e274ee5fc8cc3a6101b2",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_fixed_super.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e9969adf0f87cf19cc82fc42f5ce55df3b0b8bb0e87a0d9c35a6bfc3971d51e6",
+      "published_sha256": "e9969adf0f87cf19cc82fc42f5ce55df3b0b8bb0e87a0d9c35a6bfc3971d51e6",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_gatekeeper_nonsecure.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "efb46040b7ed4304585ea15adfd9927d9a0cd036e6757f95c4ca6179cd4e22db",
+      "published_sha256": "b251dbda01433e19eae92428199d9d72db2389019e311ce91a4e7b4aab704bde",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_graphics.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "ac8ab83e236ee9d0975c46e09857cc38d496d32d962f310c1ecc30d6d2730720",
+      "published_sha256": "cccd81c0384b1ced8dc8d3763f77ec3028fc53df60b5d5b59992b809572ee47b",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_hwc_drm.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3955589e01f0f8c24c645a5027ba46f42b42ecddab32f0cdaf8d9b9fc2920ee0",
+      "published_sha256": "807f15c4db8f963970356e7b44b4a71dc0b1b96497ca405bd13609b0ed5b6e32",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_hwc_owner_test.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "155d7118d34329949f3ab8bc288c40a0ee3bdab7d110087eeda639eee0a48309",
+      "published_sha256": "0c0ca1d58f08e53f2ac7186b57ed34505ac5486c22e4de2ee1d3edf35e1e7ffe",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_kernel.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2b4b6c063369cf165b457274398475bae784e41d179ca937fb808b9bed9b5ce2",
+      "published_sha256": "a754a52977faf2393bfc92fe2ddbe5e44a6adf66ccbc98227621be2819e5c716",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_m1_audio_local_tests.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "7fa89b35a81ddb77ff42e820565c6f7d3b1857e67ce94113d47d27c0fb9ec3a0",
+      "published_sha256": "7fa89b35a81ddb77ff42e820565c6f7d3b1857e67ce94113d47d27c0fb9ec3a0",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_m1_avd_firmware.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "ae862fbe9f921592d7719384de636d552dd37d34c7f2fc55a43e3f59fcd8b82e",
+      "published_sha256": "ae862fbe9f921592d7719384de636d552dd37d34c7f2fc55a43e3f59fcd8b82e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_m1_bluetooth_audio.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "36a0b4d4f749ff0f8588511654c707b0b9298543a892424a455843084325506a",
+      "published_sha256": "36a0b4d4f749ff0f8588511654c707b0b9298543a892424a455843084325506a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_m1_lights.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "d3f47601417b1aa63198cbfb86194d7fde7150e4497262634e946921882b774b",
+      "published_sha256": "d3f47601417b1aa63198cbfb86194d7fde7150e4497262634e946921882b774b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_m1_native_audio.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3a8885ddf91ef8c7835e38f2c40f4b59d728e97aa94ee666d8cbaaa26d54e385",
+      "published_sha256": "5772a69e9a07ce64a5373182db6acf63eea84b60097e9fec4e423f8b953a1bc4",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_m1_native_audio_abi.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bcec5db9e03a896a85fc8af6ad18484ea8870606d116b09f72acbf96c3f52a20",
+      "published_sha256": "bcec5db9e03a896a85fc8af6ad18484ea8870606d116b09f72acbf96c3f52a20",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_m1_speakersafetyd.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "386d68dc695c846267599fae10614513ad797cff9abd25d77436a879e43549f8",
+      "published_sha256": "6a79246212d5e18e237c985c511edf9be36a6903b92444e0fc8b8decb6becb13",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_m1_touchbar.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b8549c53f0d21b5600bf87702438f23961a45f0ddce71f326f555b7464ca38ce",
+      "published_sha256": "b8549c53f0d21b5600bf87702438f23961a45f0ddce71f326f555b7464ca38ce",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_m1_wifi.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "8d307e965bfb261b0433de190282b930d47118bbce7d7535bb48c79ab337f60d",
+      "published_sha256": "8d307e965bfb261b0433de190282b930d47118bbce7d7535bb48c79ab337f60d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_m1_wifi_tests.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "df8b93d3465cbd891a6ef89e93835d06213be4d997a4a476a6a9a49e9cabf502",
+      "published_sha256": "df8b93d3465cbd891a6ef89e93835d06213be4d997a4a476a6a9a49e9cabf502",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_mesa_android.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "003e659deb55c569d0f55667cc07def2e6f38190ce560c4c537bfb3fb9ad24b5",
+      "published_sha256": "003e659deb55c569d0f55667cc07def2e6f38190ce560c4c537bfb3fb9ad24b5",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_native_alsa_lib.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e3ca5a2168f7ccb86f343b631e63bc73ab5f5b85ace7dc1a89ad0fce69170cac",
+      "published_sha256": "ad7bcb0fe4439c890941209942b9b914a4f8e9fee992e3626bbb1f375923f1b4",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_owner_inventory_bootstrap.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "7a195a9a9f9ee7cc141d0c83a8dfee47c63eb5e5f89d7bac9f39042e57bba5fb",
+      "published_sha256": "79e38b1e7b157f8d5071ae62ba9a40292986d744e4ea5b0c7566dfa10608b0f9",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_ram_bootstrap.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "34ac428831c525fd59ebe1591b9e7968cd8b9728a15bfe84033524d89b19f418",
+      "published_sha256": "f988d6ba2a7b887666feb383862417a96a807c37270933035d6b25b1411c9529",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/build_usb_debug_bundle.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "96de5b2b4fecb9695f8d27fd2a232f85dfee098c049c771d7bef8932fb644d4b",
+      "published_sha256": "96de5b2b4fecb9695f8d27fd2a232f85dfee098c049c771d7bef8932fb644d4b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_usb_gadget_linux.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "ac15de3a86ee646eec33389d9c1de4a18409eb53ef65e393bdb781b5256480e6",
+      "published_sha256": "ac15de3a86ee646eec33389d9c1de4a18409eb53ef65e393bdb781b5256480e6",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/build_usb_linux.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "acbec94b30d35d879f25a2c5514c423f917c99f455c627ca986375564e364e0f",
+      "published_sha256": "acbec94b30d35d879f25a2c5514c423f917c99f455c627ca986375564e364e0f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/codec_decode_probe.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "c3b5f7959f6abbbaf7ff4b503d6dba824873233fb4d24c409e36505cff297a12",
+      "published_sha256": "c3b5f7959f6abbbaf7ff4b503d6dba824873233fb4d24c409e36505cff297a12",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/codec_inventory_probe.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "05d14bc7290f3a4675d6f19a7c596e78fedae058112dcde079cf7c31a60372fd",
+      "published_sha256": "05d14bc7290f3a4675d6f19a7c596e78fedae058112dcde079cf7c31a60372fd",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/configure_native_m1_profile.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "69a16752db96b52ec28a4f9e6093d39d4e17f553132861f10a5955cda3413de6",
+      "published_sha256": "69a16752db96b52ec28a4f9e6093d39d4e17f553132861f10a5955cda3413de6",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/debug_android_boot_vm.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e22973570ee21d07cf6cb816501dd725297d847c22c783097b2db87fcd212c83",
+      "published_sha256": "3a865f7dc2424bfb0c9c4a32ebf8840d7f8655abb48e98136b720721905a4b91",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/egl_android_probe.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "9b0d247f25129e30aee758fb1b179b8958c6f13fe9b3e9ba7ee8d3f04dbf0312",
+      "published_sha256": "9b0d247f25129e30aee758fb1b179b8958c6f13fe9b3e9ba7ee8d3f04dbf0312",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/fetch_hwc_aidl.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "6c98ff6dba1af90120961e9feaf22d97e05428fc9a5a5bda57143fc93c2bea39",
+      "published_sha256": "6c98ff6dba1af90120961e9feaf22d97e05428fc9a5a5bda57143fc93c2bea39",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/fetch_m1_native_audio_references.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "20b3c210869b9f3e400fe921d686ed02181efba6202084c1f7feb561141817be",
+      "published_sha256": "20b3c210869b9f3e400fe921d686ed02181efba6202084c1f7feb561141817be",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/fetch_security_aidl.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "6bcd8eb26b45153ff8dd336bbce9e01ba9f9b7172c25da845c5cd40a4f1d8eaa",
+      "published_sha256": "1e81c7b1e3c4c81e9f84f5e36e2a55d1f5545976b6cc889549f9c4380da71845",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/firmware_manifest.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bf6a8cfdc23daa929a6e17f8268c1921e10ed610f51a73afca12da723ca3cd39",
+      "published_sha256": "bf6a8cfdc23daa929a6e17f8268c1921e10ed610f51a73afca12da723ca3cd39",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/gatekeeper_nonsecure_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "be71b042802590098bd7f7776cfa78d76ebc600be352c3a94ef30afec080ac8b",
+      "published_sha256": "be71b042802590098bd7f7776cfa78d76ebc600be352c3a94ef30afec080ac8b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/init.googlebook-usb-linux.rc",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "c4600cc7d01745601eb3c4e963fee055406b1a10a425c2fb6773a724e4130d36",
+      "published_sha256": "c4600cc7d01745601eb3c4e963fee055406b1a10a425c2fb6773a724e4130d36",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/install_fixed_m1.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "9dac3bb37175d3c803f2445eaaa56e62c037874e9ca9c68d2cd2a6e73cc38c9b",
+      "published_sha256": "a78ffd1bbd6c1b882107c79c2af49e51dfe39ebc9fe46651ca291815321c9483",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/inventory_product_golden.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "d5e3ebfa34b8e456d1d7e65d1e30bb96cdde2988248fd4aef5796aee1da19d18",
+      "published_sha256": "d5e3ebfa34b8e456d1d7e65d1e30bb96cdde2988248fd4aef5796aee1da19d18",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kernel-adp-scanout-pitch.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "ee453a9ae86cfa2676e88be4f5159cdade5befe507ef722e2a798057fcd4bc67",
+      "published_sha256": "ee453a9ae86cfa2676e88be4f5159cdade5befe507ef722e2a798057fcd4bc67",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kernel-android-memfd.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "540ae7105ec2ce03d6b2d1db5e413250bd21ce924baf457d6e64d00f5a50898b",
+      "published_sha256": "540ae7105ec2ce03d6b2d1db5e413250bd21ce924baf457d6e64d00f5a50898b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kernel-asahi-privileged-priority.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+      "published_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kernel-googlebook.config",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "420f573770be1f4a521f7421808e137fca03bafbc43669890b53861859fbde48",
+      "published_sha256": "420f573770be1f4a521f7421808e137fca03bafbc43669890b53861859fbde48",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kernel-host-include/byteswap.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3b900a351c193ed31af75bc7c9fcc801a3d819320fcbabd1f779fc65c83e47ac",
+      "published_sha256": "3b900a351c193ed31af75bc7c9fcc801a3d819320fcbabd1f779fc65c83e47ac",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kernel-host-include/elf.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "c740aff6c359b415e9e3ac0f5baea6c3400c1b581c1cc4a884ace9651d1aeb99",
+      "published_sha256": "aad8fd7e9fdd062523ecf423e771c58d3c16690cc11780da8d24e6ba17a6e465",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/kernel-host-include/endian.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "7568fb241b6b0612e5423cd04dd31cdd3733c0ca5b55d49690cf2f4c7e9e3318",
+      "published_sha256": "7568fb241b6b0612e5423cd04dd31cdd3733c0ca5b55d49690cf2f4c7e9e3318",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kernel-macos-m1.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b909d3f1be30af9f439f20c2bdbaf28e76deadb0e04b86ae5285e9e39e4b44c0",
+      "published_sha256": "0f2eb4537929a4c4b394bc1d42596fd991ac045337aea52e9984cacd9cae4e7b",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/keymint_software.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e9fee54347da296d654d435074519397deba876b3f9c82100c24ff0d421c5f1a",
+      "published_sha256": "e9fee54347da296d654d435074519397deba876b3f9c82100c24ff0d421c5f1a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/kvm_execution_smoke.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "7bb5078ca03af6f52ff0538de45e306c5363066f73555e6b04b8858b8693d198",
+      "published_sha256": "7bb5078ca03af6f52ff0538de45e306c5363066f73555e6b04b8858b8693d198",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_bluetooth_audio_playback_test.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "186521caf8841516db40f71a9a235b571ffbef84a71a93fa873347bde4274a37",
+      "published_sha256": "186521caf8841516db40f71a9a235b571ffbef84a71a93fa873347bde4274a37",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_bluetooth_audio_service.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e29744967526160836169e3833cc32744f7b3453b3ee13bf0a71929729739aab",
+      "published_sha256": "e29744967526160836169e3833cc32744f7b3453b3ee13bf0a71929729739aab",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_hwc_owner_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2349b368c261c271f3d1ed8a06fd064be1acaef6154d2dbb8a0e097e06be0e26",
+      "published_sha256": "2349b368c261c271f3d1ed8a06fd064be1acaef6154d2dbb8a0e097e06be0e26",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_input_key_state.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "4b8d9055a2cbda0f14dafbbc080d08ba7216fe6ec28fe856bf595e3251fc87e2",
+      "published_sha256": "4b8d9055a2cbda0f14dafbbc080d08ba7216fe6ec28fe856bf595e3251fc87e2",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_input_key_state.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e4d13a3499c3be6b5d6592b7e0240f2171a81693e9e794575f121a7cace2308d",
+      "published_sha256": "e4d13a3499c3be6b5d6592b7e0240f2171a81693e9e794575f121a7cace2308d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_input_key_state_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "ebec41d45ce8073ee45ff19b4a800e92c96177f264e2e4851f00c54b6580f3c0",
+      "published_sha256": "ebec41d45ce8073ee45ff19b4a800e92c96177f264e2e4851f00c54b6580f3c0",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_lights.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2b993b222bafbdfc7db7278cc9f215e7519688fdef3fb91195fffa2789a8cc43",
+      "published_sha256": "2b993b222bafbdfc7db7278cc9f215e7519688fdef3fb91195fffa2789a8cc43",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_lights.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "488f563c330d1ee001e9ba7e7bd255b8a04a7d0bbb4d7f0e738e1d6ae5fc176d",
+      "published_sha256": "488f563c330d1ee001e9ba7e7bd255b8a04a7d0bbb4d7f0e738e1d6ae5fc176d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_lights_service.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "13e6fe62ec7f3a9b4c22ad7148694501b216fab25218c19c2050e7e1764eb375",
+      "published_sha256": "13e6fe62ec7f3a9b4c22ad7148694501b216fab25218c19c2050e7e1764eb375",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_lights_service.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1fec785f5efef1af418cb3b3a28c1349d92dd2afb5c7d4febcce583306b5790d",
+      "published_sha256": "1fec785f5efef1af418cb3b3a28c1349d92dd2afb5c7d4febcce583306b5790d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_lights_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "ba661948ec9ffdbef3bcfd5cf78ebf4a447808931bb2a150493c6bd9c82c6f0a",
+      "published_sha256": "ba661948ec9ffdbef3bcfd5cf78ebf4a447808931bb2a150493c6bd9c82c6f0a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_native_audio.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "64c9e2638ad8caa2d3980f5eabdec319c375471f26814682bb432d9d6741521a",
+      "published_sha256": "64c9e2638ad8caa2d3980f5eabdec319c375471f26814682bb432d9d6741521a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_native_audio_configuration.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "9ee45ab7afcadb7909d7eab469ca6af410af4f3f50725e484396f6967c1e8752",
+      "published_sha256": "9ee45ab7afcadb7909d7eab469ca6af410af4f3f50725e484396f6967c1e8752",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_native_audio_local_probe.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "916b07581716cf0cfcabefae8c530595ec4fd2411a0ddc54a23aa853fd5a6989",
+      "published_sha256": "916b07581716cf0cfcabefae8c530595ec4fd2411a0ddc54a23aa853fd5a6989",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_native_audio_pcm.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "abca22656b7f0331270946665dec8395d239609591507431cfce5eee20f14015",
+      "published_sha256": "abca22656b7f0331270946665dec8395d239609591507431cfce5eee20f14015",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_native_audio_pcm.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "9b9bda99530d683200f5b501b6ed1dd11f7b8fe0c9063a15ddad9c9c2945429b",
+      "published_sha256": "9b9bda99530d683200f5b501b6ed1dd11f7b8fe0c9063a15ddad9c9c2945429b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_ram_image_update.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "309d73bb1a67c41cf255898d2365e70c01e86a1b907c93fa499133b1fa20fcf8",
+      "published_sha256": "6f4c434705658c2e5a874cb65b07a54ac5f9e73425586aef06e90307ef66f529",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/m1_touchbar.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "be8179a9621859a41dd8d4b9937ed3f9f02fa61b9bf7f51c789b297e7585511f",
+      "published_sha256": "be8179a9621859a41dd8d4b9937ed3f9f02fa61b9bf7f51c789b297e7585511f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_touchbar_model.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "9bcbea6daa6c984d59bc504cd796b79cf880fbf4953278ec21dd6fba29493053",
+      "published_sha256": "9bcbea6daa6c984d59bc504cd796b79cf880fbf4953278ec21dd6fba29493053",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_touchbar_model.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f3f94926b3c72de7605ad4552cfedf5424511b3c7d6714f09bddcc0f48ed48bc",
+      "published_sha256": "f3f94926b3c72de7605ad4552cfedf5424511b3c7d6714f09bddcc0f48ed48bc",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_touchbar_model_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b25a32a369386d632d44ccbc2c15ab44605ffab0a44cc379e868eb70caf3fdf0",
+      "published_sha256": "b25a32a369386d632d44ccbc2c15ab44605ffab0a44cc379e868eb70caf3fdf0",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_wifi_census.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bf775db464770c8905abe521c47855fc97c837fcf37855ed66b17f6ca8d84d34",
+      "published_sha256": "bf775db464770c8905abe521c47855fc97c837fcf37855ed66b17f6ca8d84d34",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_wifi_hal.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "7c59618214faff7c98093deaff8dd476d1ccc0abba44b62eacf9a4fc2b17e3b1",
+      "published_sha256": "7c59618214faff7c98093deaff8dd476d1ccc0abba44b62eacf9a4fc2b17e3b1",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_wifi_hal_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "630be5a045e99ee8426e1f3b6bc2ca4b8f06e4bb96568d08e2b936e26a360f53",
+      "published_sha256": "630be5a045e99ee8426e1f3b6bc2ca4b8f06e4bb96568d08e2b936e26a360f53",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_wifi_linux.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "887ed69969ec549894d09147aeeaaaf2a25626d9ae37d5ac40b6f2d27c86bd7c",
+      "published_sha256": "887ed69969ec549894d09147aeeaaaf2a25626d9ae37d5ac40b6f2d27c86bd7c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_wifi_linux.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3f34fd5c0617541c54ae0cdb7710c0480f1c41ee135de8b9187addd2b111c15f",
+      "published_sha256": "3f34fd5c0617541c54ae0cdb7710c0480f1c41ee135de8b9187addd2b111c15f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/m1_wifi_mode_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "4a4d39e1f1394cccc1fa236114fe1805bb52bebf05519740397720d5e977f872",
+      "published_sha256": "4a4d39e1f1394cccc1fa236114fe1805bb52bebf05519740397720d5e977f872",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/mesa-asahi-privileged-priority.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+      "published_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-multiqueue.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "6709d73da72f5be8b99c7ade542c684c7848b468db0221b113d3b233c861d32c",
+      "published_sha256": "6709d73da72f5be8b99c7ade542c684c7848b468db0221b113d3b233c861d32c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-priority.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b9639a01b577b9c67a66319a8b737ce817493570ae324d8e34b1274d878a267a",
+      "published_sha256": "b9639a01b577b9c67a66319a8b737ce817493570ae324d8e34b1274d878a267a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "8b89d1e1af6c254f33427f204e497cf2697b533647790983dc0d59170e0b5c30",
+      "published_sha256": "8b89d1e1af6c254f33427f204e497cf2697b533647790983dc0d59170e0b5c30",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-full-priority.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+      "published_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/minigbm_sync_failure_test.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3b3e6aad995e242c79ca8af3259f170bea338aec574b561fb8ae9193b4ba11a4",
+      "published_sha256": "3b3e6aad995e242c79ca8af3259f170bea338aec574b561fb8ae9193b4ba11a4",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/native_audio_local_runtime.sh",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "290535a6e784154dc59543028d0a677c889e95e61ba337729461985178c1918a",
+      "published_sha256": "290535a6e784154dc59543028d0a677c889e95e61ba337729461985178c1918a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/prepare_m1_audio_local_runtime.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "3b079b2975512c932ff928e1208229f3532dd3e2e4e0d211394c736ebe343491",
+      "published_sha256": "d4bd4511266b17fcf3851ea67a2ffed3d432a4e3f7b4540688e848bef418a7d1",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_m1_install.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "713a6959dce2826be368bb04b7a8164a80cf63a45c46f7ddde0e91fe7ef718ee",
+      "published_sha256": "93353b89a3df1a4559045239f0ba98702e864b827f846d1945011fc0e2eaea91",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_m1_native_audio_local.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "29b8f770f0b5070834b78cdce5b67545aa2d8ca68bc7e3d6ee17d2050b6eb1d6",
+      "published_sha256": "c6f138b495b61e9715e15038245f94e599639efe4a865b1d4e7496223394103d",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_m1_wifi_firmware.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1b1658d208ba7d7f9c61fede883b97183d37a9b4428d6ac0b083df5dee3b108f",
+      "published_sha256": "cec30a0856d0792072e91a7123824996154ecc56fb712bb4e33cff26ee60ead8",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_manifest_firmware_initrd.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2939963d65c245c2df24b6fc4df37119f097e3da689cbd63263b8ccc0b12fcb8",
+      "published_sha256": "2939963d65c245c2df24b6fc4df37119f097e3da689cbd63263b8ccc0b12fcb8",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/prepare_native_trial_payload.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "fdc4136af64ded6374acb8968c6d6f832be42ad1fa72c32f8adf202f11738e94",
+      "published_sha256": "af0fda84f855c8bed4f4b7cc2df3ac1afa222ecd381757fa2b1b88f42b65d29e",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_ram_update_plan.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f609b322c262fd0598c809944b57de4d7f7d2c53f1d8c9f51a9a0dc6b4accdee",
+      "published_sha256": "2e1bca3f4590d42b296c9efda97c14f546960d775895f104891e4c1f95df34ab",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_system_ext_m1.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f3952917d6ec1121164c96e3f209ae2ce71c52bdb000d5a0238b8c902916866b",
+      "published_sha256": "4ed5239e966d3020648acd2aea08c521deddefbc18fc5dd38a0c57d7454a9862",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_system_m1.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2d2216b4d70730d18a56f0cd80a1c6a052651c701d282ab23bcfd9020301745a",
+      "published_sha256": "84b83a432bb783f262704e51987d69deb4c478ad0d9b1c7cbf3a9e200395bd79",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prepare_vendor_namespace_test.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "71671cbbd9780dcda8a0917496d5dd209aa2abdad226a8f7fe8e5277c9bbd22c",
+      "published_sha256": "f438b8ca10c2194f1f080e1af33a0c32fbdeb1cbf6057082e20ea04e15d4baf4",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/project_paths.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bd88dde6f58c7a2b27f28d35c619fa8746b55c7a7fcf7fa7b93d60fa88b28567",
+      "published_sha256": "80785c68dd86e5ed30f2a1b6588d8a0af16b0a133f654079c077b2b2465dce82",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/prune_qcom_apks.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f31eb816189c66d131cc2a9c46caffbddb90959b880ec449e1313cf6d7ea33f0",
+      "published_sha256": "f31eb816189c66d131cc2a9c46caffbddb90959b880ec449e1313cf6d7ea33f0",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/prune_qcom_services.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f3aa84d80518806be98929de4a0e27bd9baac8df50c1a7793ec65f9c756cb20b",
+      "published_sha256": "f3aa84d80518806be98929de4a0e27bd9baac8df50c1a7793ec65f9c756cb20b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/prune_qspm_service.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e8e06470e745910fb0b6e48a18f791519e017d3abc4f259905d26d701480d1c5",
+      "published_sha256": "e8e06470e745910fb0b6e48a18f791519e017d3abc4f259905d26d701480d1c5",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/qemu_img_framework_main.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "39fb21e4e848a2e6af7b403e48c4c3a778ff78940b6e33039b508ded1413028d",
+      "published_sha256": "39fb21e4e848a2e6af7b403e48c4c3a778ff78940b6e33039b508ded1413028d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/run_m1_audio_local_runtime.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "fd4e2056d136aacbd87714a6da0dc9c10a567e566502349dec7beaca2d359aa3",
+      "published_sha256": "fd4e2056d136aacbd87714a6da0dc9c10a567e566502349dec7beaca2d359aa3",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/run_m1_native_audio_local.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e0209e1a670344664a019acb03d068db5c881e7430af5012b443075a3231fa68",
+      "published_sha256": "e0209e1a670344664a019acb03d068db5c881e7430af5012b443075a3231fa68",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/selinux_boot_smoke.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1077b5d69466b098f80373989014ff5ddb15fd1c92e9e0fa4ce346e884088d33",
+      "published_sha256": "1077b5d69466b098f80373989014ff5ddb15fd1c92e9e0fa4ce346e884088d33",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/selinux_graphics_probe.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f38c4704192b71cc10ab73c6308eb0d9314fac2e2a47647ee962ed62c3c6c9d9",
+      "published_sha256": "f38c4704192b71cc10ab73c6308eb0d9314fac2e2a47647ee962ed62c3c6c9d9",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_gatekeeper_nonsecure.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b583e087f3e34941da03cd3204088a04f7f8d783eeb5a7bc47ef5e919952fb10",
+      "published_sha256": "b583e087f3e34941da03cd3204088a04f7f8d783eeb5a7bc47ef5e919952fb10",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_linux_device_hals.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "177c21a12f9c3342f6c667bc5fedfd905af19c9217dc819e30ccd80c0c0cad92",
+      "published_sha256": "177c21a12f9c3342f6c667bc5fedfd905af19c9217dc819e30ccd80c0c0cad92",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_bluetooth_audio.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "883dc66d0651245e2251fcbb25023ae98f345c45c2339e1bf52110791c37157d",
+      "published_sha256": "883dc66d0651245e2251fcbb25023ae98f345c45c2339e1bf52110791c37157d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_bluetooth_rfkill.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "efa2a2a3caa2f398de77ab34062847dda2b9fad1eb4959f1f1b5209d422e20d7",
+      "published_sha256": "efa2a2a3caa2f398de77ab34062847dda2b9fad1eb4959f1f1b5209d422e20d7",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_input.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "67dc54795128080dd83ef7f5e51ab86c78a3144531c5c31a0e366b1dbcf8dbd1",
+      "published_sha256": "67dc54795128080dd83ef7f5e51ab86c78a3144531c5c31a0e366b1dbcf8dbd1",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_input_policy.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "82d6b9a4603a36c57627d30e4ffc5c0dd166b53daff4e4325ef8df5d533590f9",
+      "published_sha256": "82d6b9a4603a36c57627d30e4ffc5c0dd166b53daff4e4325ef8df5d533590f9",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_native_audio.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "09d46efc5b13d927f075be1049718811b1023a644b7f2a710c762b7761052b9a",
+      "published_sha256": "afd721f6385d30a2097c29a7e865ce1d207a2cadaba54121bd1685a758cbdfa6",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/stage_m1_native_audio_address.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "32b3312485f75e59c86f59060199896ee6d317a404f2d1c92c359b10a95a7210",
+      "published_sha256": "32b3312485f75e59c86f59060199896ee6d317a404f2d1c92c359b10a95a7210",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_native_audio_recovery.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "7260f19f9c6e29467442b674372f305f55990977891ac087bd2978fa062e1b80",
+      "published_sha256": "7260f19f9c6e29467442b674372f305f55990977891ac087bd2978fa062e1b80",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_power_profile.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "634ab13a9b6b9342821a2a65ac41bc77e1e569d5a38189e9ac229529255184f2",
+      "published_sha256": "634ab13a9b6b9342821a2a65ac41bc77e1e569d5a38189e9ac229529255184f2",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_vulkan_multiqueue.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "088dff3513b4ec9a760dcc9bbafec3a1d0ab47917c6001e2fc6f5c9696367c88",
+      "published_sha256": "088dff3513b4ec9a760dcc9bbafec3a1d0ab47917c6001e2fc6f5c9696367c88",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_vulkan_priority.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "95f9d71bfb88ada5cda5a19265e3069b03ad2843dfa66414965494b1bf9e75c8",
+      "published_sha256": "95f9d71bfb88ada5cda5a19265e3069b03ad2843dfa66414965494b1bf9e75c8",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_vulkan_profile.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2fe2c345a7b27f52528fc162ed42f478590235b6e423bfb506c1d8c6c364b89c",
+      "published_sha256": "2fe2c345a7b27f52528fc162ed42f478590235b6e423bfb506c1d8c6c364b89c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_wifi.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "33df90e9debc29db4ff9a8e93d0a9198f08ac95c457510b42f74b44de1675b5b",
+      "published_sha256": "33df90e9debc29db4ff9a8e93d0a9198f08ac95c457510b42f74b44de1675b5b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_m1_wifi_firmware.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1215fff8d91363ed47ec263baccfe0148267cdc01aef47e7a6009db56647351c",
+      "published_sha256": "1215fff8d91363ed47ec263baccfe0148267cdc01aef47e7a6009db56647351c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_native_egl.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "4aa592d49c60f6c8bf3b9de95796524da152f6d26a1e6fae5629cf41d526ff7d",
+      "published_sha256": "4aa592d49c60f6c8bf3b9de95796524da152f6d26a1e6fae5629cf41d526ff7d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_software_codecs.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "fbb0a2e68b338ca8dcbff9fb0b42ff008bfae7717f0ccceb0fdf262ec757fd23",
+      "published_sha256": "fbb0a2e68b338ca8dcbff9fb0b42ff008bfae7717f0ccceb0fdf262ec757fd23",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/stage_usb_linux.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "cc9646a5c037e1989d40deb1138f5b25adc249881e179c06601fb10ef02c1e9e",
+      "published_sha256": "cc9646a5c037e1989d40deb1138f5b25adc249881e179c06601fb10ef02c1e9e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/strace-android-compat.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "676876c01c214d595c34f13786efa3353b82bb1d2da4a27254fa3fcba9425676",
+      "published_sha256": "676876c01c214d595c34f13786efa3353b82bb1d2da4a27254fa3fcba9425676",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/swiftshader-android.patch",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bac2969e9f370fd75aa072f9797c343219db08d30a7fd92b662322b8234131e2",
+      "published_sha256": "bac2969e9f370fd75aa072f9797c343219db08d30a7fd92b662322b8234131e2",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/test_android_lp_state.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1fec2a3b97551955ae29973334e841300764eb48ec9c41ad31c3a6248695845a",
+      "published_sha256": "1fec2a3b97551955ae29973334e841300764eb48ec9c41ad31c3a6248695845a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/test_archived_ram_update.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "cdb0e82afe735ee6b8194aced9db513ec1eaa35126529039590606c99ed80a86",
+      "published_sha256": "7eef4aeafc40e5c624be591fd621a43fa05ecaaa82331e9ade8cfea2591c009c",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/test_avd_bootstrap_firmware.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "b96e1cc14577f6045f644896504213e24ee989e6c074a336a93ea822970f18e9",
+      "published_sha256": "b96e1cc14577f6045f644896504213e24ee989e6c074a336a93ea822970f18e9",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/test_deduplicated_bootstrap.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "bcb0f30f8489253f10ebcf506c8e266cd2dfcff10b6262ae4558412ffee1453e",
+      "published_sha256": "bcb0f30f8489253f10ebcf506c8e266cd2dfcff10b6262ae4558412ffee1453e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/test_drm_fence_runtime.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2b32708a17f6436a521301e9c2eca07ae54444e2be2d07d10c51097c5ec5a454",
+      "published_sha256": "4e7c40bb14ed6c55bf3c171c5167b9ab5665966a339baf92042be6d019702b94",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/test_kernel22_android_boot.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "0e3417477b5b7503541813b5f0713e2d6c1fe8d8dd41086cba5e346e305bc314",
+      "published_sha256": "0e3417477b5b7503541813b5f0713e2d6c1fe8d8dd41086cba5e346e305bc314",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/test_kernel_early_android.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f528ecb18cc0703a24b09eb1837e22cb2f9a7c7ee9e9b1b358d7b2a0d993eb7c",
+      "published_sha256": "f88b55e931be69d99b8a98c209b40fe72f83df7b1d7f5e05c05e7d2dfbd909a8",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/test_m1_speaker_dependency_runtime.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "a27c70529468bb132e13839aaf44f178eacd636fce993004ae43aeecb8e2cc0b",
+      "published_sha256": "b2765f9e59a8c1d898d02b3d79295fd59758dad228dbb899c3b0a30c43380c28",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/test_m1_touchbar_model.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "68fa61a1f52e89efd445da444f3772d228ea0b62389bbb538abdbcff671ca52b",
+      "published_sha256": "68fa61a1f52e89efd445da444f3772d228ea0b62389bbb538abdbcff671ca52b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/test_ram_bootstrap_vm.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "12c24835fc702dd228bf70b45690fd2d8d5772eaba78be5251d6b3af28180700",
+      "published_sha256": "f9a26820c4d9b87683d278f4df0d763ef30af062ed3807a6fa6347a9666ee689",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/test_restored_firmware_runtime.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "8a384d70bb80b8e5bfd56a3bc807ab7ce06c5ca6504d92a0a5c62e88364d0735",
+      "published_sha256": "8a384d70bb80b8e5bfd56a3bc807ab7ce06c5ca6504d92a0a5c62e88364d0735",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/test_vendor_erofs_kernel_runtime.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "8c4e71ebdef1e3032d3a34089220f505217206236c7b63c311f06db6fb605fd2",
+      "published_sha256": "e3086da8a1a7bd0e18e36f2618bbe15590e09191eaf6b27ac5e313120e6a36b3",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/test_vendor_zstd_kernel_runtime.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "dc8f1a8c2dde6abbbef1153805a51bc18bb60aba6d45125648da8e525e3a4b35",
+      "published_sha256": "68d26946b2e9771eaff69cd8891e9656b38898bf711eea90c52c383033c3c582",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/tests/test_firmware_manifest.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "421ed974e0b85841bd03937a0120bb95257a79c78d270401088d045ca28d89e3",
+      "published_sha256": "421ed974e0b85841bd03937a0120bb95257a79c78d270401088d045ca28d89e3",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/update_android_vm_overlay.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "826c518ba3348081eac6063a781ba058b74ae749f65cc0b3de4e7db299986e9e",
+      "published_sha256": "bbec3f0abbd4147ff32b4f3ffecc6c10ebeb76457aacd35258c4612ce349fd21",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/usb_linux_gadget.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "75aa3b4cfb68855f5fbee5a5a4b86148bc98b00c4fb33d531b5e9761fc12d20a",
+      "published_sha256": "75aa3b4cfb68855f5fbee5a5a4b86148bc98b00c4fb33d531b5e9761fc12d20a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_gadget.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "c5b8c6c96b486bbd4f3881c8158ef4041bd0096cc3b0e8c56dba6053731bf9d2",
+      "published_sha256": "c5b8c6c96b486bbd4f3881c8158ef4041bd0096cc3b0e8c56dba6053731bf9d2",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "5fd76c6b4f0f78151a19df45e1babdaee53c31e30ed3f5a07eaabdd6d4bb0f4b",
+      "published_sha256": "5fd76c6b4f0f78151a19df45e1babdaee53c31e30ed3f5a07eaabdd6d4bb0f4b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "ab0b3a5c0b16b04ee0342d2b225baab002e287a597a58c77f4b9500aa355c13c",
+      "published_sha256": "ab0b3a5c0b16b04ee0342d2b225baab002e287a597a58c77f4b9500aa355c13c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "9becf26d923fe4ac3b0b2d23e74154dc9fab87f58cb1b94ac86b049ef62dd5ff",
+      "published_sha256": "9becf26d923fe4ac3b0b2d23e74154dc9fab87f58cb1b94ac86b049ef62dd5ff",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_gadget_service.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "1e4bf653c77da7b563aabe754915b18353afece92bd5fe395e01d0d90396b99e",
+      "published_sha256": "1e4bf653c77da7b563aabe754915b18353afece92bd5fe395e01d0d90396b99e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_gadget_service_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f54cf7732b86acf759271c5bbde1be82694eb931ab250ec17c9afb5f5dbd3478",
+      "published_sha256": "f54cf7732b86acf759271c5bbde1be82694eb931ab250ec17c9afb5f5dbd3478",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_gadget_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "dca2b336bac45f46d710b12dcb32793e791b53b99392b5bd3c0c583313005a6f",
+      "published_sha256": "dca2b336bac45f46d710b12dcb32793e791b53b99392b5bd3c0c583313005a6f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_service.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "8c2197df73d42b89c879ba91a49b9640f56bd6c6a52dece9069317f71d9556d1",
+      "published_sha256": "8c2197df73d42b89c879ba91a49b9640f56bd6c6a52dece9069317f71d9556d1",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_service_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "9e564d94794c37220c6445dc03fcc4c6cb857601bc6eacab6246eff543cf06cd",
+      "published_sha256": "9e564d94794c37220c6445dc03fcc4c6cb857601bc6eacab6246eff543cf06cd",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_typec.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "6a8e815665532a88e2939d0ab16aae54c0f17231a8fbfd9b5c4b035515ac0497",
+      "published_sha256": "6a8e815665532a88e2939d0ab16aae54c0f17231a8fbfd9b5c4b035515ac0497",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_typec.h",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "466069dddb813c9b24aa696f3e8c5f44ef91c151d19f50f8f1090e08e944afd2",
+      "published_sha256": "466069dddb813c9b24aa696f3e8c5f44ef91c151d19f50f8f1090e08e944afd2",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/usb_linux_typec_test.cpp",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "8c058a68de959709ea31a465704685f33f7ccc199ea3bf0405822ee6b9e8853b",
+      "published_sha256": "8c058a68de959709ea31a465704685f33f7ccc199ea3bf0405822ee6b9e8853b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/validate_vendor_image.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "f3aeefb7a585e1aa00f5b1f19dce2b4643ea641db52093d33dea92b46de127d4",
+      "published_sha256": "fb740ca482622329dd95589e12d77017db768d67dc3d1f1ebac71b60fb5aecc2",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "scripts/verify_erofs_readback.py",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "aeffcebb938eb1920dc9e0371d8e520d2fb2786af15735be313e889747b3a95d",
+      "published_sha256": "aeffcebb938eb1920dc9e0371d8e520d2fb2786af15735be313e889747b3a95d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/vulkan_android_interop_probe.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "13bbfe8e3848af26d870109bada4325caea218e42ae6327430679ea24314ca59",
+      "published_sha256": "13bbfe8e3848af26d870109bada4325caea218e42ae6327430679ea24314ca59",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/vulkan_hal_probe.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "2579abcc8670cd1011807a9e4baaa5c9d7d2afa8b60433c88724b9e4a90c7922",
+      "published_sha256": "2579abcc8670cd1011807a9e4baaa5c9d7d2afa8b60433c88724b9e4a90c7922",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "scripts/vulkan_priority_probe.c",
+      "origin": "port implementation or development recipe",
+      "original_sha256": "e6f60b377e7c620ecb8ecab7923a6e19d0f6718bf6694f3e5e4ad61739465c8b",
+      "published_sha256": "e6f60b377e7c620ecb8ecab7923a6e19d0f6718bf6694f3e5e4ad61739465c8b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "docs/engineering/m1-bluetooth-audio-integration-20261017.md",
+      "origin": "local engineering documentation",
+      "original_sha256": "29c34d84cb0cbd1295d159a90210f94b421a9e1206179264d97140c53a07ae0f",
+      "published_sha256": "ff8704e69690362b02c9cb05ee5634ae258042413fb14d5edd83eb73ab9d8cfd",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "docs/engineering/m1-native-input.md",
+      "origin": "local engineering documentation",
+      "original_sha256": "2e57e31703366e423152ccbbe238196c3438e71b1d9694e3f2d2607c59f94f6d",
+      "published_sha256": "2e57e31703366e423152ccbbe238196c3438e71b1d9694e3f2d2607c59f94f6d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "docs/engineering/m1-native-primary-audio-20261017.md",
+      "origin": "local engineering documentation",
+      "original_sha256": "702df99318fa960306a7162cf73489ae3f88eeca171f9f65b3d78478a5bf5634",
+      "published_sha256": "702df99318fa960306a7162cf73489ae3f88eeca171f9f65b3d78478a5bf5634",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "docs/engineering/m1-touchbar-visual-audit-20261017.md",
+      "origin": "local engineering documentation",
+      "original_sha256": "ed5b1ee3306a7630a9b044238af2ff973483c790f9de8f523ddded19a1e1cd1f",
+      "published_sha256": "ed5b1ee3306a7630a9b044238af2ff973483c790f9de8f523ddded19a1e1cd1f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/arch/arm64/tools/gen-kernel-hwcaps.sh",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "0d1615969e269ce6621e1c42d8c5a4ef3d48f8dfffb255cc21cc67988857e0e7",
+      "published_sha256": "0d1615969e269ce6621e1c42d8c5a4ef3d48f8dfffb255cc21cc67988857e0e7",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/block/partitions/efi.c",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "7bcd688fafb78ab625b2e7ba974fd022e5c538e47a875d55865a9a60f900e431",
+      "published_sha256": "0602b06cd5ae380a33e3de865dde4a40e40ccdd54ab335442a097c035a734f02",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/adp/adp_drv.c",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "77aaeff412a8a54db873b305705d7f74538f0d1aed4035e9b62388d0519b4d1c",
+      "published_sha256": "77aaeff412a8a54db873b305705d7f74538f0d1aed4035e9b62388d0519b4d1c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/asahi/file.rs",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "53ad70f052fef3c8e75f5e504b5b8719ff8f53dd3a9919c5311041209aa68f11",
+      "published_sha256": "53ad70f052fef3c8e75f5e504b5b8719ff8f53dd3a9919c5311041209aa68f11",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/drm_crtc.c",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "fba8c3eb7311d496cabfab848c86b418d2f94b70caff9edaeb98f870469e06c9",
+      "published_sha256": "fba8c3eb7311d496cabfab848c86b418d2f94b70caff9edaeb98f870469e06c9",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/include/uapi/drm/asahi_drm.h",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+      "published_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/mm/Kconfig",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "30bddcfc1bea77c00440e8b675372d50e0059ae682a618131f4ca757ace00eab",
+      "published_sha256": "30bddcfc1bea77c00440e8b675372d50e0059ae682a618131f4ca757ace00eab",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/mm/Makefile",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "9b23c5d6516101da9bb73bd445a5268bad33a123626c1b59233f475ba80b8704",
+      "published_sha256": "9b23c5d6516101da9bb73bd445a5268bad33a123626c1b59233f475ba80b8704",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim-internal.h",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
+      "published_sha256": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.c",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
+      "published_sha256": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.h",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
+      "published_sha256": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/mm/shmem.c",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "d2d9455c7277cd1543ec1a89664ff384b5fa435635205c9357a85a68c06eb268",
+      "published_sha256": "d2d9455c7277cd1543ec1a89664ff384b5fa435635205c9357a85a68c06eb268",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/scripts/Makefile.vmlinux",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "7372c536b4b1f66be9c9d3ec8d970f3dbacad0fe4e440cf6c20538ca4c8e073d",
+      "published_sha256": "7372c536b4b1f66be9c9d3ec8d970f3dbacad0fe4e440cf6c20538ca4c8e073d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/scripts/mod/file2alias.c",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "7573025cf9c5dc609a06c7fe29a181e9f438d64429c8360aabe4a8b736c93807",
+      "published_sha256": "7573025cf9c5dc609a06c7fe29a181e9f438d64429c8360aabe4a8b736c93807",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/linux-asahi/usr/gen_init_cpio.c",
+      "origin": "modified linux-asahi source",
+      "original_sha256": "3f2dab06f48fd1415cacaf076a953a5571fdb3d613556a70662ad30f6b35252e",
+      "published_sha256": "3f2dab06f48fd1415cacaf076a953a5571fdb3d613556a70662ad30f6b35252e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/linux-asahi/googlebook-port.patch",
+      "origin": "aggregate diff against recorded upstream commit",
+      "original_sha256": "0b58363172c313aa6e1f28a54938aa35eeb8506b5f3059c89058111552ddbb02",
+      "published_sha256": "9db0150a21f68cdd2c2fccc49dd7a01ca708902ad47be7885de52934eaf4643f",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "sources/linux-asahi/COPYING",
+      "origin": "upstream license",
+      "original_sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "published_sha256": "fb5a425bd3b3cd6071a3a9aff9909a859e7c1158d54d32e07658398cd67eb6a0",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/include/drm-uapi/asahi_drm.h",
+      "origin": "modified mesa source",
+      "original_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+      "published_sha256": "28d04579c075ff2b59cd966097a8ef2c0b1e44592f865b798f963d54bbe4c85b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.c",
+      "origin": "modified mesa source",
+      "original_sha256": "07094cb4ad3b075a04561ae89a5a9f01a8c2660f468d54e5a632d264d492f1e0",
+      "published_sha256": "07094cb4ad3b075a04561ae89a5a9f01a8c2660f468d54e5a632d264d492f1e0",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.h",
+      "origin": "modified mesa source",
+      "original_sha256": "87f1f5e5c63ecc339a42a8e2dffaff45696d5022debb95ff506ab593a18895d8",
+      "published_sha256": "87f1f5e5c63ecc339a42a8e2dffaff45696d5022debb95ff506ab593a18895d8",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/meson.build",
+      "origin": "modified mesa source",
+      "original_sha256": "181b0097931620b3473aab5500a1117d1ee32b1407316a356e6c24fa92d35c14",
+      "published_sha256": "181b0097931620b3473aab5500a1117d1ee32b1407316a356e6c24fa92d35c14",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.c",
+      "origin": "modified mesa source",
+      "original_sha256": "3bce7bd2f9545403113c21434c38f569258b64e8862f27c5850cbfce4211e11d",
+      "published_sha256": "3bce7bd2f9545403113c21434c38f569258b64e8862f27c5850cbfce4211e11d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.h",
+      "origin": "modified mesa source",
+      "original_sha256": "f4abdad657d521df3c700a0f56c7167608ba845dbe93ca2f8950a8198be5d5c3",
+      "published_sha256": "f4abdad657d521df3c700a0f56c7167608ba845dbe93ca2f8950a8198be5d5c3",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_buffer.c",
+      "origin": "modified mesa source",
+      "original_sha256": "b71d1f12a2bdfc63d1007f03343862d71770e2068a5dae86ce6666bf77b4d208",
+      "published_sha256": "b71d1f12a2bdfc63d1007f03343862d71770e2068a5dae86ce6666bf77b4d208",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.c",
+      "origin": "modified mesa source",
+      "original_sha256": "6fc1bc6d2a988c28eaf7ead23013637db723c3092a069a0004d21c91501bb01c",
+      "published_sha256": "6fc1bc6d2a988c28eaf7ead23013637db723c3092a069a0004d21c91501bb01c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.h",
+      "origin": "modified mesa source",
+      "original_sha256": "d6182293c96bf4518349929ba3b45241b97a558f86cf18f12830544483496612",
+      "published_sha256": "d6182293c96bf4518349929ba3b45241b97a558f86cf18f12830544483496612",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device_memory.c",
+      "origin": "modified mesa source",
+      "original_sha256": "67abf9737e3b3108683655172da8424a3883e1916bccf789046580647216f9af",
+      "published_sha256": "67abf9737e3b3108683655172da8424a3883e1916bccf789046580647216f9af",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.c",
+      "origin": "modified mesa source",
+      "original_sha256": "d5223ed52addffe4b3dea51817dfcc02d2420a6273030781c35a3043b7310d3e",
+      "published_sha256": "d5223ed52addffe4b3dea51817dfcc02d2420a6273030781c35a3043b7310d3e",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.h",
+      "origin": "modified mesa source",
+      "original_sha256": "fa497a6575237de8031df92e89c4070205e9c3987082afd708b18e9938c3c5dc",
+      "published_sha256": "fa497a6575237de8031df92e89c4070205e9c3987082afd708b18e9938c3c5dc",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_physical_device.c",
+      "origin": "modified mesa source",
+      "original_sha256": "73ecf7140ad5e165737c6a24c6f4b07011f447e98c19cd777de64227e970c535",
+      "published_sha256": "73ecf7140ad5e165737c6a24c6f4b07011f447e98c19cd777de64227e970c535",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.c",
+      "origin": "modified mesa source",
+      "original_sha256": "d29231369edb669b6845aa43639c7e2eee52e290285ddb01fbe59fcb16ec761c",
+      "published_sha256": "d29231369edb669b6845aa43639c7e2eee52e290285ddb01fbe59fcb16ec761c",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.h",
+      "origin": "modified mesa source",
+      "original_sha256": "cfdd5bc1655b66b16edc68adab45d1d1f3b8cb1fa49c749c94963c9c21100f38",
+      "published_sha256": "cfdd5bc1655b66b16edc68adab45d1d1f3b8cb1fa49c749c94963c9c21100f38",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/meson.build",
+      "origin": "modified mesa source",
+      "original_sha256": "312deff5ab7edb16910e598f5b9f055ff24cf526dd616c2462831cf8e2b4879a",
+      "published_sha256": "312deff5ab7edb16910e598f5b9f055ff24cf526dd616c2462831cf8e2b4879a",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/mesa/src/compiler/clc/clc_helpers.cpp",
+      "origin": "modified mesa source",
+      "original_sha256": "f0a5c30eb3b1f1ac4bf5257e877190b7141184ea3e53fc0a4933c473da4cda55",
+      "published_sha256": "f0a5c30eb3b1f1ac4bf5257e877190b7141184ea3e53fc0a4933c473da4cda55",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/mesa/googlebook-port.patch",
+      "origin": "aggregate diff against recorded upstream commit",
+      "original_sha256": "239cf7a2ea0d281c800a567ae24cbc2887f83b87651463494b3249974cbfd171",
+      "published_sha256": "239cf7a2ea0d281c800a567ae24cbc2887f83b87651463494b3249974cbfd171",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_buffer.cc",
+      "origin": "modified minigbm source",
+      "original_sha256": "3f78bd8b10268d66a00c9c88073607fb90a026bcb16de47edfdb6c177570d9ce",
+      "published_sha256": "3f78bd8b10268d66a00c9c88073607fb90a026bcb16de47edfdb6c177570d9ce",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/minigbm/cros_gralloc/cros_gralloc_driver.cc",
+      "origin": "modified minigbm source",
+      "original_sha256": "cc4d669994d24c53235ed728500224b6cfd26db9048f3cba6c21fdaac1115234",
+      "published_sha256": "cc4d669994d24c53235ed728500224b6cfd26db9048f3cba6c21fdaac1115234",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/minigbm/drv.c",
+      "origin": "modified minigbm source",
+      "original_sha256": "f863d213b67610786d1c5832ac973ac531448c92fe89defbe0ca932402689be9",
+      "published_sha256": "f863d213b67610786d1c5832ac973ac531448c92fe89defbe0ca932402689be9",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/minigbm/drv_helpers.h",
+      "origin": "modified minigbm source",
+      "original_sha256": "8b51f4382ff845bd9eac6eb277cb4c88449bf7647ef073f0c1bfe45dd3f1c5d3",
+      "published_sha256": "8b51f4382ff845bd9eac6eb277cb4c88449bf7647ef073f0c1bfe45dd3f1c5d3",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/minigbm/dumb_driver.c",
+      "origin": "modified minigbm source",
+      "original_sha256": "81e3b3ffe72ebb2827511fcabdd66b98ff8d6cf5f6dcfa26e4ae94d8ed2819e4",
+      "published_sha256": "81e3b3ffe72ebb2827511fcabdd66b98ff8d6cf5f6dcfa26e4ae94d8ed2819e4",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/minigbm/virtgpu.c",
+      "origin": "modified minigbm source",
+      "original_sha256": "53eca69fc2caa4f42be004007f53e9f3c4826a0df0e383ac628bf784f99e5a4d",
+      "published_sha256": "53eca69fc2caa4f42be004007f53e9f3c4826a0df0e383ac628bf784f99e5a4d",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/minigbm/googlebook-port.patch",
+      "origin": "aggregate diff against recorded upstream commit",
+      "original_sha256": "79e88c1593b10ad4703e60089c8c4800a4405514cab3e9c96499b351830ad599",
+      "published_sha256": "79e88c1593b10ad4703e60089c8c4800a4405514cab3e9c96499b351830ad599",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/minigbm/LICENSE",
+      "origin": "upstream license",
+      "original_sha256": "8610954adbca6c6b85d8b1ae5613b44b0014e437d32fcad6683bb27541411686",
+      "published_sha256": "8610954adbca6c6b85d8b1ae5613b44b0014e437d32fcad6683bb27541411686",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/drm-hwcomposer/drm/ResourceManager.cpp",
+      "origin": "modified drm-hwcomposer source",
+      "original_sha256": "556741db71803eeb8bb0e3fb975b748935cb120f6ee0e92447f16302aa35af52",
+      "published_sha256": "556741db71803eeb8bb0e3fb975b748935cb120f6ee0e92447f16302aa35af52",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/drm-hwcomposer/googlebook-port.patch",
+      "origin": "aggregate diff against recorded upstream commit",
+      "original_sha256": "0bb6fd8280ad874619cb057a9b5bf09d4c855e4038f15f0152f021a6d0208245",
+      "published_sha256": "0bb6fd8280ad874619cb057a9b5bf09d4c855e4038f15f0152f021a6d0208245",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/drm-hwcomposer/NOTICE",
+      "origin": "upstream license",
+      "original_sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+      "published_sha256": "8c6db340475136df3c1201d458fa5755698eace76e510471ecc9d857d6083dac",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/speakersafetyd/src/main.rs",
+      "origin": "modified speakersafetyd source",
+      "original_sha256": "f335aea60504e5b833a0598237be441e25fd0ce708c630395e397a23361744cf",
+      "published_sha256": "f335aea60504e5b833a0598237be441e25fd0ce708c630395e397a23361744cf",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/speakersafetyd/googlebook-port.patch",
+      "origin": "aggregate diff against recorded upstream commit",
+      "original_sha256": "c5bf7614c2330d96e2385df63bd10c50788ecc3067e1e9253c7af26bbe4611f8",
+      "published_sha256": "c5bf7614c2330d96e2385df63bd10c50788ecc3067e1e9253c7af26bbe4611f8",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/speakersafetyd/LICENSE",
+      "origin": "upstream license",
+      "original_sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+      "published_sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/alsa-lib/configure.ac",
+      "origin": "modified alsa-lib source",
+      "original_sha256": "41390d0a0ab75a5a77afbd712f539d6fe30530b9d29552f5c3152c304f5d9988",
+      "published_sha256": "41390d0a0ab75a5a77afbd712f539d6fe30530b9d29552f5c3152c304f5d9988",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/alsa-lib/googlebook-port.patch",
+      "origin": "aggregate diff against recorded upstream commit",
+      "original_sha256": "31a55a06d333bf4ffd379613d8b283f87c417a004202b7e1cd27f6bf0f1f7200",
+      "published_sha256": "31a55a06d333bf4ffd379613d8b283f87c417a004202b7e1cd27f6bf0f1f7200",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/alsa-lib/COPYING",
+      "origin": "upstream license",
+      "original_sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+      "published_sha256": "32434afcc8666ba060e111d715bfdb6c2d5dd8a35fa4d3ab8ad67d8f850d2f2b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/linux-asahi/privileged-priority.patch",
+      "origin": "priority change or tested kernel configuration",
+      "original_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+      "published_sha256": "df9bdb3dc88965f677b7ba2d6a8accbfd13376e58873efd34cab0a25bd9b4094",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/mesa/privileged-priority.patch",
+      "origin": "priority change or tested kernel configuration",
+      "original_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+      "published_sha256": "34568cf5c12cf307f9fd48b87aa3ffb94338888d4279c0adfc3c9bfdfbfd8fca",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/mesa/android-vulkan-full.patch",
+      "origin": "priority change or tested kernel configuration",
+      "original_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+      "published_sha256": "b58c0314b8830ec5cf68ecd0b37ec798acb89e54d670c918aabb2e7f1088bd5b",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "config/kernel25.config",
+      "origin": "priority change or tested kernel configuration",
+      "original_sha256": "be60da788d6b40b37b5f3d55c05db2c19e472b8e198690452263b6184e3429aa",
+      "published_sha256": "be60da788d6b40b37b5f3d55c05db2c19e472b8e198690452263b6184e3429aa",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/linux-asahi/upstream-fence-fixes/01-bbea9e696f0cca2573b58f89bfbb19af03595c5a.patch",
+      "origin": "upstream Android DRM fence fix",
+      "original_sha256": "a60a51670c5b312f7b2dc1960658939ab7db98f53d2ca66f651e804bf1063428",
+      "published_sha256": "a60a51670c5b312f7b2dc1960658939ab7db98f53d2ca66f651e804bf1063428",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/linux-asahi/upstream-fence-fixes/02-57acb869490b504996ea46cbb80af49e35ec66e1.patch",
+      "origin": "upstream Android DRM fence fix",
+      "original_sha256": "fac27da93132adc84f5ec8350fdfa82f2aa2ce646b9f9affefa7566f8acf7459",
+      "published_sha256": "fac27da93132adc84f5ec8350fdfa82f2aa2ce646b9f9affefa7566f8acf7459",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "manifests/references/native-radios-aosp-aa229558cbf0-provenance.json",
+      "origin": "upstream provenance",
+      "original_sha256": "12e1468c2be764e021fb7a2ce3e2f8560862ae5a32ad6cfedb06a8d5f0851a86",
+      "published_sha256": "12e1468c2be764e021fb7a2ce3e2f8560862ae5a32ad6cfedb06a8d5f0851a86",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "manifests/references/references-memfd-ashmem-provenance.json",
+      "origin": "upstream provenance",
+      "original_sha256": "4093e36a63f870ac98ebc9e13c11f3950e8abf3f2bb4615ca6c24fffb90107b3",
+      "published_sha256": "4093e36a63f870ac98ebc9e13c11f3950e8abf3f2bb4615ca6c24fffb90107b3",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "manifests/references/drm-fence-fixes-provenance.json",
+      "origin": "upstream provenance",
+      "original_sha256": "fc0c5bec53786055e622da54b8c1c6c9fe96393a3040a953112c055c4209f3a6",
+      "published_sha256": "70e2b83cff6004f1521f0d4f5c2fe495e361766a80df52375393af0a4c1c4d04",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "LICENSES/MIT.txt",
+      "origin": "upstream SPDX license text",
+      "original_sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "published_sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "LICENSES/GPL-2.0.txt",
+      "origin": "upstream SPDX license text",
+      "original_sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+      "published_sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "LICENSES/LGPL-2.1.txt",
+      "origin": "upstream SPDX license text",
+      "original_sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229",
+      "published_sha256": "fe482a156acd576ecc147de2b0bee8e97b7adb461afb11efaf4022b9e8e9a229",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "LICENSES/LGPL-2.0.txt",
+      "origin": "upstream SPDX license text",
+      "original_sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433",
+      "published_sha256": "967792c8a6a57bbbc123a69fff6c3020af80b04623916b82ba721b0347e64433",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "LICENSES/BSD-2-Clause.txt",
+      "origin": "upstream SPDX license text",
+      "original_sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
+      "published_sha256": "6313108c23efffa36948f8b2cff1560a5935373b527b0e1a837cc77e6ed1bacd",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "LICENSES/BSD-3-Clause.txt",
+      "origin": "upstream SPDX license text",
+      "original_sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
+      "published_sha256": "7a83b1aeb460458db9a4bd521d7f237c45b1650f6e60ea5ffc71e49472454de3",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "LICENSES/Apache-2.0.txt",
+      "origin": "upstream SPDX license text",
+      "original_sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12",
+      "published_sha256": "7e4d3fba250d15e9e0afa380d4b611828fa2560cc8fdebe95bcf2f01a487de12",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "LICENSES/Linux-syscall-note.txt",
+      "origin": "upstream SPDX exception",
+      "original_sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
+      "published_sha256": "8e378ab93586eb55135d3bc119cce787f7324f48394777d00c34fa3d0be3303f",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "sources/m1n1/proxyclient/m1n1/hv/virtio.py",
+      "origin": "MIT upstream m1n1 host transport with local pipe/EOF fix",
+      "original_sha256": "9edfe44872af6ef17de2723fb41d70902f282ac1143850332410cc89c6d143cb",
+      "published_sha256": "9edfe44872af6ef17de2723fb41d70902f282ac1143850332410cc89c6d143cb",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "patches/m1n1/googlebook-port.patch",
+      "origin": "diff against official m1n1 v1.9.9 commit",
+      "original_sha256": "60a2eab47dcb60adce8f448113f98b378b6e7bf8869307b414d709c91aaf9883",
+      "published_sha256": "60a2eab47dcb60adce8f448113f98b378b6e7bf8869307b414d709c91aaf9883",
+      "publication_path_or_identifier_adjustments": false
+    },
+    {
+      "file": "docs/engineering/configurazione-e-modifiche-m1.md",
+      "origin": "historical boot/kernel12 engineering documentation",
+      "original_sha256": "947d3adb52717cc41ca3add0ba6071c80d13733481b8948c90873993760002fb",
+      "published_sha256": "20d2a80f73da5ff7c9da23a82159ef86f895f191782a34fe64c9058f5275e70c",
+      "publication_path_or_identifier_adjustments": true
+    },
+    {
+      "file": "sources/m1n1/LICENSE",
+      "origin": "official upstream m1n1 license",
+      "original_sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
+      "published_sha256": "11ca423a564b52d3b7f260398baa20d016c25ae180fbdd0067c27b7d1ed7b420",
+      "publication_path_or_identifier_adjustments": false
+    }
+  ]
+}

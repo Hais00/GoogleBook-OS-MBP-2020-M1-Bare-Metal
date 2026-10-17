@@ -1,0 +1,373 @@
+{
+  "scope": "Explicit source headers; components without individual headers retain their upstream COPYING notices. Root MIT does not override upstream licensing.",
+  "files": [
+    {
+      "file": "scripts/alsa_owner_inventory.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/asahi_priority_permissions_probe.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/audio_local_binder_probe.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/audio_local_binderfs.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/audio_local_log_capture.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/audio_local_policy.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/audio_local_properties.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/audio_no_agm.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/codec_decode_probe.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/codec_inventory_probe.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/kernel-android-memfd.patch",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "scripts/kernel-host-include/byteswap.h",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "scripts/kernel-host-include/elf.h",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "scripts/keymint_software.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_bluetooth_audio_playback_test.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_bluetooth_audio_service.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_hwc_owner_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_input_key_state.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_input_key_state.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_input_key_state_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_lights.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_lights.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_lights_service.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_lights_service.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_lights_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_native_audio.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_native_audio_configuration.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_native_audio_local_probe.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_native_audio_pcm.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_native_audio_pcm.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_touchbar.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_touchbar_model.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_touchbar_model.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_touchbar_model_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_wifi_census.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_wifi_hal.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_wifi_hal_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_wifi_linux.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_wifi_linux.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/m1_wifi_mode_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-multiqueue.patch",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android-priority.patch",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-android.patch",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "scripts/mesa-honeykrisp-full-priority.patch",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "scripts/qemu_img_framework_main.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "scripts/usb_linux_gadget.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_gadget.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_binding_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_service.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_service_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_gadget_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_service.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_service_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_typec.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_typec.h",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/usb_linux_typec_test.cpp",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/vulkan_android_interop_probe.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "scripts/vulkan_priority_probe.c",
+      "SPDX": "Apache-2.0"
+    },
+    {
+      "file": "sources/linux-asahi/COPYING",
+      "SPDX": "GPL-2.0 WITH Linux-syscall-note"
+    },
+    {
+      "file": "sources/linux-asahi/arch/arm64/tools/gen-kernel-hwcaps.sh",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "sources/linux-asahi/block/partitions/efi.c",
+      "SPDX": "GPL-2.0-or-later"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/adp/adp_drv.c",
+      "SPDX": "GPL-2.0-only"
+    },
+    {
+      "file": "sources/linux-asahi/drivers/gpu/drm/asahi/file.rs",
+      "SPDX": "GPL-2.0-only OR MIT"
+    },
+    {
+      "file": "sources/linux-asahi/include/uapi/drm/asahi_drm.h",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/linux-asahi/mm/Kconfig",
+      "SPDX": "GPL-2.0-only"
+    },
+    {
+      "file": "sources/linux-asahi/mm/Makefile",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim-internal.h",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.c",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "sources/linux-asahi/mm/memfd-ashmem-shim.h",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "sources/linux-asahi/mm/shmem.c",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "sources/linux-asahi/scripts/Makefile.vmlinux",
+      "SPDX": "GPL-2.0-only"
+    },
+    {
+      "file": "sources/linux-asahi/usr/gen_init_cpio.c",
+      "SPDX": "GPL-2.0"
+    },
+    {
+      "file": "sources/m1n1/proxyclient/m1n1/hv/virtio.py",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/include/drm-uapi/asahi_drm.h",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/lib/agx_device.h",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/meson.build",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_android.h",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_buffer.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device.h",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_device_memory.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_image.h",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_physical_device.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.c",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/hk_queue.h",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/mesa/src/asahi/vulkan/meson.build",
+      "SPDX": "MIT"
+    },
+    {
+      "file": "sources/speakersafetyd/src/main.rs",
+      "SPDX": "GPL-2.0-only"
+    }
+  ]
+}

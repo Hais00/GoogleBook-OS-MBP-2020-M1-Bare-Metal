@@ -1,0 +1,21 @@
+diff --git a/src/main.rs b/src/main.rs
+--- a/src/main.rs
++++ b/src/main.rs
+@@ -29,7 +29,7 @@
+ 
+ const UNLOCK_MAGIC: i32 = 0xdec1be15u32 as i32;
+ 
+-const FLAGFILE: &str = "/run/speakersafetyd/speakersafetyd.flag";
++const FLAGFILE: &str = "/dev/speakersafetyd/speakersafetyd.flag";
+ 
+ /// Simple program to greet a person
+ #[derive(Parser, Debug)]
+@@ -49,7 +49,7 @@
+ }
+ 
+ fn get_machine() -> String {
+-    fs::read_to_string("/proc/device-tree/compatible")
++    fs::read_to_string("/sys/firmware/devicetree/base/compatible")
+         .expect("Could not read device tree compatible")
+         .split_once("\0")
+         .expect("Unexpected compatible format")

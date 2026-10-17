@@ -1,0 +1,141 @@
+diff --git a/src/asahi/vulkan/hk_physical_device.c b/src/asahi/vulkan/hk_physical_device.c
+--- a/src/asahi/vulkan/hk_physical_device.c
++++ b/src/asahi/vulkan/hk_physical_device.c
+@@ -1461,9 +1461,15 @@
+          if (prio) {
+             STATIC_ASSERT(ARRAY_SIZE(hk_global_queue_priorities) <=
+                           VK_MAX_GLOBAL_PRIORITY_SIZE_KHR);
+-            prio->priorityCount = ARRAY_SIZE(hk_global_queue_priorities);
++            /* Older kernels reject elevated priorities unconditionally. Only
++             * expose them when the owner reports the capability-checked path.
++             */
++            prio->priorityCount =
++               (!pdev->dev.is_virtio &&
++                (pdev->dev.params.features & DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY))
++                  ? ARRAY_SIZE(hk_global_queue_priorities) : 2;
+             memcpy(&prio->priorities, hk_global_queue_priorities,
+-                   sizeof(hk_global_queue_priorities));
++                   prio->priorityCount * sizeof(hk_global_queue_priorities[0]));
+          }
+       }
+    }
+diff --git a/src/asahi/vulkan/hk_queue.c b/src/asahi/vulkan/hk_queue.c
+--- a/src/asahi/vulkan/hk_queue.c
++++ b/src/asahi/vulkan/hk_queue.c
+@@ -1038,11 +1038,10 @@
+       priority_info ? priority_info->globalPriority
+                     : VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR;
+ 
+-   /* TODO: Lift when kernel side is ready and we can handle failures in
+-    * create_command_queue.
+-    */
+    enum drm_asahi_priority drm_priority = translate_priority(priority);
+-   if (drm_priority >= DRM_ASAHI_PRIORITY_HIGH) {
++   if (drm_priority >= DRM_ASAHI_PRIORITY_HIGH &&
++       (dev->dev.is_virtio ||
++        !(dev->dev.params.features & DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY))) {
+       vk_free(&dev->vk.alloc, queue);
+       return VK_ERROR_NOT_PERMITTED_EXT;
+    }
+@@ -1056,9 +1055,13 @@
+    queue->vk.driver_submit = hk_queue_submit;
+ 
+    if (agx_create_command_queue_checked(&dev->dev, drm_priority, &queue->drm.id)) {
++      const int error = errno;
+       vk_queue_finish(&queue->vk);
+       vk_free(&dev->vk.alloc, queue);
+-      return vk_errorf(dev, VK_ERROR_INITIALIZATION_FAILED, "Native command queue creation failed: %m");
++      return vk_errorf(dev, (error == EACCES || error == EPERM)
++                              ? VK_ERROR_NOT_PERMITTED_KHR
++                              : VK_ERROR_INITIALIZATION_FAILED,
++                       "Native command queue creation failed: %s", strerror(error));
+    }
+    queue->drm.virt_ring_idx = drm_priority + 1;
+ 
+@@ -1089,9 +1092,10 @@
+          hk_queue_finish(dev, queue);
+          return result;
+       }
+-      mesa_logi("Honeykrisp Android queue family=%u index=%u native_queue=%u syncobj=%u (shared-heap serialized)",
+-                 pCreateInfo->queueFamilyIndex, index_in_family, queue->drm.id, queue->drm.syncobj);
+-   }
++   }
++   mesa_logi("Honeykrisp Android queue family=%u index=%u native_queue=%u syncobj=%u global_priority=%u kernel_priority=%u shared_heap_serialized=%u",
++             pCreateInfo->queueFamilyIndex, index_in_family, queue->drm.id,
++             queue->drm.syncobj, priority, drm_priority, dev->android_submit.enabled);
+ #endif
+    return VK_SUCCESS;
+ }
+diff --git a/src/asahi/lib/agx_device.c b/src/asahi/lib/agx_device.c
+--- a/src/asahi/lib/agx_device.c
++++ b/src/asahi/lib/agx_device.c
+@@ -745,6 +745,11 @@
+    if (dev->debug & AGX_DBG_1QUEUE) {
+       simple_mtx_lock(&dev->vma_lock);
+       if (dev->queue_id) {
++         if (dev->queue_priority != priority) {
++            simple_mtx_unlock(&dev->vma_lock);
++            errno = EINVAL;
++            return -1;
++         }
+          *queue_id = dev->queue_id;
+          simple_mtx_unlock(&dev->vma_lock);
+          return 0;
+@@ -756,7 +761,10 @@
+    int ret = asahi_simple_ioctl(dev, DRM_IOCTL_ASAHI_QUEUE_CREATE, &create);
+    if (!ret) {
+       *queue_id = create.queue_id;
+-      if (dev->debug & AGX_DBG_1QUEUE) dev->queue_id = create.queue_id;
++      if (dev->debug & AGX_DBG_1QUEUE) {
++         dev->queue_id = create.queue_id;
++         dev->queue_priority = priority;
++      }
+    }
+    if (dev->debug & AGX_DBG_1QUEUE) simple_mtx_unlock(&dev->vma_lock);
+    return ret;
+diff --git a/src/asahi/lib/agx_device.h b/src/asahi/lib/agx_device.h
+--- a/src/asahi/lib/agx_device.h
++++ b/src/asahi/lib/agx_device.h
+@@ -114,6 +114,7 @@
+ 
+    /* Global queue handle */
+    uint32_t queue_id;
++   enum drm_asahi_priority queue_priority;
+ 
+    /* VMA heaps */
+    simple_mtx_t vma_lock;
+diff --git a/include/drm-uapi/asahi_drm.h b/include/drm-uapi/asahi_drm.h
+--- a/include/drm-uapi/asahi_drm.h
++++ b/include/drm-uapi/asahi_drm.h
+@@ -213,6 +213,14 @@
+ 	 * userspace can speculate memory accesses more aggressively.
+ 	 */
+ 	DRM_ASAHI_FEATURE_SOFT_FAULTS = (1UL) << 0,
++	/**
++	 * @DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY: HIGH and REALTIME queue
++	 * priorities are implemented and available to the current caller at
++	 * GET_PARAMS time. This requires CAP_SYS_NICE in the initial user
++	 * namespace. QUEUE_CREATE rechecks it; unauthorized callers get EACCES.
++	 * This reports kernel support, not a hard real-time completion guarantee.
++	 */
++	DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY = (1UL) << 1,
+ };
+ 
+ /**
+@@ -538,14 +546,14 @@
+ 	/**
+ 	 * @DRM_ASAHI_PRIORITY_HIGH: High priority queue.
+ 	 *
+-	 * Reserved for future extension.
++	 * Requires DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY and CAP_SYS_NICE.
+ 	 */
+ 	DRM_ASAHI_PRIORITY_HIGH = 2,
+ 
+ 	/**
+ 	 * @DRM_ASAHI_PRIORITY_REALTIME: Real-time priority queue.
+ 	 *
+-	 * Reserved for future extension.
++	 * Requires DRM_ASAHI_FEATURE_PRIVILEGED_PRIORITY and CAP_SYS_NICE.
+ 	 */
+ 	DRM_ASAHI_PRIORITY_REALTIME = 3,
+ };

@@ -1,0 +1,26 @@
+{
+  "repository": "https://android.googlesource.com/platform/hardware/interfaces",
+  "commit": "aa229558cbf04bc997ed27465c5e7ad497123d1b",
+  "groups": [
+    {
+      "path": "bluetooth/audio/aidl",
+      "archive_sha256": "071d7bc63e5c38736869d071b8459dd5f268d7c37fdfe006042b87e38c4e28cb",
+      "files": 437
+    },
+    {
+      "path": "bluetooth/audio/utils",
+      "archive_sha256": "a5b556b5e91b74465dd7b3aaade8e54797d9035407843add8c9ab6117167b75a",
+      "files": 48
+    },
+    {
+      "path": "wifi/aidl",
+      "archive_sha256": "e8e613cb518eadd2b75eb97532bca2a20c09294f1dd2c0873c9cde129d55da89",
+      "files": 759
+    },
+    {
+      "path": "wifi/legacy_headers",
+      "archive_sha256": "1c5aa859b3bf608e16d21aa4ccc835ccc94abee33918c1a2fdcc0f71d7b59473",
+      "files": 13
+    }
+  ]
+}

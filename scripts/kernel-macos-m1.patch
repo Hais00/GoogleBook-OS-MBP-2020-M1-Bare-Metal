@@ -1,0 +1,118 @@
+diff --git a/arch/arm64/tools/gen-kernel-hwcaps.sh b/arch/arm64/tools/gen-kernel-hwcaps.sh
+index e7cdcf428..76663bcbb 100644
+--- a/arch/arm64/tools/gen-kernel-hwcaps.sh
++++ b/arch/arm64/tools/gen-kernel-hwcaps.sh
+@@ -17,7 +17,7 @@ echo "/* Generated file - do not edit */"
+ echo ""
+ 
+ grep -E '^#define HWCAP[0-9]*_[A-Z0-9_]+' $1 | \
+-	sed 's/.*HWCAP\([0-9]*\)_\([A-Z0-9_]\+\).*/#define KERNEL_HWCAP_\2\t__khwcap\1_feature(\2)/'
++	sed 's/.*HWCAP\([0-9]*\)_\([A-Z0-9_][A-Z0-9_]*\).*/#define KERNEL_HWCAP_\2\t__khwcap\1_feature(\2)/'
+ 
+ echo ""
+ echo "#endif /* __ASM_KERNEL_HWCAPS_H */"
+diff --git a/block/partitions/efi.c b/block/partitions/efi.c
+index 9865d5909..2975897bf 100644
+--- a/block/partitions/efi.c
++++ b/block/partitions/efi.c
+@@ -747,6 +747,30 @@ int efi_partition(struct parsed_partitions *state)
+ 		label_max = min(ARRAY_SIZE(info->volname) - 1,
+ 				ARRAY_SIZE(ptes[i].partition_name));
+ 		utf16_le_to_7bit(ptes[i].partition_name, label_max, info->volname);
++
++		/* GoogleBook M1 installation: supply Android names for these
++		 * explicitly identified, unnamed partitions without rewriting GPT.
++		 * Existing names and every other partition remain unchanged.
++		 */
++		if (IS_ENABLED(CONFIG_ARCH_APPLE) && !info->volname[0]) {
++			static const struct {
++				const char *uuid;
++				const char *name;
++			} googlebook_parts[] = {
++				{ "00000000-0000-4000-8000-000000000001", "super" },
++				{ "00000000-0000-4000-8000-000000000004", "metadata" },
++				{ "00000000-0000-4000-8000-000000000005", "userdata" },
++			};
++			unsigned int p;
++
++			for (p = 0; p < ARRAY_SIZE(googlebook_parts); p++) {
++				if (!strcasecmp(info->uuid, googlebook_parts[p].uuid)) {
++					strscpy(info->volname, googlebook_parts[p].name,
++						sizeof(info->volname));
++					break;
++				}
++			}
++		}
+ 		state->parts[i + 1].has_info = true;
+ 	}
+ 	kfree(ptes);
+diff --git a/scripts/Makefile.vmlinux b/scripts/Makefile.vmlinux
+index fcae1e432..fdb7550b5 100644
+--- a/scripts/Makefile.vmlinux
++++ b/scripts/Makefile.vmlinux
+@@ -113,7 +113,7 @@ vmlinux: vmlinux.unstripped FORCE
+ # what kmod expects to parse.
+ quiet_cmd_modules_builtin_modinfo = GEN     $@
+       cmd_modules_builtin_modinfo = $(cmd_objcopy); \
+-                                    sed -i 's/\x00\+$$/\x00/g' $@; \
++                                    /opt/homebrew/bin/gsed -i 's/\x00\+$$/\x00/g' $@; \
+                                     chmod -x $@
+ 
+ OBJCOPYFLAGS_modules.builtin.modinfo := -j .modinfo -O binary
+diff --git a/scripts/mod/file2alias.c b/scripts/mod/file2alias.c
+index 2ad87a74b..ea1b9752f 100644
+--- a/scripts/mod/file2alias.c
++++ b/scripts/mod/file2alias.c
+@@ -107,9 +107,11 @@ typedef struct {
+ 	__u8 b[16];
+ } guid_t;
+ 
++#ifndef __APPLE__
+ typedef struct {
+ 	__u8 b[16];
+ } uuid_t;
++#endif
+ 
+ #define	UUID_STRING_LEN		36
+ 
+@@ -1267,13 +1269,14 @@ static void do_typec_entry(struct module *mod, void *symval)
+ static void do_tee_entry(struct module *mod, void *symval)
+ {
+ 	DEF_FIELD_ADDR(symval, tee_client_device_id, uuid);
++	const unsigned char *b = (const unsigned char *)uuid;
+ 
+ 	module_alias_printf(mod, true,
+ 			    "tee:%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x",
+-		uuid->b[0], uuid->b[1], uuid->b[2], uuid->b[3], uuid->b[4],
+-		uuid->b[5], uuid->b[6], uuid->b[7], uuid->b[8], uuid->b[9],
+-		uuid->b[10], uuid->b[11], uuid->b[12], uuid->b[13], uuid->b[14],
+-		uuid->b[15]);
++		b[0], b[1], b[2], b[3], b[4],
++		b[5], b[6], b[7], b[8], b[9],
++		b[10], b[11], b[12], b[13], b[14],
++		b[15]);
+ }
+ 
+ /* Looks like: wmi:guid */
+diff --git a/usr/gen_init_cpio.c b/usr/gen_init_cpio.c
+index b7296edc6..2532af2c1 100644
+--- a/usr/gen_init_cpio.c
++++ b/usr/gen_init_cpio.c
+@@ -14,6 +14,17 @@
+ #include <ctype.h>
+ #include <limits.h>
+ 
++#ifndef O_LARGEFILE
++#define O_LARGEFILE 0
++#endif
++
++#ifndef __linux__
++static inline ssize_t copy_file_range(int fd_in, off_t *off_in, int fd_out, off_t *off_out, size_t len, unsigned int flags) {
++    (void)fd_in; (void)off_in; (void)fd_out; (void)off_out; (void)len; (void)flags;
++    return -1;
++}
++#endif
++
+ /*
+  * Original work by Jeff Garzik
+  *

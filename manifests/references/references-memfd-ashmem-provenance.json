@@ -1,0 +1,12 @@
+{
+  "upstream": "https://android.googlesource.com/kernel/common",
+  "tag": "android14-6.1-2025-04_r6",
+  "commit": "563a3050191027317f4c6206c4c69da9e9fc699e",
+  "license": "GPL-2.0",
+  "ported_files": {
+    "memfd-ashmem-shim.c": "2f080b2630db524bb79c5f60bfd4cb9e6d0ebaf2f69a53b0f6f27678ce218978",
+    "memfd-ashmem-shim.h": "493f414cf379fb78167d6ffea191511c6391e57bb2232ffa7b2c14e0a050de66",
+    "memfd-ashmem-shim-internal.h": "83ff01d33eca8ec64a9df8b905da18261f0cc51231f7ebfdd26b3e876a5a2850"
+  },
+  "active_userspace": "arm64 only; CONFIG_COMPAT disabled"
+}
